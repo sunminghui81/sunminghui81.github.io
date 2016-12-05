@@ -1,0 +1,12 @@
+{% if site.mathsyouth.comments.provider and page.comments != false %}
+
+{% case site.mathsyouth.comments.provider %}
+{% when "disqus" %}
+  {% include mathsyouth/comments-providers/disqus %}
+{% when "duoshuo" %}
+  {% include mathsyouth/comments-providers/duoshuo %}
+{% when "custom" %}
+  {% include custom/comments %}
+{% endcase %}
+
+{% endif %}

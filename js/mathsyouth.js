@@ -1,8 +1,8 @@
 /* =============================================================================
-#     FileName: codepiano.js
+#     FileName: mathsyouth.js
 #         Desc: javascript for blog
-#       Author: codepiano
-#        Email: codepiano.li@gmail.com
+#       Author: mathsyouth
+#        Email: mathsyouth.li@gmail.com
 #     HomePage: http://www.weibo.com/anyexingchen
 #      Version: 0.0.1
 #   LastChange: 2013-05-12 01:39:30
