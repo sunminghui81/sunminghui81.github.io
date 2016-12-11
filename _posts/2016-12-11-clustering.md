@@ -23,9 +23,10 @@ plt.title("Generate isotropic Gaussian blobs for clustering")
 plt.show()
 ```
 
-生成右图：<img src="/image/kmeans/isotropic_gaussian_blobs.png" alt="isotropic" width="50%" height="50%"/>
+<img src="/image/kmeans/isotropic_gaussian_blobs.png" alt="isotropic" width="60%" height="60%"/>
 
 从上图可以看出，我们随机产生了3个cluster。但当我们事先并不知道有多少cluster时，为了通过k-means算法来估算cluster，需要设置多个cluster初始值，运行多次k-means算法：
+
 ```Python
 from sklearn.cluster import KMeans
 plt.figure(figsize=(8, 8))
@@ -38,7 +39,7 @@ for n_clusters in range(2, 6):
 plt.show()
 ```
 
-生成下图：<img src="/image/kmeans/guess_number_clusters.png" alt="guess number" width="100%" height="100%"/>
+<img src="/image/kmeans/guess_number_clusters.png" alt="guess number" width="100%" height="100%"/>
 
 从上图可以看出，当猜测的cluster数目不对时，我们的预测与实际情况相差较大；为了保证预测尽量准确，我们需要设置不同的初始值来分别运行k-means算法，然后从中取最小的`inertia`或`within-cluster sum of squared criterion`。
 
@@ -59,7 +60,7 @@ plt.title("K-means for clustering anisotropicly distributed blobs")
 plt.show()
 ```
 
-生成下图：<img src="/image/kmeans/anisotropicly_distributed_data.png" alt="anisotropicly" width="70%" height="70%"/>
+<img src="/image/kmeans/anisotropicly_distributed_data.png" alt="anisotropicly" width="60%" height="60%"/>
 
 从上图我们可以看出，对于`anisotropicly distributed`的数据，k-means算法效果较差。
 
@@ -80,7 +81,7 @@ plt.title("K-means for clustering data with different variance")
 plt.show()
 ```
 
-生成下图：<img src="/image/kmeans/clusters_different_variance.png" alt="different variance" width="70%" height="70%"/>
+<img src="/image/kmeans/clusters_different_variance.png" alt="different variance" width="60%" height="60%"/>
 
 从上图我们可以看出，对于不同的cluster有不同的方差的数据，k-means算法效果较差。
 
@@ -100,6 +101,6 @@ plt.title("K-means for clustering unevenly sized blobs")
 plt.show()
 ```
 
-生成下图：<img src="/image/kmeans/clusters_unevenly_sized.png" alt="unevenly siezed" width="70%" height="70%"/>
+<img src="/image/kmeans/clusters_unevenly_sized.png" alt="unevenly siezed" width="60%" height="60%"/>
 
 从上图我们可以看出，对于不同的cluster有不同的数据规模时，k-means算法效果依然很好。
