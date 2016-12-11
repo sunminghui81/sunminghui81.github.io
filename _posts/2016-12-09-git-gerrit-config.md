@@ -6,7 +6,7 @@ title: "Git和Gerrit配置"
 categories: [tool]
 tags: [git, gerrit]
 group: archive
-icon: key
+icon: git
 ---
 {% include mathsyouth/setup %}
 

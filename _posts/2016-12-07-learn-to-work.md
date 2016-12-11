@@ -6,7 +6,7 @@ title: "学会如何工作"
 categories: [学会工作]
 tags: [工作，思考，优秀工程师]
 group: archive
-icon: leaf
+icon: comment
 ---
 {% include mathsyouth/setup %}
 

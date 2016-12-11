@@ -6,7 +6,7 @@ title: 解决Ubuntu升级出现的`Not enough free dish space`问题
 categories: [unix-based]
 tags: [ubuntu, software updater]
 group: archive
-icon: globe
+icon: linux
 ---
 {% include mathsyouth/setup %}
 

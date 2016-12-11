@@ -1,14 +1,15 @@
 permalink: /:year/:month/:day/:title
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-auto: true
-pygments: true
+highlighter: pygments
 # 分页配置，每页最多显示几篇文章
+# Gems
+gems: [jekyll-paginate]
 paginate: 4
 
 # 修改为自己的配置
-title : Linghui's blog
-tagline: Ideas are cheap, execution is everything!
+title : Ideas are cheap, execution is everything!
+tagline: Linghui's blog
 author :
   name : Linghui
   email : lh.zeng@hotmail.com
