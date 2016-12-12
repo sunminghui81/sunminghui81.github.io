@@ -24,7 +24,7 @@ if __name__ == "__main__":
     main()
 ```
 
-But these “global” variables cannot be modified within the function, unless declared global in the function. This doesn't work:
+But these "global" variables cannot be modified within the function, unless declared global in the function. This doesn't work:
 
 ```Python
 def setx(y):

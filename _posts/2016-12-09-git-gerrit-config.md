@@ -29,6 +29,7 @@ git config --global user.name
 ```
 
 配置邮箱:
+
 ```shell
 git config --global user.email "your_email@youremail.com"
 ```
@@ -62,6 +63,7 @@ git config user.name
 ```
 
 配置邮箱:
+
 ```shell
 git config user.email "your_email@youremail.com"
 ```
