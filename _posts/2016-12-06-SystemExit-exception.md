@@ -28,8 +28,7 @@ except:
     print "success"
 ```
 
-可以成功。原因是[SystemExit does not inherit from Exception][SystemExit]， 但是可以使用
-except BaseException来catch SystemExit：
+可以成功。原因是[SystemExit does not inherit from Exception][SystemExit]， 但是可以使用except BaseException来catch SystemExit：
 
 ```python
 try:
@@ -38,8 +37,7 @@ except　BaseException:
     print "success"
 ```
 
-[Exception hierarchy]给出了exeption类之间的继承关系，关于SystemExit的一些建议，可以参考
-[Python sys.exit: a suggestion].
+[Exception hierarchy]给出了exeption类之间的继承关系，关于SystemExit的一些建议，可以参考[Python sys.exit: a suggestion].
 
 [SystemExit]: https://docs.python.org/3/library/exceptions.html#SystemExit
 [Exception hierarchy]: https://docs.python.org/3/library/exceptions.html#exception-hierarchy
