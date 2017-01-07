@@ -35,3 +35,9 @@ icon: compass
    - [How to Create “Immutable” Classes in Python](http://www.blog.pythonlibrary.org/2014/01/17/how-to-create-immutable-classes-in-python/)
    - [Python data model](https://courses.cs.washington.edu/courses/cse140/12su/lectures/10-data_model.pdf)
 
+
+### Decorator
+
+1. [PYTHON修饰器的函数式编程](http://coolshell.cn/articles/11265.html)
+1. [Python Decortor Library](https://wiki.python.org/moin/PythonDecoratorLibrary)
+
