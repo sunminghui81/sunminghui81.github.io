@@ -36,11 +36,6 @@ icon: compass
 1. [How to Create “Immutable” Classes in Python](http://www.blog.pythonlibrary.org/2014/01/17/how-to-create-immutable-classes-in-python/)
 1. [Python data model](https://courses.cs.washington.edu/courses/cse140/12su/lectures/10-data_model.pdf)
 
-### Regular Expression
-
-1. [Regular Expression HOWTO](https://docs.python.org/2/howto/regex.html)
-1. [Python Regular Expressions](https://developers.google.com/edu/python/regular-expressions)
-
 ### Introspection
 
 1. [Guide to Python introspection](https://www.ibm.com/developerworks/library/l-pyint/)
