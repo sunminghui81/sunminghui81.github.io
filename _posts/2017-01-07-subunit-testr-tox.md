@@ -94,19 +94,34 @@ test_list_option=--list
 group_regex=([^\.]*\.)*
 ```
 
-### [测试环境管理工具tox简介][tox]
+### [测试环境管理工具 tox 简介][tox]
 
-tox是一个通用的虚拟环境管理和测试命令行工具。对于一个项目，我们需要运行Python 2.7的单元测试，也需要运行Python 3.4的单元测试，还需要运行PEP8的代码检查。这些不同的任务需要依赖不同的库，所以需要使用不同的虚拟环境。使用tox的时候，我们会在tox的配置文件`tox.ini`中指定不同任务的虚拟环境名称，该任务在虚拟环境中需要安装哪些包，以及该任务执行的时候需要运行哪些命令。我们除了可以使用tox来管理虚拟环境，还可以调用testr来执行测试用例。
+tox 是一个通用的虚拟环境管理和测试命令行工具。对于一个项目，我们需要运行 Python 2.7 的单元
+测试，也需要运行 Python 3.4 的单元测试，还需要运行 PEP8 的代码检查。这些不同的任务需要依赖
+不同的库，所以需要使用不同的虚拟环境。使用 tox 的时候，我们会在 tox 的配置文件`tox.ini`中
+指定不同任务的虚拟环境名称，该任务在虚拟环境中需要安装哪些包，以及该任务执行的时候需要运行哪
+些命令。我们除了可以使用 tox 来管理虚拟环境，还可以调用 testr 来执行测试用例。总之，tox 使
+用步骤如下：
 
-下面以OpenStack Tempest中的配置文件`tox.ini`为例来学习tox的使用。
+1. 安装 tox `pip install tox`；
+1. 生成 tox 配置文件，在其中指定 virtualenv 列表以及每个 virtualenv 环境下要运行的测试
+命令；
+1. 由 tox 命令自动创建准备 virtualenv，并在其中运行指定的测试命令。
+
+下面以 OpenStack Tempest 中的配置文件 `tox.ini` 为例来学习 tox 的使用。
 
 ```
 # content of: tox.ini , put in same dir as setup.py
+# tox 支持使用一个额外的 [tox:jenkins] 参数来替换 [tox] 中指定的内容。当检测到是在
+# jenkins 中调用 tox 时，tox 自动使用 [tox:jenkins] 中的配置，而不是 [tox]
 [tox]
 # envlist表示本文件中包含的配置环境，defaults to the list of all environments
 # 确定tox操作的环境列表，以此顺序发生
 envlist = pep8,py35,py34,py27,pip-check-reqs
 minversion = 2.3.1
+# 默认情况下，tox 会对当前项目执行 `python setup.py install` 以安装到 virtualenv 中，
+# 这包含了 `python setup.py sdist` 打包操作，对于大一些的项目，这会是一个费时的过程。当
+# 我们在调试代码并频繁执行单元测试的时候，我们不会想要每次都跑一遍打包操作。
 skipsdist = True
 
 # 将默认值放在[tempestenv]中，并在其他节中引用它们，以避免重复相同的值
@@ -131,14 +146,17 @@ setenv =
 # 默认情况下，tox只会将PATH环境变量从tox调用传递到测试环境。如果你想传递额外的环境变量，
 # 可以使用passenv选项
 passenv = OS_STDOUT_CAPTURE OS_STDERR_CAPTURE OS_TEST_TIMEOUT OS_TEST_LOCK_PATH OS_TEST_PATH TEMPEST_CONFIG TEMPEST_CONFIG_DIR http_proxy HTTP_PROXY https_proxy HTTPS_PROXY no_proxy NO_PROXY
-# usedevelop表示安装virtualenv的时候，本项目自己的代码采用开发模式安装，也就是不会拷贝代  # 码到virtualenv目录中，只是做个链接
+# usedevelop 表示安装 virtualenv 的时候，本项目自己的代码采用开发模式安装
+# `python setup.py develop`，也就是不会拷贝代码到 virtualenv 目录中，只是做个链接。
 usedevelop = True
 # install_command设置用于将软件包安装到虚拟环境中，包括被测包以及任何定义的依赖。
 install_command = pip install -U {opts} {packages}
-# 有时你可能想使用不包含在virtualenv中的工具，如make，bash或其他。为了避免出现警告，
-# 可以使用whitelist_externals配置
+# 默认情况下，在 virtualenv 中不能使用外部安装的命令，这本来是为了命令环境的隔离，但有些情
+# 况下，我们会想要使用外部命令。例如，在对代码对格式检查时，我们不会想要在每个 virtualenv
+# 中都安装一遍 flake8，只需调用外部环境中唯一的一份 flake8 即可；或有时你可能想使用工具
+# make 或 bash。为了避免出现警告，可以使用 whitelist_externals 配置:
 whitelist_externals = *
-# deps指定构建环境的时候需要安装的依赖包；
+# deps 指定构建环境的时候需要安装的依赖包；
 # 这些依赖包在项目包安装之前安装到环境中,每行定义一个依赖关系，它将被传递给installer命令进行
 # 处理。
 # {toxinidir} (the directory where tox.ini resides)
@@ -150,8 +168,10 @@ commands =
     find . -type f -name "*.pyc" -delete
     ostestr {posargs}
 
-# 这个section是为genconfig环境定制commands配置，告诉tox不重复使用基础[testenv]配置中的
-# commands设置； 没有定制的配置，从[testenv]读取。
+# 这个 section 是为 genconfig 环境定制 commands 配置，它将覆盖掉 [testenv] 中的
+# commands 配置项，告诉 tox 不重复使用基础 [testenv] 配置中的 commands 设置； 对于没有
+# 定制的配置，使用 [testenv]　中的默认配置。 例如 deps，由于在 [testenv:genconfig] 中
+# 未指定，所以沿袭 [testenv] 中的值。
 [testenv:genconfig]
 commands = oslo-config-generator --config-file tempest/cmd/config-generator.tempest.conf
 
@@ -176,23 +196,31 @@ commands =
     tempest run --regex {posargs}
 ```
 
-使用`-e ENV [，ENV2，...]`选项，可以明确列出要对其运行测试的环境。比如：
+在代码根目录执行 `tox` 命令就可以发起测试，测试的过程中， tox 会首先在 .tox 目录下分别建
+立 virtualenv，并在其中安装 `deps` 选项指定的依赖包，最后使用 `commands` 选项指定的命令
+发起测试。通过
+
+```
+tox -e ENV [，ENV2，...]
+```
+
+可以运行 virtualenv `ENV [，ENV2，...]` 环境下的测试，比如：
 
 ```
 tox -e genconfig
 ```
 
-tox命令首先会读取`tox.ini`文件中的`[testenv:genconfig]`配置信息，然后根据配置构建virtualenv，保存在.tox/目录下，以`genconfig`命名, 最后将在`genconfig`环境中调用`commands`命令。如果配置了`endir`，则virtualenv会保存在`endir`下。
+tox 命令首先会读取 `tox.ini` 文件中的 `[testenv:genconfig]` 配置信息，然后根据配置构建 virtualenv，保存在 .tox/ 目录下，以 `genconfig` 命名, 最后将在 `genconfig` 环境中调用 `commands` 命令。如果配置了 `endir`，则 virtualenv 会保存在 `endir` 下。
 
-如果你像这样调用tox：
+如果你像这样调用 tox：
 
 ```
 tox -e all -- tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_reboot_non_existent_server
 ```
 
-`--`后面的参数将替换你在测试命令中指定的{posargs}。
+`--` 后面的参数将替换你在测试命令中指定的 `{posargs}`。
 
-利用"tox"执行Tempest的顺序如下：
+利用 tox 执行 Tempest 的顺序如下：
 
 1. "user" execute “tox” command from terminal.
 1. "tox" load configuration from “tox.ini”, create virtual environment and invoke testr.
@@ -211,6 +239,7 @@ tox -e all -- tempest.api.compute.servers.test_servers_negative.ServersNegativeT
 1. [OpenStack Testing](http://developer.openstack.org/sdks/python/openstacksdk/contributors/testing.html)
 1. [通过demo学习OpenStack开发——单元测试](http://www.infoq.com/cn/articles/the-development-of-openstack-unit-test)
 1. [Tempest Deep Dive](http://lingxiankong.github.io/blog/2015/05/22/tempest-deep-dive/)
+1. [python 持续集成： tox 单元测试](https://blog.apporc.org/2016/08/python-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7-tox/)
 
 [subunit]: https://pypi.python.org/pypi/python-subunit/
 [testr]: http://testrepository.readthedocs.io/en/latest/

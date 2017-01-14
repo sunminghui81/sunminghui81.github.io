@@ -25,6 +25,7 @@ icon: compass
 1. [PEP 3102 -- Keyword-Only Arguments](https://www.python.org/dev/peps/pep-3102/)
 1. [How does Python's super() work with multiple inheritance?](http://stackoverflow.com/questions/3277367/how-does-pythons-super-work-with-multiple-inheritance/30187306#30187306)
 1. [Understanding Python Class Instantiation](http://amir.rachum.com/blog/2016/10/03/understanding-python-class-instantiation/)
+1. [copy – Duplicate objects](https://pymotw.com/2/copy/index.html#module-copy)
 
 ### Parameters
 
@@ -51,6 +52,8 @@ icon: compass
 
 1. [On Test Levels and Coverage](http://www.tech-foo.net/on-test-levels-and-coverage.html)
 1. [Delayed Assertions in Python Testtools](http://www.tech-foo.net/delayed-assertions-in-python-testtools.html)
+1. [Python Unit Testing Framework](http://pyunit.sourceforge.net/pyunit.html)
+1. [python 单元测试框架： testtools，fixture，mock，mox](https://blog.apporc.org/2016/08/python-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%EF%BC%9A-testtools%EF%BC%8Cfixture%EF%BC%8Cmock%EF%BC%8Cmox/)
 
 ### Import
 
@@ -94,6 +97,7 @@ icon: compass
 1. [PEP 343 -- The "with" Statement](https://www.python.org/dev/peps/pep-0343/)
 1. [Composing Context Managers in Python](http://www.tech-foo.net/composing-context-managers-in-python.html)
 1. [Understanding Python's "with" statement](http://effbot.org/zone/python-with-statement.htm)
+1. [contextlib – Context manager utilities](https://pymotw.com/2/contextlib/index.html#module-contextlib)
 
 ### Python风格规范
 
@@ -146,6 +150,7 @@ icon: compass
 1. https://jeffknupp.com/blog/archives/
 1. https://courses.cs.washington.edu/courses/cse140/12su/lectures/
 1. [Guido van Rossum - Personal Home Page](https://gvanrossum.github.io/)
+1. [Python Module of the Week](https://pymotw.com/2/)
 
 ### Source code
 
