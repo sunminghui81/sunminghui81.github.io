@@ -90,6 +90,7 @@ icon: compass
 1.http://stackoverflow.com/questions/739654/how-to-make-a-chain-of-function-decorators-in-python
 1. [PYTHON修饰器的函数式编程](http://coolshell.cn/articles/11265.html)
 1. [Python Decortor Library](https://wiki.python.org/moin/PythonDecoratorLibrary)
+1. [看完这篇文章你还不理解 Python 装饰器，只有一种可能](https://gold.xitu.io/post/587c565f128fe1006b00c973)
 
 ### Context manager
 
