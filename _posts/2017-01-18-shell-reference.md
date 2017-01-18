@@ -10,6 +10,16 @@ icon: code
 ---
 {% include mathsyouth/setup %}
 
+
+### 学会使用命令帮助
+
+* 在只记得部分命令关键字的场合，可通过 man -k 来搜索: man -k py
+* 需要知道某个命令的简要说明，可以使用 whatis: whatis python, whatis ls
+* 详细的介绍，则可用 info: info python, info ls
+* 查看程序的 binary 文件所在路径，可使用 which: which python, which ls
+* 当系统中安装了同一软件的多个版本时，不确定使用的是哪个版本时，使用 whereis 命令就能查看程序的搜索路径: whereis python
+* 对于命令的具体参数及使用方法，需要用到强大的 man: man python, man ls
+
 ### 移动光标
 
 * Ctrl + a：移到行首（a是首字母）
@@ -53,22 +63,18 @@ icon: code
 * ^blah^foo：替换前一条命令里的部分字符串。场景： `echo "wanderful"`，其实是想输出 `echo "wonderful"`。只需要 `^a^o` 就行了，对很长的命令的错误拼写有很大的帮助。（陈皓注：也可以使用 `!!:gs/blah/foo`）
 * ^blah^foo^：将上一条命令中所有的 blah 都替换为 foo
 
-### 查询目录的内容
+### 文件及目录管理
 
-命令格式： `ls [选项][文件或目录]`，选项
-
-* `-a` 所有文件
-* `-l` 查看详情
-
-### 文件处理命令
-
+1. 查询目录： `ls [选项][文件或目录]`，选项
+   * `-a` 所有文件
+   * `-l` 查看详情
 1. 建立目录： `mkdir -p [目录名]`, `-p` 表述递归建文件夹。举例： `mkdir -p work/code`
 1. 切换目录： `cd [目录名]`，简化操作：
    * `cd ~` 进入当前用户目录
    * `cd -` 回到上一次的目录
    * `cd ..` 进入上一级目录
    * `pwd` 查看当前目录所在位置
-1. 删除目录所有文件: `rm -r [目录名]`。举例： `rm -r work`
+1. 删除目录所有文件: `rm -r [目录名]`。举例： `rm -r work`；`rm /some/path/{file1,file2}`； `rm /some/path/file{1,2}`。
 1. 复制目录: `cp[选项][原文件目录][目标目录]`，　选项：
    * `-r` 复制目录
 1. 剪切、改名: `mv[原文件目录][目标文件目录]`
@@ -86,9 +92,6 @@ icon: code
 
 ### 文件搜索命令
 
-1. 命令搜索
-   * `whereis [选项][命令名]`
-   * `which [选项][命令名]`
 1. 文件搜索: `find [搜索范围][选项][条件]`。举例：
    * `find /path/ -name hello.sh` 在目录下查找名为 hello.sh 文件
    * `find /path/ -iname hello.sh` 忽略大小写查找文件
@@ -130,7 +133,7 @@ icon: code
 1. `ssh user@host cat /path/to/remotefile | diff /path/to/localfile –` 比较一个远程文件和一个本地文件
 1. `vim scp://user@host//path/to/somefile` vim一个远程文件
 
-### 用户名和密码
+### 用户管理
 
 1. 在 Ubuntu 安装的时候默认 root 用户是不开启的，需要建立一个非 root 用户 。Ubuntu 系统默认 root 用户是不能登录的，密码也是空的。 如果要使用 root 用户登录，必须先为 root 用户设置密码。打开终端， 输入： `sudo passwd root` 然后按回车，此时会提示你输入密码，在 password: 后输入密码。
 1. 更改用户密码： `sudo passwd username`，root 用户可以修改其他用户的密码，但是普通账户只能修改自己的密码，即不带参数的 passwd 命令。
@@ -153,7 +156,7 @@ icon: code
 1. 减少 grub 默认的引导时间 `sudo vim /etc/default/grub` 修改 TIMEOUT 值，然后 `sudo update-grub` 生效。
 1. [source, ., ./](http://askubuntu.com/questions/182012/is-there-a-difference-between-and-source-in-bash-after-all?lq=1)
 
-### Linux入门
+### Linux 入门
 
 1. [LINUX/UNIX 新手和专家教程](http://coolshell.cn/articles/1042.html)
 1. [Linux Shell Scripting Tutorial](https://bash.cyberciti.biz/guide/Main_Page)
@@ -165,6 +168,7 @@ icon: code
 1. [Linux 基础之常用命令篇](http://www.jianshu.com/p/0718b3abedcf)
 1. [让你提升命令行效率的 Bash 快捷键](https://linuxtoy.org/archives/bash-shortcuts.html)
 1. [Bash Shell常用快捷键](https://github.com/hokein/Wiki/wiki/Bash-Shell%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE)
+1. [Linux工具快速教程](http://linuxtools-rst.readthedocs.io/zh_CN/latest/index.html)
 
 
 
