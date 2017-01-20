@@ -100,14 +100,14 @@ icon: compass
    print f(2)
    print f(3)
    ```
-   This will print<br>
+   This will print <br>
 
    ```
    [1]
    [1, 2]
    [1, 2, 3]
    ```
-   If you don’t want the default to be shared between subsequent calls, you can write the function like this instead:<br>
+   If you don’t want the default to be shared between subsequent calls, you can write the function like this instead: <br>
 
    ```
    def f(a, L=None):
@@ -148,7 +148,7 @@ icon: compass
    parrot(vol=5.0)              # unknown keyword argument
    ```
    In a function call, keyword arguments must follow positional arguments. All the keyword arguments passed must match one of the arguments accepted by the function, and their order is not important. This also includes non-optional arguments.
-1. When a final formal parameter of the form `**name` is present, it receives a dictionary containing all keyword arguments except for those corresponding to a formal parameter. This may be combined with a formal parameter of the form `*name` which receives a tuple containing the positional arguments beyond the formal parameter list. (`*name` must occur before `**name`.) <br>
+1. When a final formal parameter of the form `**name` is present, it receives a dictionary containing all keyword arguments except for those corresponding to a formal parameter. This may be combined with a formal parameter of the form `*name` which receives a tuple containing the positional arguments beyond the formal parameter list. `*name` must occur before `**name`. <br>
 
    ```
    def cheeseshop(kind, *arguments, **keywords):
@@ -160,17 +160,17 @@ icon: compass
        keys = sorted(keywords.keys())
        for kw in keys:
            print kw, ":", keywords[kw]
-    ```
-    It could be called like this:<br>
+   ```
+   It could be called like this:<br>
 
-    ```
-    cheeseshop("Limburger", "It's very runny, sir.",
-           "It's really very, VERY runny, sir.",
-           shopkeeper='Michael Palin',
-           client="John Cleese",
-           sketch="Cheese Shop Sketch")
-    ```
-    Note that the list of keyword argument names is created by sorting the result of the keywords dictionary’s `keys()` method before printing its contents; if this is not done, the order in which the arguments are printed is undefined.
+   ```
+   cheeseshop("Limburger", "It's very runny, sir.",
+              "It's really very, VERY runny, sir.",
+              shopkeeper='Michael Palin',
+              client="John Cleese",
+              sketch="Cheese Shop Sketch")
+   ```
+   Note that the list of keyword argument names is created by sorting the result of the keywords dictionary’s `keys()` method before printing its contents; if this is not done, the order in which the arguments are printed is undefined.
 1. The reverse situation occurs when the arguments are already in a list or tuple but need to be unpacked for a function call requiring separate positional arguments. Write the function call with the `*`-operator to unpack the arguments out of a list or tuple: <br>
 
    ```
