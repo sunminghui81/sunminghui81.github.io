@@ -1,18 +1,18 @@
 ---
 layout: post
 keywords: git，gerrit, 配置
-description: Git和Gerrit的一些常用配置
-title: "Git和Gerrit配置"
+description: Git 和 Gerrit 的一些常用配置
+title: "Git 和 Gerrit 配置"
 categories: [tool]
-tags: [git, gerrit]
+tags: [Git, Gerrit]
 group: archive
 icon: git
 ---
 {% include mathsyouth/setup %}
 
-### Git配置
+### Git 配置
 
-#### Git配置全局用户名和邮箱
+#### Git 配置全局用户名和邮箱
 
 为所有的文件夹配置统一的用户名和邮箱：
 
@@ -40,7 +40,7 @@ git config --global user.email "your_email@youremail.com"
 git config --global user.email
 ```
 
-#### Git为单个文件夹配置用户名和邮箱
+#### Git 为单个文件夹配置用户名和邮箱
 
 为单个文件夹配置用户名和邮箱：
 
@@ -74,6 +74,13 @@ git config user.email "your_email@youremail.com"
 git config user.email
 ```
 
+#### Git 配置 editor
+
+If you want to set the editor only for Git, do either (you don’t need both):
+
+* Set core.editor in your Git config: git config --global core.editor "vim"
+* Set the GIT_EDITOR environment variable: export GIT_EDITOR=vim
+
 ### Gerrit配置
 
 在Ubuntu上安装`git-review`:
@@ -82,14 +89,14 @@ git config user.email
 apt-get install git-review
 ```
 
-`git review`配置文件夹:
+`git review` 配置文件夹:
 
 ```shell
 cd <projectname>
 git review -s
 ```
 
-配置Git使用Gerrit的用户名:
+配置 Git 使用 Gerrit 的用户名:
 
 ```shell
 git config gitreview.username yourgerritusername
