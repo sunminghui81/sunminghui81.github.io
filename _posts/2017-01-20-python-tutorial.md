@@ -100,14 +100,14 @@ icon: compass
    print f(2)
    print f(3)
    ```
-   This will print
+   This will print<br>
 
    ```
    [1]
    [1, 2]
    [1, 2, 3]
    ```
-   If you don’t want the default to be shared between subsequent calls, you can write the function like this instead:
+   If you don’t want the default to be shared between subsequent calls, you can write the function like this instead:<br>
 
    ```
    def f(a, L=None):
@@ -129,7 +129,8 @@ icon: compass
        print "-- Lovely plumage, the", type
        print "-- It's", state, "!"
    ```
-   This function can be called in any of the following ways:
+   This function can be called in any of the following ways:<br>
+
    ```
    parrot(1000)                                       # 1 positional argument
    parrot(voltage=1000)                               # 1 keyword argument
@@ -138,7 +139,8 @@ icon: compass
    parrot('a million', 'bereft of life', 'jump')      # 3 positional arguments
    parrot('a thousand', state='pushing up daisies')   # 1 positional, 1 keyword
    ```
-   but all the following calls would be invalid:
+   but all the following calls would be invalid:<br>
+
    ```
    parrot()                     # required argument missing
    parrot(voltage=5.0, 'dead')  # non-keyword argument after a keyword argument
@@ -159,7 +161,8 @@ icon: compass
        for kw in keys:
            print kw, ":", keywords[kw]
     ```
-    It could be called like this:
+    It could be called like this:<br>
+
     ```
     cheeseshop("Limburger", "It's very runny, sir.",
            "It's really very, VERY runny, sir.",
@@ -211,7 +214,8 @@ icon: compass
    ```
    squares = [x**2 for x in range(10)]
    ```
-   This is also equivalent to `squares = map(lambda x: x**2, range(10))`, but it’s more concise and readable.
+   This is also equivalent to `squares = map(lambda x: x**2, range(10))`, but it’s more concise and readable.<br>
+
    ```
    [(x, y) for x in [1,2,3] for y in [3,1,4] if x != y]
    # create a list of 2-tuples like (number, square)
@@ -255,25 +259,29 @@ icon: compass
    for i, v in enumerate(['tic', 'tac', 'toe']):
        print i, v
    ```
-   To loop over two or more sequences at the same time, the entries can be paired with the zip() function.
+   To loop over two or more sequences at the same time, the entries can be paired with the zip() function. <br>
+
    ```
    questions = ['name', 'quest', 'favorite color']
    answers = ['lancelot', 'the holy grail', 'blue']
    for q, a in zip(questions, answers):
        print 'What is your {0}?  It is {1}.'.format(q, a)
    ```
-   To loop over a sequence in reverse, first specify the sequence in a forward direction and then call the `reversed()` function.
+   To loop over a sequence in reverse, first specify the sequence in a forward direction and then call the `reversed()` function. <br>
+
    ```
    for i in reversed(xrange(1,10,2)):
        print i,
    ```
-   To loop over a sequence in sorted order, use the `sorted()` function which returns a new sorted list while leaving the source unaltered.
+   To loop over a sequence in sorted order, use the `sorted()` function which returns a new sorted list while leaving the source unaltered. <br>
+
    ```
    basket = ['apple', 'orange', 'apple', 'pear', 'orange', 'banana']
    for f in sorted(set(basket)):
        print f,
    ```
-   When looping through dictionaries, the key and corresponding value can be retrieved at the same time using the `iteritems()` method.
+   When looping through dictionaries, the key and corresponding value can be retrieved at the same time using the `iteritems()` method. <br>
+
    ```
    knights = {'gallahad': 'the pure', 'robin': 'the brave'}
    for k, v in knights.iteritems():
