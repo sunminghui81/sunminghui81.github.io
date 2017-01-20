@@ -101,12 +101,14 @@ icon: compass
    print f(3)
    ```
    This will print
+
    ```
    [1]
    [1, 2]
    [1, 2, 3]
    ```
    If you don’t want the default to be shared between subsequent calls, you can write the function like this instead:
+
    ```
    def f(a, L=None):
        if L is None:
