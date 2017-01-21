@@ -14,7 +14,12 @@ icon: compass
 
 #### 调用 python 解释器
 
-`python -m module [arg] ...` 运行　`module` 的源文件， `[arg]` 为调用 `module` 所需要的参数。
+1. `python -m module [arg] ...` 运行　`module` 源文件， `[arg]` 为调用 `module` 所需要的参数。
+1. `python -c command [arg] ...` 运行 `command` 中的执行语句。Since Python statements often contain spaces or other characters that are special to the shell, it is usually advised to *quote* `command` in its entirety with single quotes. <br>
+
+   ```
+   python -c 'import sys; print sys.argv; print "Hello world"'
+   ```
 
 #### 源文件编码
 

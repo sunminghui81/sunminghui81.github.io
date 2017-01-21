@@ -66,6 +66,7 @@ ascii 编码一致，常用的各种编码，包括 Unicode 编码都是如此�
 
 ### Reference
 
+1. [re – Regular Expressions](https://pymotw.com/2/re/#module-re)
 1. [Regular Expression HOWTO](https://docs.python.org/2/howto/regex.html)
 1. [Python Regular Expressions](https://developers.google.com/edu/python/regular-expressions)
 1. [正则表达式（一）：纠结的转义](http://www.infoq.com/cn/news/2011/01/regular-expressions-1)

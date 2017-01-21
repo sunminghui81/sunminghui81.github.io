@@ -59,11 +59,13 @@ icon: compass
 
 1. [ python项目内import其他内部package的模块的正确方法](http://blog.csdn.net/luo123n/article/details/49849649)
 
-### 虚拟环境
+### Python 虚拟环境
 
 1. [虚拟环境](http://pythonguidecn.readthedocs.io/zh/latest/dev/virtualenvs.html)
+1. [Install Python 2.7, virtualenv and virtualenvwrapper on OS X Mavericks/Yosemite](http://www.marinamele.com/2014/05/install-python-virtualenv-virtualenvwrapper-mavericks.html)
+1. [Python Virtual Environments - a Primer](https://realpython.com/blog/python/python-virtual-environments-a-primer/)
 
-### Socket网络编程
+### Socket 网络编程
 
 1. [Python爬虫(三)-Socket网络编程](http://www.jianshu.com/p/e062b3dd110c)
 
@@ -100,7 +102,7 @@ icon: compass
 1. [Understanding Python's "with" statement](http://effbot.org/zone/python-with-statement.htm)
 1. [contextlib – Context manager utilities](https://pymotw.com/2/contextlib/index.html#module-contextlib)
 
-### Python风格规范
+### Python 风格规范
 
 1. [PEP 8 -- Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/)
 1. [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
