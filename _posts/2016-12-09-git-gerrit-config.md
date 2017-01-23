@@ -81,6 +81,13 @@ If you want to set the editor only for Git, do either (you don’t need both):
 * Set core.editor in your Git config: git config --global core.editor "vim"
 * Set the GIT_EDITOR environment variable: export GIT_EDITOR=vim
 
+
+#### Git 配置其他
+
+* 开启颜色显示: `git config --global color.ui true`
+* `export https_proxy=”http://XXXXXX:XXXXXX@XXXXXX:8080/”` 配置代理
+
+
 ### Gerrit配置
 
 在Ubuntu上安装`git-review`:

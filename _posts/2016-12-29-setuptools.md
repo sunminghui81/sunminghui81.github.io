@@ -79,12 +79,12 @@ setup(
 1. `package_data`参数是一个从包名称到glob模式列表的字典。如果数据文件包含在包的子目录中，则glob可以包括子目录名称。比如：`package_data={'mypkg': ['data/*.dat'],}`。
 1. `data_files`可用于指定模块分发所需的其他文件：配置文件，消息目录，数据文件。它指定了一系列 *(目的安装目录，源文件)* 对，如果　*目的安装目录*　是相对路径，则相对于安装前缀进行解释；*源文件* 中的每个文件名都将相对于包源分发包顶部的setup.py脚本进行解释, 来自 *源文件* 的目录信息不用于确定已安装文件的最终位置。 　
 1. `packages`：　若`value`选择`find_packages()`，需要一个源目录和两个用来排除和包含包的包名称模式列表；如果参数省略，源目录默认为`setup.py`所在的目录。
-1. `scripts`安装pre-made脚本，同`entry_points`类似，推荐使用后者。
-1. `entry_points`关键字可以用来指定你的项目为任何命名入口点所提供的任意插件，这些入口点可能由你的项目或者你依赖的其他项目来定义。运用`console_scripts` entry points来注册脚本的接口，然后你可以让工具链将这些接口转换为实际的脚本。在上面的示例中，创建了两个控制台脚本foo和bar，以及名为baz的GUI脚本。当这个项目安装在非Windows平台上时（使用"setup.py install”，“setup.py develop”或使用EasyInstall），将安装一组foo，bar和baz脚本，这组脚本从指定的模块中导入函数main_func和some_func。这些函数调用没有参数。
+1. `scripts` 安装pre-made脚本，同`entry_points`类似，推荐使用后者。
+1. `entry_points` 关键字可以用来指定你的项目为任何命名入口点所提供的任意插件，这些入口点可能由你的项目或者你依赖的其他项目来定义。运用 `console_scripts` entry points 来注册脚本的接口，然后你可以让工具链将这些接口转换为实际的脚本。在上面的示例中，创建了两个控制台脚本 foo 和 bar，以及名为 baz 的 GUI 脚本。当这个项目安装在非 Windows 平台上时（使用 "setup.py install”，“setup.py develop” 或使用 EasyInstall），将安装一组 foo，bar 和 baz 脚本，这组脚本从指定的模块中导入函数 main_func 和 some_func。
 
 ### 项目安装
 
-#### 从PyPI上安装
+#### 从 PyPI 上安装
 
 安装最新版本
 
@@ -155,9 +155,9 @@ pip install -e <path>
 pip install -e <path> --no-deps
 ```
 
-### 需求文件requirements.txt
+### 需求文件 requirements.txt
 
-为了方便参数`install_requires`可配置, 可以创建需求文件"requirements.txt", 它包含了一系列需要安装的依赖包，关于`install_requires`和"requirements.txt"的区别可以参考 [requirements file](https://packaging.python.org/requirements/)。安装依赖包，运行命令：
+为了方便参数 `install_requires` 可配置, 可以创建需求文件"requirements.txt", 它包含了一系列需要安装的依赖包，关于 `install_requires` 和 "requirements.txt" 的区别可以参考 [requirements file](https://packaging.python.org/requirements/)。安装依赖包，运行命令：
 
 ```python
 pip install -r requirements.txt

@@ -42,6 +42,13 @@ icon: compass
 1. [Guide to Python introspection](https://www.ibm.com/developerworks/library/l-pyint/)
 1. [Python: Declaring Dynamic Attributes](http://amir.rachum.com/blog/2016/10/05/python-dynamic-attributes/)
 
+
+### Python Descriptor
+
+1. [Python Descriptors Demystified](http://nbviewer.jupyter.org/urls/gist.github.com/ChrisBeaumont/5758381/raw/descriptor_writeup.ipynb)
+1. [Python描述符（descriptor）解密](Python描述符（descriptor）解密)
+
+
 ### Python Packages
 
 1. [Python Packages and You](http://blog.habnab.it/blog/2013/07/21/python-packages-and-you/)
@@ -55,9 +62,6 @@ icon: compass
 1. [Python Unit Testing Framework](http://pyunit.sourceforge.net/pyunit.html)
 1. [python 单元测试框架： testtools，fixture，mock，mox](https://blog.apporc.org/2016/08/python-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%EF%BC%9A-testtools%EF%BC%8Cfixture%EF%BC%8Cmock%EF%BC%8Cmox/)
 
-### Import
-
-1. [ python项目内import其他内部package的模块的正确方法](http://blog.csdn.net/luo123n/article/details/49849649)
 
 ### Python 虚拟环境
 
@@ -65,14 +69,16 @@ icon: compass
 1. [Install Python 2.7, virtualenv and virtualenvwrapper on OS X Mavericks/Yosemite](http://www.marinamele.com/2014/05/install-python-virtualenv-virtualenvwrapper-mavericks.html)
 1. [Python Virtual Environments - a Primer](https://realpython.com/blog/python/python-virtual-environments-a-primer/)
 
+
 ### Socket 网络编程
 
 1. [Python爬虫(三)-Socket网络编程](http://www.jianshu.com/p/e062b3dd110c)
 
-### Errors and Exceptions
 
-1. [Errors and Exceptions](https://docs.python.org/2.7/tutorial/errors.html)
+### Python exceptions
+
 1. [Best way to log a Python exception](http://stackoverflow.com/questions/5191830/best-way-to-log-a-python-exception)
+
 
 ### Logging
 
