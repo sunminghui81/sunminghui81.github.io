@@ -11,6 +11,13 @@ icon: github
 {% include mathsyouth/setup %}
 
 
+### 深度学习基础
+
+1. [Deep Learning](http://www.deeplearningbook.org/)
+1. [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/)
+1. [A Beginner's Guide To Understanding Convolutional Neural Networks](https://adeshpande3.github.io/adeshpande3.github.io/A-Beginner's-Guide-To-Understanding-Convolutional-Neural-Networks/)
+1. [CS231n Convolutional Neural Networks for Visual Recognition](http://cs231n.github.io/)
+
 ### 安装 TensorFlow 和 Keras
 
 1. [Installing Keras with TensorFlow backend](http://www.pyimagesearch.com/2016/11/14/installing-keras-with-tensorflow-backend/)
