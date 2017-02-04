@@ -12,7 +12,7 @@ icon: compass
 
 Variables declared outside the function can be referenced within the function:
 
-```Python
+```python
 def addx(y):
     return x + y
 
@@ -26,7 +26,7 @@ if __name__ == "__main__":
 
 But these "global" variables cannot be modified within the function, unless declared global in the function. This doesn't work:
 
-```Python
+```python
 def setx(y):
     x = y
     print "x is %d " % x
@@ -42,7 +42,7 @@ if __name__ == "__main__":
 
 This works:
 
-```Python
+```python
 def setx(y):
     global x
     x = y

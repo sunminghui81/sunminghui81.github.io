@@ -25,7 +25,7 @@ icon: compass
    If the module is imported, the code is not run: `import module`。
 1. `python -c command [arg] ...` 运行 `command` 中的执行语句。Since Python statements often contain spaces or other characters that are special to the shell, it is usually advised to *quote* `command` in its entirety with single quotes. <br>
 
-   ```
+   ```shell
    python -c 'import sys; print sys.argv; print "Hello world"'
    ```
 
@@ -448,6 +448,44 @@ icon: compass
    heappush(data, -5)                 # add a new entry
    [heappop(data) for i in range(3)]  # fetch the three smallest entries
    ```
+1. The keys in a dictionary must be of an immutable Python type, such as an integer or a string, because under the hood they are implemented via a hash function. This makes for much faster lookup times, but requires keys not change (and also results in a dictionary's lack of order).
+1. The current standard for string formatting is to use the `format` method of strings with numbered or named positions within the string: <br>
+
+   ```python
+   print("I just printed {0} pages to the printer {1}".format(num, printer))
+   print("I just printed {num} pages to the printer {printer}".format(num=num, printer=printer))
+   ```
+1. Because Python is a dynamically typed language, it was not always possible to tell which operation was being performed, which often led to subtle bugs. For example, with <br>
+
+   ```python
+   def mean(seq):
+       return sum(seq) / len(seq)
+   ```
+   A call to `mean([3.0, 4.0])` would return 3.5, but `mean([3, 4])` would return 3. If this was not the intended behavior, it was necessary to use a workaround such as <br>
+
+   ```python
+   def mean(seq):
+       return float(sum(seq)) / len(seq)
+   ```
+1. For expressions without side effects, `a < b < c` is equivalent to `a < b and b < c`. However, there is a substantial difference when the expressions have side effects. `a < f(x) < b` will evaluate `f(x)` exactly once, whereas `a < f(x) and f(x) < b` will evaluate it twice if the value of `a` is less than `f(x)` and once otherwise.
+1. The boolean operators `and` and `or` use minimal evaluation. For example, `y == 0 or x/y > 100` will never raise a divide-by-zero exception. Note that these operators return the value of the last operand evaluated, rather than `True` or `False`. Thus the expression `(4 and 5)` evaluates to `5`, and `(4 or 5)` evaluates to `4`.
+1. A commonly invoked motto is EAFP, or "It is Easier to Ask for Forgiveness than Permission". In this first code sample, there is an explicit check for the attribute (i.e., "asks permission"): <br>
+
+   ```python
+   if hasattr(spam, 'eggs'):
+       ham = spam.eggs
+   else:
+       handle_error()
+   ```
+   This second sample follows the EAFP paradigm: <br>
+
+   ```python
+   try:
+       ham = spam.eggs
+   except AttributeError:
+       handle_error()
+   ```
+   When `spam` has the attribute `eggs`, the EAFP sample will run faster. When `spam` does not have the attribute `eggs` (the "exceptional" case), the EAFP sample will run slower. If exceptional cases are rare, then the EAFP version will have superior average performance than the alternative. In addition, it avoids the whole class of time-of-check-to-time-of-use (TOCTTOU) vulnerabilities. A drawback of EAFP is that it can be used only with statements; an exception cannot be caught in a generator expression, list comprehension, or lambda function.
 
 
 ### 参考材料

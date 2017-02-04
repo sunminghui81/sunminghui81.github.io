@@ -172,7 +172,20 @@ With new-style classes, dynamic ordering is necessary because all cases of multi
 
 “Private” instance variables that cannot be accessed except from inside an object don’t exist in Python. However, there is a convention that is followed by most Python code: a name prefixed with an underscore (e.g. `_spam`) should be treated as a non-public part of the API (whether it is a function, a method or a data member).
 
-Any identifier of the form `__spam` (at least two leading underscores, at most one trailing underscore) is textually replaced with `_classname__spam`, where `classname` is the current class name with leading underscore(s) stripped. Name mangling is helpful for letting subclasses override methods without breaking intraclass method calls. For example:
+In Python, mangling is used for "private" class members which are designated as such by giving them a name with two leading underscores and no more than one trailing underscore. For example, `__thing` will be mangled, as will `___thing` and `__thing_`, but `__thing__` and `__thing___` will not. On encountering name mangled attributes, Python transforms these names by a single underscore and the name of the enclosing class, for example:
+
+```python
+class Test(object):
+    def __mangled_name(self):
+        pass
+    def normal_name(self):
+        pass
+
+t = Test()
+[attr for attr in dir(t) if 'name' in attr]
+```
+
+Name mangling is helpful for letting subclasses override methods without breaking intraclass method calls. For example:
 
 ```python
 class Mapping:

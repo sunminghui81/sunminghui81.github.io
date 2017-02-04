@@ -11,15 +11,15 @@ icon: compass
 {% include mathsyouth/setup %}
 
 
-Parameters to functions are references to objects, which are passed by value. When you pass a variable to a function, python passes the reference to the object to which the variable refers (the value). Not the variable itself.
+All variables in Python hold references to objects, and these references are passed to functions. This parameter-passing scheme is called "Call by object reference." An object reference means a name, and the passed reference is an "alias", i.e. a copy of the reference to the same object, just like in C/C++. When you pass a variable to a function, python passes the reference to the object to which the variable refers (the value). Not the variable itself.
 
 If the value passed in a function is immutable, the function does not modify the caller's variable. If the value is mutable, the function may modify the caller's variable in-place:
 
-```Python
+```python
 def try_to_modify(x, y, z):
     x = 23
     y.append(42)
-    z = [99] # new reference
+    z = [99]  # new reference
     print x
     print y
     print z
@@ -35,4 +35,4 @@ if __name__ == "__main__":
     main()
 ```
 
-Functions have a local variable table called a local namespace. The variable x only exists within the function `try_to_modify`.
+In Python, non-innermost-local and not-declared-global accessible names are all aliases.
