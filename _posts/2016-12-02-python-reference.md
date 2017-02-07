@@ -55,11 +55,12 @@ icon: compass
 1. [A comprehensive guide through Python packaging (a.k.a. setup scripts)](http://foobar.lu/wp/2012/05/13/a-comprehensive-step-through-python-packaging-a-k-a-setup-scripts/)
 1. [A guide to Python packaging](http://www.ibm.com/developerworks/opensource/library/os-pythonpackaging/)
 
+
 ### Python testing
 
-1. [On Test Levels and Coverage](http://www.tech-foo.net/on-test-levels-and-coverage.html)
-1. [Delayed Assertions in Python Testtools](http://www.tech-foo.net/delayed-assertions-in-python-testtools.html)
-1. [Python Unit Testing Framework](http://pyunit.sourceforge.net/pyunit.html)
+1. [Improve Your Python: Understanding Unit Testing](https://jeffknupp.com/blog/2013/12/09/improve-your-python-understanding-unit-testing/)
+1. [unittest](https://docs.python.org/2/library/unittest.html)
+1. [testtools: tasteful testing for Python](https://testtools.readthedocs.io/en/latest/)
 1. [python 单元测试框架： testtools，fixture，mock，mox](https://blog.apporc.org/2016/08/python-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%EF%BC%9A-testtools%EF%BC%8Cfixture%EF%BC%8Cmock%EF%BC%8Cmox/)
 
 

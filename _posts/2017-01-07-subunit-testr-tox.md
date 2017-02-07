@@ -1,8 +1,8 @@
 ---
 layout: post
 keywords: test, subunit, testrepository, tox
-description: 学习OpenStack测试框架
-title: "subunit, testrepository和tox学习笔记"
+description: 学习 OpenStack 测试框架
+title: "subunit, testrepository 和 tox 学习笔记"
 categories: [python]
 tags: [test, subunit, testr, tox]
 group: archive
@@ -11,28 +11,28 @@ icon: compass
 {% include mathsyouth/setup %}
 
 
-### [测试用例运行和管理工具subunit简介][subunit]
+### [测试用例运行和管理工具 subunit 简介][subunit]
 
-subunit是一个用于传输单元测试结果的流协议。一般来说，运行单元测试的时候是把单元测试的结果直接输出到标准输出，但是如果运行大量的测试用例，这些测试结果就很难被分析。因此可以使用python-subunit模块来运行测试用例, 使用它可以很容易地实现以下功能:
+subunit 是一个用于传输单元测试结果的流协议。一般来说，运行单元测试的时候是把单元测试的结果直接输出到标准输出，但是如果运行大量的测试用例，这些测试结果就很难被分析。因此可以使用 python-subunit 模块来运行测试用例, 使用它可以很容易地实现以下功能:
 
 1. 测试聚合：单独运行的测试可以组合，然后一起报告/显示。 例如，来自不同语言的测试可以被示为无缝整体，并且在多个机器上运行的测试可以通过复用器聚合成单个流。
 1. 测试存档：运行的测试可以被录制下来，以便今后可以被重放。
-1. 测试隔离：可能会崩溃或以其他方式与彼此交互不良的测试可以单独运行，然后聚合，而不是彼此干扰或需要一个特别的test - >runner报告协议。
-1. 网格测试：subunit可以充当必要的序列化和反序列化，以便在分布式机器上实时报告测试运行的结果。
+1. 测试隔离：可能会崩溃或以其他方式与彼此交互不良的测试可以单独运行，然后聚合，而不是彼此干扰或需要一个特别的 test - >runner 报告协议。
+1. 网格测试：subunit 可以充当必要的序列化和反序列化，以便在分布式机器上实时报告测试运行的结果。
 
-#### 创建subunit结果流
+#### 创建 subunit 结果流
 
-最常见的方式是运行现有的python测试套件，并通过subunit.run模块使其输出subunit:
+最常见的方式是运行现有的 python 测试套件，并通过 subunit.run 模块使其输出 subunit:
 
 ```shell
 python -m subunit.run test_module
 ```
 
-#### 使用subunit结果流
+#### 使用 subunit 结果流
 
 ##### 转换成不同的格式
 
-如果要将subunit转换为其他标准格式，可能已有转换工具。 例如，可以通过subunit2junixml工具再次从subunit中获得junitxml：
+如果要将 subunit 转换为其他标准格式，可能已有转换工具。 例如，可以通过 subunit2junixml 工具再次从 subunit 中获得 junitxml：
 
 ```shell
 python -m subunit.run test_module | subunit2junitxml
@@ -44,39 +44,39 @@ python -m subunit.run test_module | subunit2junitxml
 python -m subunit.run test_module | subunit2pyunit
 ```
 
-subunit2pyunit命令会解析subunit协议，并且输出到标准输出。
+subunit2pyunit 命令会解析 subunit 协议，并且输出到标准输出。
 
 ##### 提取元数据
 
-如果只是想得到一个存在于subunit流中的所有测试列表，你可以通过subunit-ls管道化这个流:
+如果只是想得到一个存在于 subunit 流中的所有测试列表，你可以通过 subunit-ls 管道化这个流:
 
 ```shell
 python -m subunit.run test_module | subunit-ls
 ```
 
-这将所有的测试ids打印到stdout，每行一个。 类似地，我们可以通过使用subunit-stats工具从subunit流中提取聚合统计信息:
+这将所有的测试 ids 打印到 stdout，每行一个。 类似地，我们可以通过使用 subunit-stats 工具从 subunit 流中提取聚合统计信息:
 
 ```shell
 python -m subunit.run discover test_suite | subunit-stats
 ```
 
-如果要运行由多个test_module文件组成的文件夹test_suite，应该加上参数discover。
+如果要运行由多个 test_module 文件组成的文件夹 test_suite，应该加上参数 discover。
 
-总之，subunit是一种现代化的测试结果格式，它可以充分利用由testtools等工具包提供的现代化测试特性。特别地，对于验收测试套件，能够将任意内容附加到测试结果，并且使该数据跟随测试结果。它可以用单个文件来包含测试作者认为重要的所有信息。这些数据可以在机器之间移动，并随意解压。
+总之，subunit 是一种现代化的测试结果格式，它可以充分利用由 testtools 等工具包提供的现代化测试特性。特别地，对于验收测试套件，能够将任意内容附加到测试结果，并且使该数据跟随测试结果。它可以用单个文件来包含测试作者认为重要的所有信息。这些数据可以在机器之间移动，并随意解压。
 
-### [测试用例运行和管理工具testrepository简介][testr]
+### [测试用例运行和管理工具 testrepository 简介][testr]
 
-Test repository是一个用于跟踪测试结果的小应用程序, 可以表示为subunit stream的任何测试运行能够被插入到一个repository中。典型的工作流是具有插入测试运行的repository，然后查询repository以找出需要处理的问题。testr可以自动化这一工作流，它通过使用测试运行器列出所有的测试来工作，它获得这个列表并将其分配到与当前机器上可用的CPU数量匹配的多个分区，然后fork这些测试运行器给每个分区一份测试列表。最后，测试运行器将subunit的结果回传到testr，以便tesr可以跟踪测试成功和失败以及其他统计数据。总之，testr将并行运行测试（所以它们更快），并保持结果的鲁棒日志。
+Test repository 是一个用于跟踪测试结果的小应用程序, 可以表示为 subunit stream 的任何测试运行能够被插入到一个 repository 中。典型的工作流是具有插入测试运行的 repository，然后查询 repository 以找出需要处理的问题。testr 可以自动化这一工作流，它通过使用测试运行器列出所有的测试来工作，它获得这个列表并将其分配到与当前机器上可用的 CPU 数量匹配的多个分区，然后 fork 这些测试运行器给每个分区一份测试列表。最后，测试运行器将 subunit 的结果回传到 testr，以便 tesr可以跟踪测试成功和失败以及其他统计数据。总之，testr 将并行运行测试（所以它们更快），并保持结果的鲁棒日志。
 
-testr使用python-subunit模块来运行测试用例，然后分析subunit的输出并对测试结果进行记录（记录到本地文件）。举例来说，testr允许你做这样的事情：
+testr 使用 `python-subunit` 模块来运行测试用例，然后分析 subunit 的输出并对测试结果进行记录（记录到本地文件）。举例来说，testr 允许你做这样的事情：
 
 1. 知道哪些用例运行时间最长
 1. 显示运行失败的用例
 1. 重新运行上次运行失败的用例
 
-testr通过`.testr.conf`文件进行配置，该文件需要在运行testr的同一目录中。
+testr 通过 `.testr.conf` 文件进行配置，该文件需要在运行 testr 的同一目录中。
 
-下面以OpenStack Tempest中的配置文件`.testr.conf`为例来学习testr的使用。
+下面以 OpenStack Tempest 中的配置文件 `.testr.conf` 为例来学习 testr 的使用。
 
 ```
 [DEFAULT]
@@ -86,9 +86,9 @@ test_command=OS_STDOUT_CAPTURE=${OS_STDOUT_CAPTURE:-1} \
              OS_TEST_TIMEOUT=${OS_TEST_TIMEOUT:-500} \
              OS_TEST_LOCK_PATH=${OS_TEST_LOCK_PATH:-${TMPDIR:-'/tmp'}} \
              ${PYTHON:-python} -m subunit.run discover -t ${OS_TOP_LEVEL:-./} ${OS_TEST_PATH:-./tempest/test_discover} $LISTOPT $IDOPTION
-# 当运行特定测试ids时，将该值代入到test_command中
+# 当运行特定测试 ids 时，将该值代入到 test_command 中
 test_id_option=--load-list $IDFILE
-# 通过查询测试程序来看哪些测试将运行。运行`testr list-tests`命令将会列出所有的测试用例
+# 通过查询测试程序来看哪些测试将运行。运行 `testr list-tests` 命令将会列出所有的测试用例
 test_list_option=--list
 # 将特定类型的测试分组在一起，以便它们被同一后端运行
 group_regex=([^\.]*\.)*
@@ -115,8 +115,8 @@ tox 是一个通用的虚拟环境管理和测试命令行工具。对于一个�
 # tox 支持使用一个额外的 [tox:jenkins] 参数来替换 [tox] 中指定的内容。当检测到是在
 # jenkins 中调用 tox 时，tox 自动使用 [tox:jenkins] 中的配置，而不是 [tox]
 [tox]
-# envlist表示本文件中包含的配置环境，defaults to the list of all environments
-# 确定tox操作的环境列表，以此顺序发生
+# envlist 表示本文件中包含的配置环境，defaults to the list of all environments
+# 确定 tox 操作的环境列表，以此顺序发生
 envlist = pep8,py35,py34,py27,pip-check-reqs
 minversion = 2.3.1
 # 默认情况下，tox 会对当前项目执行 `python setup.py install` 以安装到 virtualenv 中，
@@ -124,7 +124,7 @@ minversion = 2.3.1
 # 我们在调试代码并频繁执行单元测试的时候，我们不会想要每次都跑一遍打包操作。
 skipsdist = True
 
-# 将默认值放在[tempestenv]中，并在其他节中引用它们，以避免重复相同的值
+# 将默认值放在 [tempestenv] 中，并在其他节中引用它们，以避免重复相同的值
 [tempestenv]
 # default: False, meaning that virtualenvs will be created without inheriting
 # the global site packages.
@@ -136,20 +136,20 @@ deps =
     setuptools
     -r{toxinidir}/requirements.txt
 
-# testenv是默认配置，如果某个配置在环境专属的section中没有，就从这个section中读取
+# testenv 是默认配置，如果某个配置在环境专属的 section 中没有，就从这个 section 中读取
 [testenv]
-# 如果需要设置像PYTHONPATH这样的环境变量，可以使用setenv指令
+# 如果需要设置像 PYTHONPATH 这样的环境变量，可以使用 setenv 指令
 setenv =
     VIRTUAL_ENV={envdir}
     OS_TEST_PATH=./tempest/tests
     PYTHONWARNINGS=default::DeprecationWarning
-# 默认情况下，tox只会将PATH环境变量从tox调用传递到测试环境。如果你想传递额外的环境变量，
-# 可以使用passenv选项
+# 默认情况下，tox 只会将 PATH 环境变量从 tox 调用传递到测试环境。如果你想传递额外的环境变
+# 量，可以使用 passenv 选项
 passenv = OS_STDOUT_CAPTURE OS_STDERR_CAPTURE OS_TEST_TIMEOUT OS_TEST_LOCK_PATH OS_TEST_PATH TEMPEST_CONFIG TEMPEST_CONFIG_DIR http_proxy HTTP_PROXY https_proxy HTTPS_PROXY no_proxy NO_PROXY
 # usedevelop 表示安装 virtualenv 的时候，本项目自己的代码采用开发模式安装
 # `python setup.py develop`，也就是不会拷贝代码到 virtualenv 目录中，只是做个链接。
 usedevelop = True
-# install_command设置用于将软件包安装到虚拟环境中，包括被测包以及任何定义的依赖。
+# install_command 设置用于将软件包安装到虚拟环境中，包括被测包以及任何定义的依赖。
 install_command = pip install -U {opts} {packages}
 # 默认情况下，在 virtualenv 中不能使用外部安装的命令，这本来是为了命令环境的隔离，但有些情
 # 况下，我们会想要使用外部命令。例如，在对代码对格式检查时，我们不会想要在每个 virtualenv
@@ -157,13 +157,13 @@ install_command = pip install -U {opts} {packages}
 # make 或 bash。为了避免出现警告，可以使用 whitelist_externals 配置:
 whitelist_externals = *
 # deps 指定构建环境的时候需要安装的依赖包；
-# 这些依赖包在项目包安装之前安装到环境中,每行定义一个依赖关系，它将被传递给installer命令进行
-# 处理。
+# 这些依赖包在项目包安装之前安装到环境中,每行定义一个依赖关系，它将被传递给 installer 命令
+# 进行处理。
 # {toxinidir} (the directory where tox.ini resides)
 deps =
     -r{toxinidir}/requirements.txt
     -r{toxinidir}/test-requirements.txt
-# commands表示构建好virtualenv之后要执行的命令
+# commands 表示构建好 virtualenv 之后要执行的命令
 commands =
     find . -type f -name "*.pyc" -delete
     ostestr {posargs}
@@ -180,15 +180,15 @@ setenv = OS_TEST_PATH=./tempest/tests
 commands = python setup.py testr --coverage --testr-arg='tempest\.tests {posargs}'
 
 [testenv:all]
-# 用户可以设置环境的特定路径。如果路径不是绝对的，它将被视为相对于{toxinidir}。
-# 默认：{toxworkdir}/{envname}, {toxworkdir}创建虚拟环境的目录和用于打包的子目录
+# 用户可以设置环境的特定路径。如果路径不是绝对的，它将被视为相对于 {toxinidir}。
+# 默认：{toxworkdir}/{envname}, {toxworkdir} 创建虚拟环境的目录和用于打包的子目录
 envdir = .tox/tempest
-# section的值可以通过{[sectionname]valuename}方式引用，这样可以避免配置参数的重复
+# section 的值可以通过 {[sectionname]valuename} 方式引用，这样可以避免配置参数的重复
 sitepackages = {[tempestenv]sitepackages}
 # 'all' includes slow tests
 setenv =
     {[tempestenv]setenv}
-# 该值通过os.environ ['OS_TEST_TIMEOUT']的返回值获取，如果环境变量不存在，则替换为1200
+# 该值通过 os.environ ['OS_TEST_TIMEOUT'] 的返回值获取，如果环境变量不存在，则替换为1200
     OS_TEST_TIMEOUT={env:OS_TEST_TIMEOUT:1200}
 deps = {[tempestenv]deps}
 commands =
