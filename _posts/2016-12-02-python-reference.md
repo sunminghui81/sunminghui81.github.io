@@ -61,7 +61,7 @@ icon: compass
 1. [Improve Your Python: Understanding Unit Testing](https://jeffknupp.com/blog/2013/12/09/improve-your-python-understanding-unit-testing/)
 1. [unittest](https://docs.python.org/2/library/unittest.html)
 1. [testtools: tasteful testing for Python](https://testtools.readthedocs.io/en/latest/)
-1. [python 单元测试框架： testtools，fixture，mock，mox](https://blog.apporc.org/2016/08/python-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%EF%BC%9A-testtools%EF%BC%8Cfixture%EF%BC%8Cmock%EF%BC%8Cmox/)
+1. [Testing Your Code](http://docs.python-guide.org/en/latest/writing/tests/)
 
 
 ### Python 虚拟环境
@@ -144,8 +144,6 @@ icon: compass
 
 ### Books and blogs
 
-1. [The Python Tutorial](https://docs.python.org/2/tutorial/)
-1. [Python syntax and semantics](https://en.wikipedia.org/wiki/Python_syntax_and_semantics)
 1. [Python Tips](http://book.pythontips.com/en/latest/index.html)
 1. https://pythontips.com/
 1. [Python Essays](http://legacy.python.org/doc/essays/)
@@ -161,17 +159,19 @@ icon: compass
 1. https://courses.cs.washington.edu/courses/cse140/12su/lectures/
 1. [Guido van Rossum - Personal Home Page](https://gvanrossum.github.io/)
 1. [Python Module of the Week](https://pymotw.com/2/)
+1. [The Hitchhiker’s Guide to Python!](http://docs.python-guide.org/en/latest/)
+1. [Python Top 10 Articles for the Past Year (v.2017)](https://medium.mybridge.co/python-top-10-articles-for-the-past-year-v-2017-6033ae8c65c9#.eyhin34m5)
+
 
 ### Source code
 
 1. [The Architecture of Open Source Applications](http://aosabook.org/en/index.html)
 
+
 ### Others
 
 1. [Hidden features of Python](http://stackoverflow.com/questions/101268/hidden-features-of-python)
 1. http://stackoverflow.com/questions/tagged/python?page=1&sort=votes&pagesize=15
-1. [PEP 328 -- Imports: Multi-Line and Absolute/Relative](https://www.python.org/dev/peps/pep-0328/)
-1. [PEP 341 -- Unifying try-except and try-finally](https://www.python.org/dev/peps/pep-0341/)
 1. https://www.codementor.io/python/tutorial/essential-python-interview-questions
 1. http://www.careerride.com/python-interview-questions.aspx
 1. http://stackoverflow.com/questions/13857/can-you-explain-closures-as-they-relate-to-python
