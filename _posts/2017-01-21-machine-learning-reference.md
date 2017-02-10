@@ -13,6 +13,11 @@ icon: github
 
 ### 深度学习理论基础
 
+#### 深度学习导读
+
+1. [神经网络浅讲：从神经元到深度学习](http://www.cnblogs.com/subconscious/p/5058741.html)
+
+
 #### 深度学习入门
 
 1. [A Beginner's Guide To Understanding Convolutional Neural Networks](https://adeshpande3.github.io/adeshpande3.github.io/A-Beginner's-Guide-To-Understanding-Convolutional-Neural-Networks/)
@@ -29,7 +34,16 @@ icon: github
 
 #### 深度学习博客
 
-1. https://adeshpande3.github.io/adeshpande3.github.io/
+1. [Chris Olah: Google Brain, Research Scientist](http://colah.github.io/)
+1. [Adit Deshpande: CS Undergrad at UCLA](https://adeshpande3.github.io/adeshpande3.github.io/)
+
+
+#### 深度学习专题
+
+反向传播算法：
+
+1. [Calculus on Computational Graphs: Backpropagation](http://colah.github.io/posts/2015-08-Backprop/)
+1. [How the backpropagation algorithm works](http://neuralnetworksanddeeplearning.com/chap2.html)
 
 
 ### 安装 TensorFlow 和 Keras
