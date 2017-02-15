@@ -22,7 +22,7 @@ icon: compass
        import sys
        main(int(sys.argv[1]))
    ```
-   If the module is imported, the code is not run: `import module`。
+   If the module is imported, the code is not run: `import module`. Since the argument is a module name, you must not give a file extension (`.py`).  When a package name is supplied instead of a normal module, the interpreter will execute `pkg.__main__` as the main module.
 1. `python -c command [arg] ...` 运行 `command` 中的执行语句。Since Python statements often contain spaces or other characters that are special to the shell, it is usually advised to *quote* `command` in its entirety with single quotes. <br>
 
    ```shell

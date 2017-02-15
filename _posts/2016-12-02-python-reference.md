@@ -120,13 +120,6 @@ icon: compass
 1. [OpenStack Style Guidelines](http://docs.openstack.org/developer/hacking/)
 
 
-### main
-
-1. [PEP 299 -- Special __main__() function in modules](https://www.python.org/dev/peps/pep-0299/)
-1. http://stackoverflow.com/questions/419163/what-does-if-name-main-do
-1. [Python main() functions](http://www.artima.com/weblogs/viewpost.jsp?thread=4829)
-
-
 ### Iterator and Generator
 
 1. [Iterators & Generators](http://anandology.com/python-practice-book/iterators.html)

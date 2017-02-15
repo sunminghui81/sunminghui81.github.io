@@ -20,6 +20,7 @@ icon: code
 * 当系统中安装了同一软件的多个版本时，不确定使用的是哪个版本时，使用 whereis 命令就能查看程序的搜索路径: whereis python
 * 对于命令的具体参数及使用方法，需要用到强大的 man: man python, man ls
 
+
 ### 移动光标
 
 * Ctrl + a：移到行首（a是首字母）
@@ -28,6 +29,7 @@ icon: code
 * Ctrl + f：后移一个字符(forward)
 * Alt + b：前移一个单词
 * Ctrl + xx：在命令行首和光标之间移动
+
 
 ### 编辑命令
 
@@ -40,6 +42,7 @@ icon: code
 * Ctrl + Shift + c: 复制
 * Ctrl + Shift + v: 粘贴
 
+
 ### 重新执行命令
 
 * 在命令行前加空格，该命令不会进入 history 里
@@ -48,6 +51,7 @@ icon: code
 * Ctrl + g：从历史搜索模式退出
 * Ctrl + p：历史中的上一条命令
 * Ctrl + n：历史中的下一条命令
+
 
 ### Bang (!) 命令
 
@@ -62,6 +66,7 @@ icon: code
 * ^blah：删除上一条命令中的 blah
 * ^blah^foo：替换前一条命令里的部分字符串。场景： `echo "wanderful"`，其实是想输出 `echo "wonderful"`。只需要 `^a^o` 就行了，对很长的命令的错误拼写有很大的帮助。（陈皓注：也可以使用 `!!:gs/blah/foo`）
 * ^blah^foo^：将上一条命令中所有的 blah 都替换为 foo
+
 
 ### 文件及目录管理
 
@@ -87,8 +92,11 @@ icon: code
    * `/home`
    * `/lib` 系统库保存命令
    * `/mnt` 系统挂载目录
-1. 创建一个空文件: `> file.txt`
+1. 创建一个空文件:
+   * `:> file.txt`
+   * `touch file.txt`
 1. 列出当前目录里最大的10个文件: `du -s * | sort -n | tail`
+
 
 ### 文件搜索命令
 
@@ -97,6 +105,7 @@ icon: code
    * `find /path/ -iname hello.sh` 忽略大小写查找文件
    * `find /var/log -mtime +10` `-mtime` 文件修改时间, `-atime` 文件访问时间, `-ctime` 改变文件属性时间; +10 10天前, 10  10天, -10 10天内
    * `find /etc -size +20M` 查找文件大于20M的文件
+
 
 ### 压缩与解压缩命令
 
@@ -120,6 +129,7 @@ icon: code
    * 压缩目录: `gzip -r  [目录]`
    * 解压缩: `guzip [文件]`, `guzip -r [目录]`
 
+
 ### 网络相关
 
 1. `ifconfig` 查看 ip
@@ -127,17 +137,20 @@ icon: code
 1. 查看某域名与自己的电脑的网络状态: `ping google.com`
 1. `mtr google.com`
 
+
 ### 远程操作
 
 1. `ssh user@host bash < /path/to/local/script.sh` 在远程机器上运行一段脚本。这条命令最大的好处就是不用把脚本拷到远程机器上。
 1. `ssh user@host cat /path/to/remotefile | diff /path/to/localfile –` 比较一个远程文件和一个本地文件
 1. `vim scp://user@host//path/to/somefile` vim一个远程文件
 
+
 ### 用户管理
 
 1. 在 Ubuntu 安装的时候默认 root 用户是不开启的，需要建立一个非 root 用户 。Ubuntu 系统默认 root 用户是不能登录的，密码也是空的。 如果要使用 root 用户登录，必须先为 root 用户设置密码。打开终端， 输入： `sudo passwd root` 然后按回车，此时会提示你输入密码，在 password: 后输入密码。
 1. 更改用户密码： `sudo passwd username`，root 用户可以修改其他用户的密码，但是普通账户只能修改自己的密码，即不带参数的 passwd 命令。
 1. 创建用户命令两条： `adduser`, `useradd`; 用户删除命令 `userdel`。`adduser` 会自动为创建的用户指定主目录、系统 shell 版本，会在创建时输入用户密码；`useradd` 需要使用参数选项指定上述基本设置，如果不使用任何参数，则创建的用户无密码、无主目录、没有指定 shell 版本。
+
 
 ### 进程管理
 
@@ -147,19 +160,21 @@ icon: code
    * `ps aux` 或 `ps -ef` 都是显示所有用户进程
    * `kill PID` 根据进程号，直接终止进程
 
+
 ### 其他常用命令
 
 1. `echo “ls -l” | at midnight` 在某个时间运行某个命令。
 1. `tail -f /path/to/file.log | sed '/^Finished: SUCCESS$/ q'` 当 file.log 里出现 Finished: SUCCESS 时候就退出 tail，这个命令用于实时监控并过滤 log 是否出现了某条记录。
-1. 建立共享文件夹: `python -m SimpleHTTPServer` 实现一个 HTTP 服务，把当前目录设为 HTTP 服务目录，可以通过 http://localhost:8000 访问。
 1. 临时切换 shell, 如果用的是 zsh，直接输入 bash 即可切换成 bash。
 1. 减少 grub 默认的引导时间 `sudo vim /etc/default/grub` 修改 TIMEOUT 值，然后 `sudo update-grub` 生效。
 1. [source, ., ./](http://askubuntu.com/questions/182012/is-there-a-difference-between-and-source-in-bash-after-all?lq=1)
+
 
 ### Linux 入门
 
 1. [LINUX/UNIX 新手和专家教程](http://coolshell.cn/articles/1042.html)
 1. [Linux Shell Scripting Tutorial](https://bash.cyberciti.biz/guide/Main_Page)
+
 
 ### 参考文献
 
