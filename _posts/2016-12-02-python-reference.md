@@ -169,6 +169,11 @@ icon: compass
 
 1. [The Architecture of Open Source Applications](http://aosabook.org/en/index.html)
 
+#### 经典代码走读 -- A Web Crawler With asyncio Coroutines
+
+1. [A Web Crawler With asyncio Coroutines](http://www.aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html)
+1. [Python Asynchronous I/O Walkthrough](http://pgbovine.net/python-async-io-walkthrough.htm)
+
 
 ### Others
 

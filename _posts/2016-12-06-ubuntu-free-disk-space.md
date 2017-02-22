@@ -1,8 +1,8 @@
 ---
 layout: post
 keywords: ubuntu, free disk space, software updater
-description: Ubuntu自动更新经常会出现`Not enough free dish space`问题，本文记录解决方法
-title: 解决Ubuntu升级出现的`Not enough free dish space`问题
+description: Ubuntu 自动更新经常会出现 Not enough free dish space 问题，本文记录解决方法
+title: 解决 Ubuntu 升级出现的 Not enough free dish space 问题
 categories: [unix-based]
 tags: [ubuntu, software updater]
 group: archive
@@ -10,7 +10,7 @@ icon: linux
 ---
 {% include mathsyouth/setup %}
 
-Ubuntu自动更新经常会出现`Not enough free dish space`问题：
+Ubuntu 自动更新经常会出现 Not enough free dish space 问题：
 
 ![ubuntu_free_space](/image/ubuntu_free_space/software-updater-2016-12-06.png)
 
