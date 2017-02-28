@@ -1,7 +1,7 @@
 ---
 layout: post
 keywords: coding tips
-description: 记录 python coding tips
+description: 记录 Python coding tips
 title: "Python coding tips"
 categories: [python]
 tags: [python coding tips]
