@@ -28,8 +28,11 @@ icon: code
 * Ctrl + b：前移一个字符(backward)
 * Ctrl + f：后移一个字符(forward)
 * Alt + b：前移一个单词
+* Alt + f: 后移一个单词
+* Alt + l: 后移单词尾
 * Ctrl + xx：在命令行首和光标之间移动
 
+**Note: 对于 Ubuntu 14.04 来说，Alt + f 默认用作“启用菜单访问键”，若要此快捷键生效，需要修改默认配置。打开终端，点击 edit->keyboard shortcuts, 然后去勾第一个选项 "Enable menu access keys (Such as Alt+F to open the File menu)"。或者用　Alt + Super + f 替代 Alt + f，此处 Super 键特指 win 键。**
 
 ### 编辑命令
 

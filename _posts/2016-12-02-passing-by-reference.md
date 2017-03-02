@@ -11,9 +11,62 @@ icon: compass
 {% include mathsyouth/setup %}
 
 
-All variables in Python hold references to objects, and these references are passed to functions. This parameter-passing scheme is called "Call by object reference." An object reference means a name, and the passed reference is an "alias", i.e. a copy of the reference to the same object, just like in C/C++. When you pass a variable to a function, python passes the reference to the object to which the variable refers (the value). Not the variable itself.
+What we commonly refer to as *variables* in Python are more properly called *names*. Likewise, *assignment* is really the binding of a *name* to an *object*.
 
-If the value passed in a function is immutable, the function does not modify the caller's variable. If the value is mutable, the function may modify the caller's variable in-place:
+Let's look at a block of Python code:
+
+```python
+some_guy = 'Fred'
+some_guy = 'George'
+```
+
+### Binding names to objects
+
+On line 1, we create a *binding* between a *name* `some_guy`, and a string *object* containing `'Fred'`. In the context of program execution, the environment is altered; a binding of the name `some_guy` to a string object is created in the `scope of the block` where the statement occurred. When we later say `some_guy = 'George'`, the string object containing `'Fred'` is unaffected. We've just changed the binding of the name `some_guy`. **We haven't, however, changed either the 'Fred' or 'George' string objects.**
+
+It would be incorrect to say that "mutable objects can change and immutable ones can't", however. Consider the following:
+
+```python
+first_names = ['Fred', 'George', 'Bill']
+last_names = ['Smith', 'Jones', 'Williams']
+name_tuple = (first_names, last_names)
+print name_tuple
+
+first_names.append('Igor')
+print name_tuple
+```
+
+Tuples in Python are immutable. We can't change the tuple object `name_tuple` is bound to. But immutable containers may contain references to mutable objects like lists. Therefore, even though the tuple object is immutable, it "changes" when `'Igor'` is appended to the list object `first_names` is bound to.
+
+### Function calls
+
+When you pass a *variable* to a function, python passes the reference to the object to which the variable refers. This parameter-passing scheme is called "call-by-object-reference". For example, when the function `foo(bar)` is called, a binding within the scope of `foo` to the object the argument` bar` is bound to is created. If `bar` refers to a mutable object and `foo` changes its value, then these changes will be visible outside of the scope of the function.
+
+```python
+def foo(bar):
+    bar.append(42)
+    print bar
+
+answer_list = []
+foo(answer_list)
+print answer_list
+```
+
+On the other hand, if `bar` refers to an immutable object, the most that `foo` can do is create a name `bar` in its local namespace and bind it to some other object.
+
+```python
+def foo(bar):
+    bar = 'new value'
+    print bar
+
+answer_list = 'old value'
+foo(answer_list)
+print answer_list
+```
+
+**In Python a variable is not an alias for a location in memory. Rather, it is simply a binding to a Python object.**
+
+Another example:
 
 ```python
 def try_to_modify(x, y, z):
@@ -35,4 +88,6 @@ if __name__ == "__main__":
     main()
 ```
 
-In Python, non-innermost-local and not-declared-global accessible names are all aliases.
+### References
+
+1. [Is Python call-by-value or call-by-reference? Neither.](https://jeffknupp.com/blog/2012/11/13/is-python-callbyvalue-or-callbyreference-neither/)

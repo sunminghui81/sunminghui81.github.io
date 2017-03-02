@@ -15,7 +15,7 @@ icon: linux
 
 ### 查找系统快捷键
 
-点击右上角的主菜单，　然后 System Settings > Keyboard > Shortcuts
+点击右上角的主菜单，然后 System Settings > Keyboard > Shortcuts
 
 
 ### 查找应用程序特定的键盘快捷键
