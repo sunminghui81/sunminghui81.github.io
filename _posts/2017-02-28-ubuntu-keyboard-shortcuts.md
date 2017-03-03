@@ -72,16 +72,16 @@ icon: linux
 
 ## 系统快捷键
 
-* Ctrl + Alt + Delete: 立即重新启动计算机，但不保存打开的文件
+* Ctrl + Alt + Delete: 锁屏或登出
 * Ctrl + Alt + L: 锁屏
 
 
 ## Terminal 终端
 
 * Ctrl + Alt + T: 打开终端
+* Ctrl + Shift + T: 新建标签页
 * Tab: 自动补全命令或文件名
 * Ctrl + Shift + V: 粘贴 （Linux 中不需要复制的动作，文本被选择就自动被复制）
-* Ctrl + Shift + T: 新建标签页
 * Ctrl + D: 关闭标签页
 * Ctrl + L: 清屏幕
 * Ctrl + R + 文本: 在输入历史中搜索
