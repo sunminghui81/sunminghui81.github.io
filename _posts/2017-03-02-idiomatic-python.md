@@ -65,6 +65,8 @@ if name in ('Tom', 'Dick', 'Harry'):
 
 List comprehensions, when used judiciously, increase clarity in code that builds a list from existing data. Especially when data is both checked for some condition and transformed in some way, list comprehensions make it clear what's happening. There are also (usually) performance benefits to using list comprehensions (or alternately, set comprehensions) due to optimizations in the CPython interpreter.
 
+####  Use `is` to check if two names are bound to the same object
+
 ### 参考材料
 
 1. [Writing Idiomatic Python](https://jeffknupp.com/blog/2012/10/04/writing-idiomatic-python/)

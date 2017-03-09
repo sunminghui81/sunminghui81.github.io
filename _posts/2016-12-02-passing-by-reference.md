@@ -38,6 +38,77 @@ print name_tuple
 
 Tuples in Python are immutable. We can't change the tuple object `name_tuple` is bound to. But immutable containers may contain references to mutable objects like lists. Therefore, even though the tuple object is immutable, it "changes" when `'Igor'` is appended to the list object `first_names` is bound to.
 
+### Everything is an object
+
+Anything you can (legally) place on the right hand side of the equals sign is (or creates) an object in Python. Both `10` and `"Hello World"` are objects.
+
+```python
+# We can see all the attributes 10 has using the dir() function
+print dir(10)
+foo = 10
+print foo.__add__
+foo = "Hello World"
+print dir(foo)
+```
+
+Since everything in Python is essentially names bound to objects, we can do silly (but interesting) stuff like this:
+
+```python
+import datetime
+import imp
+
+print(datetime.datetime.now())
+
+class PartyTime():
+
+    def __call__(self, *arg):
+        imp.reload(datetime)
+        value = datetime.datetime(*arg)
+        datetime.datetime = self
+        return value
+
+    def __getattr__(self, value):
+        if value == "now":
+            return lambda: print("Party Time!")
+        else:
+            imp.reload(datetime)
+            value = getattr(datetime.datetime, value)
+            datetime.datetime = self
+            return value
+
+datetime.datetime = PartyTime()
+datetime.datetime.now()
+today = datetime.datetime(2017, 3, 7)
+print(today)
+print(today.timestamp())
+```
+
+**Note: The above code works only in Python 3.X, not Python 2.X.**
+
+#### Immutable and mutable objects
+
+Immutable objects are fundamentally expensive to "change", because doing so involves creating a copy. Changing mutable objects is cheap. For example, concatenating strings must allocate memory for a new string and copy the contents, while appending to a list (in most cases) requires no allocation.
+
+The value of a `tuple` can't be changed after it is created. But the "value" of a tuple is conceptually just a sequence of names with unchangeable bindings to objects. The key thing to note is that the bindings are unchangeable, not the objects they are bound to. This means the following is perfectly legal:
+
+```python
+class Foo():
+    def __init__(self):
+        self.value = 0
+    def __str__(self):
+        return str(self.value)
+    def __repr__(self):
+        return str(self.value)
+
+f = Foo()
+print f
+foo_tuple = (f, f)
+print foo_tuple
+foo_tuple[0] = 1
+f.value = 1
+print foo_tuple
+```
+
 ### Function calls
 
 When you pass a *variable* to a function, python passes the reference to the object to which the variable refers. This parameter-passing scheme is called "call-by-object-reference". For example, when the function `foo(bar)` is called, a binding within the scope of `foo` to the object the argument` bar` is bound to is created. If `bar` refers to a mutable object and `foo` changes its value, then these changes will be visible outside of the scope of the function.
@@ -91,3 +162,4 @@ if __name__ == "__main__":
 ### References
 
 1. [Is Python call-by-value or call-by-reference? Neither.](https://jeffknupp.com/blog/2012/11/13/is-python-callbyvalue-or-callbyreference-neither/)
+1. [Drastically Improve Your Python: Understanding Python's Execution Model](https://jeffknupp.com/blog/2013/02/14/drastically-improve-your-python-understanding-pythons-execution-model/)

@@ -19,7 +19,6 @@ icon: compass
 
 ### Variables, objects, class and instance variables
 
-1. [Drastically Improve Your Python: Understanding Python's Execution Model](https://jeffknupp.com/blog/2013/02/14/drastically-improve-your-python-understanding-pythons-execution-model/)
 1. [Class and instance variables in Python 2.7](https://timothyawiseman.wordpress.com/2012/10/06/class-and-instance-variables-in-python-2-7/)
 1. [What is the difference between class and instance variables in Python?](http://stackoverflow.com/questions/8959097/what-is-the-difference-between-class-and-instance-variables-in-python)
 1. [Using global variables in a function other than the one that created them](http://stackoverflow.com/questions/423379/using-global-variables-in-a-function-other-than-the-one-that-created-them)
@@ -75,16 +74,13 @@ icon: compass
 1. [Install Python 2.7, virtualenv and virtualenvwrapper on OS X Mavericks/Yosemite](http://www.marinamele.com/2014/05/install-python-virtualenv-virtualenvwrapper-mavericks.html)
 1. [Python Virtual Environments - a Primer](https://realpython.com/blog/python/python-virtual-environments-a-primer/)
 
-### Python exceptions
-
-1. [Best way to log a Python exception](http://stackoverflow.com/questions/5191830/best-way-to-log-a-python-exception)
-
 
 ### Logging
 
 1. [python logging 模块使用教程](http://www.jianshu.com/p/feb86c06c4f4)
 1. [Good logging practice in Python](https://fangpenlin.com/posts/2012/08/26/good-logging-practice-in-python/)
 1. [Logging Cookbook](https://docs.python.org/3/howto/logging-cookbook.html)
+1. [Best way to log a Python exception](http://stackoverflow.com/questions/5191830/best-way-to-log-a-python-exception)
 
 
 ### Metaclass
@@ -97,10 +93,11 @@ icon: compass
 ### Decorator
 
 1. [A guide to Python's function decorators](http://thecodeship.com/patterns/guide-to-python-function-decorators/)
-1.http://stackoverflow.com/questions/739654/how-to-make-a-chain-of-function-decorators-in-python
+1. http://stackoverflow.com/questions/739654/how-to-make-a-chain-of-function-decorators-in-python
 1. [PYTHON 修饰器的函数式编程](http://coolshell.cn/articles/11265.html)
 1. [Python Decortor Library](https://wiki.python.org/moin/PythonDecoratorLibrary)
 1. [看完这篇文章你还不理解 Python 装饰器，只有一种可能](https://gold.xitu.io/post/587c565f128fe1006b00c973)
+1. [PEP 318 -- Decorators for Functions and Methods](https://www.python.org/dev/peps/pep-0318/)
 
 
 ### Context manager
@@ -118,17 +115,6 @@ icon: compass
 1. [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
 1. [Python 风格规范](http://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/python_style_rules/)
 1. [OpenStack Style Guidelines](http://docs.openstack.org/developer/hacking/)
-
-
-### Iterator and Generator
-
-1. [Iterators & Generators](http://anandology.com/python-practice-book/iterators.html)
-1. [Generators](http://book.pythontips.com/en/latest/generators.html)
-1. [PEP 234 -- Iterators](https://www.python.org/dev/peps/pep-0234/)
-1. [PEP 318 -- Decorators for Functions and Methods](https://www.python.org/dev/peps/pep-0318/)
-1. [Generator Tricks for Systems Programmers](http://www.dabeaz.com/generators/)
-1. [What is the function of the “yield” keyword?](http://stackoverflow.com/questions/231767/what-is-the-function-of-the-yield-keyword?rq=1)
-1. [Understanding Python's "for" statement](http://effbot.org/zone/python-for-statement.htm)
 
 
 ### Performance
@@ -173,6 +159,8 @@ icon: compass
 
 1. [A Web Crawler With asyncio Coroutines](http://www.aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html)
 1. [Python Asynchronous I/O Walkthrough](http://pgbovine.net/python-async-io-walkthrough.htm)
+1. [I don't understand Python's Asyncio](http://lucumr.pocoo.org/2016/10/30/i-dont-understand-asyncio/)
+1. [A Curious Course on Coroutines and Concurrency](http://www.dabeaz.com/coroutines/)
 
 
 ### Others

@@ -11,7 +11,59 @@ icon: compass
 {% include mathsyouth/setup %}
 
 
-### Python Scopes and Namespaces
+### Blocks and Scopes
+
+A `block` is just a "block" of Python code that is executed as a single unit. The three most common types of blocks are modules, class definitions, and the bodies of functions. So the `scope` of a name is the innermost `block` in which it's defined. How does the interpreter "find" what a name is bound to (or if it's even a valid name at all)? It begins by checking the `scope` of the innermost `block`. Then it checks the `scope` that contained the innermost `block`, then the `scope` that contained that, and so on. Anything defined at the modules level is considered a `global` name. These are accessible from anywhere.
+
+Consider the following:
+
+```python
+GLOBAL_CONSTANT = 42
+
+def print_some_weird_calculation(value):
+    number_of_digits = len(str(value))
+
+    def print_formatted_calculation(result):
+        print ('{value} * {constant} = {result}'.format(value=value,
+               constant=GLOBAL_CONSTANT, result=result))
+        print '{}   {}'.format('^' * number_of_digits, '++')
+        print '\nKey: ^ points to your number, + points to constant'
+
+    print_formatted_calculation(value * GLOBAL_CONSTANT)
+
+print_some_weird_calculation(123)
+```
+
+A name's `scope` extends to any blocks contained in the block where the name was defined, unless the name is rebound in one of those blocks. If `print_formatted_calculation` had the line `value = 3`, then the `scope` of the name `value` in `print_some_weird_calculation` would only be the body of that function. It's `scope` would not include `print_formatted_calculation`, since that `block` rebound the name.
+
+In the example above, if we rebound `value` in `print_formatted_calculation`, it would have no affect on the `value` in `print_some_weird_calculation`, which is `print_formatted_calculation`'s enclosing `scope`. With the following two keywords, we can actually affect the bindings outside our local `scope`.
+
+* `global my_variable` tells the interpreter to use the binding of the name `my_variable` in the top-most (or "global" scope). Putting `global my_variable` in a code `block` is a way of saying, "copy the binding of this global variable, or if you don't find it, create the name `my_variable` in the global scope."
+* The `nonlocal my_variable` statement instructs the interpreter to use the binding of the name `my_variable` defined in the nearest enclosing scope. This is a way to rebind a name not defined in either the local or global scope. Unlike `global my_variable` however, if we use `nonlocal my_variable` then `my_variable` must already exist; it won't be created if it's not found.
+
+```python
+GLOBAL_CONSTANT = 42
+print(GLOBAL_CONSTANT)
+def outer_scope_function():
+    some_value = hex(0x0)
+    print(some_value)
+
+    def inner_scope_function():
+        nonlocal some_value
+        some_value = hex(0xDEADBEEF)
+
+    inner_scope_function()
+    print(some_value)
+    global GLOBAL_CONSTANT
+    GLOBAL_CONSTANT = 31337
+
+outer_scope_function()
+print(GLOBAL_CONSTANT)
+```
+
+**Note: The above code works only in Python 3.x. The nonlocal keyword does not exist in Python 2.7.**
+
+### Python Namespaces
 
 Objects have individuality, and multiple names (in multiple scopes) can be bound to the same object. A *namespace* is a mapping from names to objects. Most namespaces are currently implemented as Python dictionaries. Examples of namespaces are: the set of built-in names (containing functions such as `abs()`, and built-in exception names); the global names in a module; and the local names in a function invocation. In a sense the set of attributes of an object also form a namespace.
 
@@ -37,7 +89,6 @@ Usually, the local scope references the local names of the (textually) current f
 It is important to realize that scopes are determined textually: the global scope of a function defined in a module is that module’s namespace, no matter from where or by what alias the function is called. On the other hand, the actual search for names is done dynamically, at run time — however, the language definition is evolving towards static name resolution, at “compile” time, so don’t rely on dynamic name resolution! (In fact, local variables are already determined statically.)
 
 A special quirk of Python is that – if no `global` statement is in effect – assignments to names always go into the innermost scope. Assignments do not copy data — they just bind names to objects. The same is true for deletions: the statement `del x` removes the binding of `x` from the namespace referenced by the local scope. In fact, all operations that introduce new names use the local scope: in particular, `import` statements and function definitions bind the module or function name in the local scope. (The `global` statement can be used to indicate that particular variables live in the global scope.)
-
 
 ### A First Look at Classes
 
@@ -334,3 +385,4 @@ list(data[i] for i in range(len(data)-1,-1,-1))
 ### 参考材料
 
 1. [Classes](https://docs.python.org/2/tutorial/classes.html)
+1. [Drastically Improve Your Python: Understanding Python's Execution Model](https://jeffknupp.com/blog/2013/02/14/drastically-improve-your-python-understanding-pythons-execution-model/)
