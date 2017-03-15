@@ -164,3 +164,7 @@ Do NOT edit the default SublimeCodeIntel settings. Your changes will be lost whe
     }
 }
 ```
+
+##### [sublime-rst-completion](https://github.com/mgaitan/sublime-rst-completion)
+
+编写 RST　文档的利器。

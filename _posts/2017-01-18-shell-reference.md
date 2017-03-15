@@ -3,7 +3,7 @@ layout: post
 keywords: bash
 description: 收集关于 bash 的经典学习资料，以便随时查阅
 title: "Bash 常用命令"
-categories: [tool]
+categories: [unix-based]
 tags: [shell]
 group: archive
 icon: code
@@ -13,12 +13,12 @@ icon: code
 
 ### 学会使用命令帮助
 
-* 在只记得部分命令关键字的场合，可通过 man -k 来搜索: man -k py
-* 需要知道某个命令的简要说明，可以使用 whatis: whatis python, whatis ls
-* 详细的介绍，则可用 info: info python, info ls
-* 查看程序的 binary 文件所在路径，可使用 which: which python, which ls
-* 当系统中安装了同一软件的多个版本时，不确定使用的是哪个版本时，使用 whereis 命令就能查看程序的搜索路径: whereis python
-* 对于命令的具体参数及使用方法，需要用到强大的 man: man python, man ls
+* 在只记得部分命令关键字的场合，可通过 `man -k` 来搜索: `man -k py`。
+* 需要知道某个命令的简要说明，可以使用 `whatis`: `whatis python`, `whatis ls`。
+* 详细的介绍，则可用 `info`: `info python`, `info ls`。
+* 查看程序的 binary 文件所在路径，可使用 `which`: `which python`, `which ls`。
+* 当系统中安装了同一软件的多个版本时，不确定使用的是哪个版本时，使用 `whereis` 命令就能查看程序的搜索路径: `whereis python`。
+* 对于命令的具体参数及使用方法，需要用到强大的 `man`: `man python`, `man ls`。关于 `which` 和 `whereis` 的区别可以使用命令： `man which`, `man whereis`。
 
 
 ### 移动光标
@@ -58,14 +58,14 @@ icon: code
 
 ### Bang (!) 命令
 
-* !!：执行上一条命令
-* !XXX：执行最近的以 XXX 开头的命令，如 !vim
-* !XXX:p：仅打印输出，而不执行
-* !$：上一条命令的最后一个参数，与 Alt + . 相同
-* !$:p：打印输出 !$ 的内容
+* `!!`：执行上一条命令
+* `!XXX`：执行最近的以 XXX 开头的命令，如 `!vim`
+* `!XXX:p`：仅打印输出，而不执行
+* `!$`：上一条命令的最后一个参数，与 Alt + . 相同
+* `!$:p`：打印输出 `!$` 的内容
 * `!*`：上一条命令的所有参数
 * `!*:p`：打印输出 `!*` 的内容
-* sudo !!： 以 root 的身份执行上一条命令。场景举例：比如 Ubuntu 里用 apt-get 安装软件包的时候是需要 root 身份的，我们经常会忘记在 apt-get 前加 sudo。
+* `sudo !!`： 以 root 的身份执行上一条命令。场景举例：比如 Ubuntu 里用 apt-get 安装软件包的时候是需要 root 身份的，我们经常会忘记在 apt-get 前加 sudo。
 * ^blah：删除上一条命令中的 blah
 * ^blah^foo：替换前一条命令里的部分字符串。场景： `echo "wanderful"`，其实是想输出 `echo "wonderful"`。只需要 `^a^o` 就行了，对很长的命令的错误拼写有很大的帮助。（陈皓注：也可以使用 `!!:gs/blah/foo`）
 * ^blah^foo^：将上一条命令中所有的 blah 都替换为 foo
