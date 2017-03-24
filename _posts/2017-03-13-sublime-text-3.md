@@ -27,9 +27,9 @@ sudo dpkg --install sublime-text_build-3126_amd64.deb
 
 #### 安装 Package Control
 
-以后用到的插件都要借助 `Package Control` 来安装，打开已经安装好的 Sublime Text 3，然后点击顶部菜单的 View > Show Console（或者使用快捷键 Ctrl + `）。在弹出的输入框里复制粘贴下面的代码：
+以后用到的插件都要借助 `Package Control` 来安装，打开已经安装好的 Sublime Text 3，然后点击顶部菜单的 View > Show Console（或者使用快捷键 `Ctrl` + `` ` ``）。在弹出的输入框里复制粘贴下面的代码：
 
-```
+```python
 import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())
 ```
 
@@ -37,17 +37,23 @@ import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.
 
 安装插件的步骤：
 
-1. 按下 `Ctrl + Shift + P`　调出命令面板；
+1. 按下 `Ctrl` + `Shift` + `P`　调出命令面板；
 1. 输入 `install package` 并回车，会列出可安装的插件；
 1. 输入要安装的插件名称，比如 `MarkdownEditing`，并回车，插件会被安装；
 1. 重启 Sublime Text 3 以完成安装。
 
 卸载插件的步骤：
 
-1. 按下 `Ctrl + Shift + P`　调出命令面板；
+1. 按下 `Ctrl` + `Shift` + `P`　调出命令面板；
 1. 输入 `remove package` 并回车，会列出已安装的插件；
 1. 输入要删除的插件名称，比如 `MarkdownEditing`，并回车，插件会被删除；
 1. 重启 Sublime Text 3 以完成卸载。
+
+升级插件的步骤：
+
+1. 按下 `Ctrl` + `Shift` + `P`　调出命令面板；
+1. 输入 `upgrade package` 并回车，如果有列表出来则有插件需要更新；否则，会弹出提示框提醒没有任何插件需要更新；
+1. 重启 Sublime Text 3 以完成升级。
 
 #### Sublime Text 3 插件
 
@@ -167,4 +173,4 @@ Do NOT edit the default SublimeCodeIntel settings. Your changes will be lost whe
 
 ##### [sublime-rst-completion](https://github.com/mgaitan/sublime-rst-completion)
 
-编写 RST　文档的利器。
+编写 RST 文档的利器。

@@ -104,9 +104,10 @@ icon: code
 ### 文件搜索命令
 
 1. 文件搜索: `find [搜索范围][选项][条件]`。举例：
-   * `find /path/ -name hello.sh` 在目录下查找名为 hello.sh 文件
+   * `find /path/ -name hello.sh` 在目录下查找名为 `hello.sh` 文件
    * `find /path/ -iname hello.sh` 忽略大小写查找文件
-   * `find /var/log -mtime +10` `-mtime` 文件修改时间, `-atime` 文件访问时间, `-ctime` 改变文件属性时间; +10 10天前, 10  10天, -10 10天内
+   * `find /path/ -iname "*.log"` 查找命名为 `xxx.log` 的文件
+   * `find /var/log -mtime +10` `-mtime` 文件修改时间, `-atime` 文件访问时间, `-ctime` 改变文件属性时间; `+10` 10天前, `10`  10天, `-10` 10天内
    * `find /etc -size +20M` 查找文件大于20M的文件
 
 
@@ -120,12 +121,10 @@ icon: code
    * 解开归档文件： `tar -xvf test.tar`
    * 解压 .tar.gz 文件（非常常用）： `tar -zxvf test.tar.gz`
    * 打包 .tar.gz: `tar -zcvf 压缩包名.tar.gz  原文件`
-
 1. .zip 格式
    * 压缩文件： `zip [压缩文件名] [原文件]`
    * 压缩目录： `zip -r  [压缩文件名] [原文件]`
    * 解压缩： `unzip [压缩文件名]`
-
 1. .gz 格式
    * 压缩为 .gz 格式，原文件不保留: `gzip [原文件]`
    * 压缩为 .gz 格式，原文件保留: `gzip -c [原文件] > [压缩文件]`
@@ -139,7 +138,22 @@ icon: code
 1. 查看路由列表: `netstat -rn` 或 `route -n`
 1. 查看某域名与自己的电脑的网络状态: `ping google.com`
 1. `mtr google.com`
+2. 检查本机端口是否打开：
+   * `nc -v 127.0.0.1 8000`
+   * `telnet 127.0.0.1 8000`
+1. 检查远程端口是否打开：
+   * 运行命令 `nc -v google.com 80` 会显示：
 
+     Connection to google.com 80 port [tcp/http] succeeded!    
+     ^C  
+   * 运行命令 `telnet google.com 80` 会显示：
+     
+     Trying 172.217.24.46...  
+     Connected to google.com.  
+     Escape character is '^]'. #==> `Ctrl`+ `]`  
+     ^]  
+     telnet> quit  
+     Connection closed.
 
 ### 远程操作
 
@@ -147,29 +161,21 @@ icon: code
 1. `ssh user@host cat /path/to/remotefile | diff /path/to/localfile –` 比较一个远程文件和一个本地文件
 1. `vim scp://user@host//path/to/somefile` vim一个远程文件
 
-
 ### 用户管理
 
 1. 在 Ubuntu 安装的时候默认 root 用户是不开启的，需要建立一个非 root 用户 。Ubuntu 系统默认 root 用户是不能登录的，密码也是空的。 如果要使用 root 用户登录，必须先为 root 用户设置密码。打开终端， 输入： `sudo passwd root` 然后按回车，此时会提示你输入密码，在 password: 后输入密码。
 1. 更改用户密码： `sudo passwd username`，root 用户可以修改其他用户的密码，但是普通账户只能修改自己的密码，即不带参数的 passwd 命令。
 1. 创建用户命令两条： `adduser`, `useradd`; 用户删除命令 `userdel`。`adduser` 会自动为创建的用户指定主目录、系统 shell 版本，会在创建时输入用户密码；`useradd` 需要使用参数选项指定上述基本设置，如果不使用任何参数，则创建的用户无密码、无主目录、没有指定 shell 版本。
 
-
 ### 进程管理
 
+1. [lsof](http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/lsof.html) 是一个查看当前系统文件的工具。在 Linux 环境下，任何事物都以文件的形式存在，通过文件不仅仅可以访问常规数据，还可以访问网络连接和硬件。如传输控制协议 (TCP) 和用户数据报协议 (UDP) 套接字等，系统在后台都为该应用程序分配了一个文件描述符，该文件描述符提供了大量关于这个应用程序本身的信息。
+2. [ps](http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/ps.html) 命令用来列出系统中当前运行的那些进程。ps 命令列出的是当前那些进程的快照，就是执行 ps 命令的那个时刻的那些进程，如果想要动态的显示进程信息，就可以使用 top 命令。
+3. [top](http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/top.html) 命令是 Linux 下常用的性能分析工具，能够实时显示系统中各个进程的资源占用状况，类似于 Windows 的任务管理器。
 1. 使用 `pgrep` 和 `pkill` 来找到或是 kill 某个名字的进程。 （`-f` 选项很有用）
-1. `ps aux` 显示所有用户进程
 1. `kill PID` 根据进程号，直接终止进程
-1. `top` 动态显示进程
-   * 按”P”键: 按 CPU 使用时间排序
-   * 按”M”键: 按内存使用多少排序
-   * 按”T”键: 按执行时间多少排序
-   * 按”u”键: 监视特定用户
-   * 按”K”键: 删除进程
-1. `top -d 10` 指定更新时间
 
-
-### 其他常用命令
+### 其他常用工具和命令
 
 1. `echo “ls -l” | at midnight` 在某个时间运行某个命令。
 1. `tail -f /path/to/file.log | sed '/^Finished: SUCCESS$/ q'` 当 file.log 里出现 Finished: SUCCESS 时候就退出 tail，这个命令用于实时监控并过滤 log 是否出现了某条记录。
@@ -177,12 +183,11 @@ icon: code
 1. 减少 grub 默认的引导时间 `sudo vim /etc/default/grub` 修改 TIMEOUT 值，然后 `sudo update-grub` 生效。
 1. [source, ., ./](http://askubuntu.com/questions/182012/is-there-a-difference-between-and-source-in-bash-after-all?lq=1)
 
-
 ### Linux 入门
 
 1. [LINUX/UNIX 新手和专家教程](http://coolshell.cn/articles/1042.html)
 1. [Linux Shell Scripting Tutorial](https://bash.cyberciti.biz/guide/Main_Page)
-
+2. [Ubuntu 命令技巧](http://wiki.ubuntu.org.cn/index.php?title=UbuntuSkills&variant=zh-cn#.E5.88.87.E6.8D.A2.E8.BE.93.E5.85.A5.E6.B3.95.E5.BC.95.E6.93.8E)
 
 ### 参考文献
 
@@ -190,8 +195,5 @@ icon: code
 1. [应该知道的 LINUX 技巧](http://coolshell.cn/articles/8883.html)
 1. [Linux 基础之常用命令篇](http://www.jianshu.com/p/0718b3abedcf)
 1. [让你提升命令行效率的 Bash 快捷键](https://linuxtoy.org/archives/bash-shortcuts.html)
-1. [Bash Shell常用快捷键](https://github.com/hokein/Wiki/wiki/Bash-Shell%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE)
-1. [Linux工具快速教程](http://linuxtools-rst.readthedocs.io/zh_CN/latest/index.html)
-
-
-
+1. [Bash Shell 常用快捷键](https://github.com/hokein/Wiki/wiki/Bash-Shell%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE)
+1. [Linux 工具快速教程](http://linuxtools-rst.readthedocs.io/zh_CN/latest/index.html)
