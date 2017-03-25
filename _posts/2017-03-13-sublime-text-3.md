@@ -11,7 +11,7 @@ icon: key
 {% include mathsyouth/setup %}
 
 
-### Ubuntu 下 Sublime Text 3 的配置使用
+### Ubuntu 14.04 下 Sublime Text 3 的配置使用
 
 #### 安装 Sublime Text 3
 
@@ -21,9 +21,43 @@ icon: key
 sudo dpkg --install sublime-text_build-3126_amd64.deb
 ```
 
+#### Sublime Text 3 [快捷键](https://segmentfault.com/a/1190000002570753)
+
+`Ctrl` + `P`：搜索项目中的文件
+`Ctrl` + `G`：跳转到第几行
+`Ctrl` + `W`：关闭当前打开文件
+`Ctrl` + `Shift` + `W`：关闭所有打开文件
+`Ctrl` + `L`：选择行，重复可依次增加选择下一行
+`Ctrl` +` Shift` + `L`：选择多行
+`Ctrl` + `Shift` + `Enter`：在当前行前插入新行
+`Ctrl` + `X`：删除当前行
+`Ctrl` + `M`：跳转到对应括号
+`Ctrl` + `R`：前往 method
+`Ctrl` + `N`：新建窗口
+`Ctrl` + `/`：注释当前行
+`Ctrl` + `Shift`+ `/`：当前位置插入注释
+`F11`：开关全屏
+`Shift` + `F11`：开关全屏免打扰模式，只编辑当前文件
+`Alt` + 数字：切换打开第N个文件
+`Ctrl` + `Shift`+ 上下键：替换行
+
 #### 解决无法输入中文的问题
 
-解决方法请参考 [sublime-text-imfix](https://github.com/lyfeyaj/sublime-text-imfix)，我用的是搜狗拼音，该方法依然有效。
+##### fcitx 键盘输入法系统
+
+解决方法请参考 [sublime-text-imfix](https://github.com/lyfeyaj/sublime-text-imfix)。
+
+搜狗拼音采用的是 fcitx，所以如果安装了搜狗可以采用该方法。但是搜狗很耗 CPU，详细信息请参考[链接](https://github.com/fcitx/fcitx/issues/183https://github.com/fcitx/fcitx/issues/183vv)。
+
+##### ibus 键盘输入法系统
+
+点击[链接](https://github.com/xgenvn/InputHelper)安装 [InputHelper](https://github.com/xgenvn/InputHelper) 插件，关于如何安装 Package Control 可参考后文。
+
+如果发现在 Sublime Text 3 中无法使用 `Ctrl` + `Shift`+ `Z` 调出输入框，请检查是否安装 `pygtk`:
+
+```
+sudo apt-get install python-gtk2-dev
+```
 
 #### 安装 Package Control
 

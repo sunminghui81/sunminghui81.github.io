@@ -23,45 +23,43 @@ icon: code
 
 ### 移动光标
 
-* Ctrl + a：移到行首（a是首字母）
-* Ctrl + e：移到行尾（end）
-* Ctrl + b：前移一个字符(backward)
-* Ctrl + f：后移一个字符(forward)
-* Alt + b：前移一个单词
-* Alt + f: 后移一个单词
-* Alt + l: 后移单词尾
-* Ctrl + xx：在命令行首和光标之间移动
+* `Ctrl` + `A`：移到行首（`A` 是首字母）
+* `Ctrl` + `E`：移到行尾（end）
+* `Ctrl` + `B`：前移一个字符(backward)
+* `Ctrl` + `F`：后移一个字符(forward)
+* `Alt` + `B`：前移一个单词
+* `Alt` + `F`: 后移一个单词
+* `Alt` + `L`: 后移单词尾
+* `Ctrl` + `XX`：在命令行首和光标之间移动
 
-**Note: 对于 Ubuntu 14.04 来说，Alt + f 默认用作“启用菜单访问键”，若要此快捷键生效，需要修改默认配置。打开终端，点击 edit->keyboard shortcuts, 然后去勾第一个选项 "Enable menu access keys (Such as Alt+F to open the File menu)"。或者用　Alt + Super + f 替代 Alt + f，此处 Super 键特指 win 键。**
+**Note: 对于 Ubuntu 14.04 来说，`Alt` + `F` 默认用作“启用菜单访问键”，若要此快捷键生效，需要修改默认配置。打开终端，点击 edit -> keyboard shortcuts, 然后去勾第一个选项 "Enable menu access keys (Such as `Alt` + `F` to open the File menu)"。或者用　`Alt` + `Super` + `F` 替代 `Alt` + `F`，此处 `Super` 键特指 win 键。**
 
 ### 编辑命令
 
-* Ctrl + u：从光标处删除至命令行首
-* Ctrl + k：从光标处删除至命令行尾
-* Ctrl + w：从光标处删除至字首 (word)
-* Alt + d：从光标处删除至字尾 (delete)
-* Alt + .: 粘帖最后一次命令最后的参数（通常用于 mkdir long-long-dir 后, cd 配合着 Alt + .）
-* Ctrl + y：粘贴至光标后
-* Ctrl + Shift + c: 复制
-* Ctrl + Shift + v: 粘贴
-
+* `Ctrl` + `U`：从光标处删除至命令行首
+* `Ctrl` + `K`：从光标处删除至命令行尾
+* `Ctrl` + `W`：从光标处删除至字首 (word)
+* `Alt` + `D`：从光标处删除至字尾 (delete)
+* `Alt` + `.`: 粘帖最后一次命令最后的参数（通常用于 mkdir long-long-dir 后, cd 配合着 `Alt` + `.`）
+* `Ctrl` + `Y`：粘贴至光标后
+* `Ctrl` + `Shift` + `C`: 复制
+* `Ctrl` + `Shift` + `V`: 粘贴
 
 ### 重新执行命令
 
-* 在命令行前加空格，该命令不会进入 history 里
+* 在命令行前加空格，该命令不会进入 `history` 里
 * `history | awk '{CMD[$2]++;count++;} END { for (a in CMD )print CMD[a] " " CMD[a]/count*100 "% " a }' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl | head -n10` 这行脚本能输出你最常用的十条命令，由此甚至可以洞察你是一个什么类型的程序员。
-* Ctrl + r：逆向搜索命令历史
-* Ctrl + g：从历史搜索模式退出
-* Ctrl + p：历史中的上一条命令
-* Ctrl + n：历史中的下一条命令
-
+* `Ctrl` + `R`：逆向搜索命令历史
+* `Ctrl` + `G`：从历史搜索模式退出
+* `Ctrl` + `P`：历史中的上一条命令
+* `Ctrl` + `N`：历史中的下一条命令
 
 ### Bang (!) 命令
 
 * `!!`：执行上一条命令
 * `!XXX`：执行最近的以 XXX 开头的命令，如 `!vim`
 * `!XXX:p`：仅打印输出，而不执行
-* `!$`：上一条命令的最后一个参数，与 Alt + . 相同
+* `!$`：上一条命令的最后一个参数，与 `Alt` + . 相同
 * `!$:p`：打印输出 `!$` 的内容
 * `!*`：上一条命令的所有参数
 * `!*:p`：打印输出 `!*` 的内容
@@ -69,7 +67,6 @@ icon: code
 * ^blah：删除上一条命令中的 blah
 * ^blah^foo：替换前一条命令里的部分字符串。场景： `echo "wanderful"`，其实是想输出 `echo "wonderful"`。只需要 `^a^o` 就行了，对很长的命令的错误拼写有很大的帮助。（陈皓注：也可以使用 `!!:gs/blah/foo`）
 * ^blah^foo^：将上一条命令中所有的 blah 都替换为 foo
-
 
 ### 文件及目录管理
 
@@ -100,7 +97,6 @@ icon: code
    * `touch file.txt`
 1. 列出当前目录里最大的10个文件: `du -s * | sort -n | tail`
 
-
 ### 文件搜索命令
 
 1. 文件搜索: `find [搜索范围][选项][条件]`。举例：
@@ -110,31 +106,30 @@ icon: code
    * `find /var/log -mtime +10` `-mtime` 文件修改时间, `-atime` 文件访问时间, `-ctime` 改变文件属性时间; `+10` 10天前, `10`  10天, `-10` 10天内
    * `find /etc -size +20M` 查找文件大于20M的文件
 
-
 ### 压缩与解压缩命令
 
-常见压缩格式：.zip 、 .gz 、 .bz2、.tar.gz 、 .tar.bz2
+常见压缩格式：`.zip` 、 `.gz` 、`.bz2`、`.tar.gz` 、 `.tar.bz2`
 
-1. tar 命令
+1. `tar` 命令
    * 创建一个归档文件： `tar -cvf test.tar test1/ test2/`
    * 列出归档文件中的内容： `tar -tf test.tar`
    * 解开归档文件： `tar -xvf test.tar`
-   * 解压 .tar.gz 文件（非常常用）： `tar -zxvf test.tar.gz`
-   * 打包 .tar.gz: `tar -zcvf 压缩包名.tar.gz  原文件`
-1. .zip 格式
+   * 解压 `.tar.gz` 文件（非常常用）： `tar -zxvf test.tar.gz`
+   * 打包 `.tar.gz`: `tar -zcvf 压缩包名.tar.gz  原文件`
+1. `.zip` 格式
    * 压缩文件： `zip [压缩文件名] [原文件]`
    * 压缩目录： `zip -r  [压缩文件名] [原文件]`
    * 解压缩： `unzip [压缩文件名]`
-1. .gz 格式
-   * 压缩为 .gz 格式，原文件不保留: `gzip [原文件]`
-   * 压缩为 .gz 格式，原文件保留: `gzip -c [原文件] > [压缩文件]`
+1. `.gz` 格式
+   * 压缩为 `.gz` 格式，原文件不保留: `gzip [原文件]`
+   * 压缩为 `.gz` 格式，原文件保留: `gzip -c [原文件] > [压缩文件]`
    * 压缩目录: `gzip -r  [目录]`
    * 解压缩: `guzip [文件]`, `guzip -r [目录]`
 
+### 网络工具
 
-### 网络相关
-
-1. `ifconfig` 查看 ip
+1. 查看当前 IP 地址： `ifconfig eth0 |awk '/inet/ {split($2,x,":");print x[2]}'`
+1. 参考文档[网络工具](http://linuxtools-rst.readthedocs.io/zh_CN/latest/base/07_network.html)
 1. 查看路由列表: `netstat -rn` 或 `route -n`
 1. 查看某域名与自己的电脑的网络状态: `ping google.com`
 1. `mtr google.com`
@@ -147,10 +142,10 @@ icon: code
      Connection to google.com 80 port [tcp/http] succeeded!    
      ^C  
    * 运行命令 `telnet google.com 80` 会显示：
-     
+
      Trying 172.217.24.46...  
      Connected to google.com.  
-     Escape character is '^]'. #==> `Ctrl`+ `]`  
+     Escape character is '^]'. #==> ``Ctrl``+ `]`  
      ^]  
      telnet> quit  
      Connection closed.
@@ -187,7 +182,7 @@ icon: code
 
 1. [LINUX/UNIX 新手和专家教程](http://coolshell.cn/articles/1042.html)
 1. [Linux Shell Scripting Tutorial](https://bash.cyberciti.biz/guide/Main_Page)
-2. [Ubuntu 命令技巧](http://wiki.ubuntu.org.cn/index.php?title=UbuntuSkills&variant=zh-cn#.E5.88.87.E6.8D.A2.E8.BE.93.E5.85.A5.E6.B3.95.E5.BC.95.E6.93.8E)
+2. [Ubuntu 命令技巧](http://wiki.ubuntu.org.cn/UbuntuSkills)
 
 ### 参考文献
 
