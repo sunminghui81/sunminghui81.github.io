@@ -169,6 +169,7 @@ icon: code
 3. [top](http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/top.html) 命令是 Linux 下常用的性能分析工具，能够实时显示系统中各个进程的资源占用状况，类似于 Windows 的任务管理器。
 1. 使用 `pgrep` 和 `pkill` 来找到或是 kill 某个名字的进程。 （`-f` 选项很有用）
 1. `kill PID` 根据进程号，直接终止进程
+1. 清除僵尸进程： `ps -eal | awk '{ if ($2 == "Z") {print $4}}' | xargs sudo kill -9`
 
 ### 其他常用工具和命令
 
@@ -176,7 +177,7 @@ icon: code
 1. `tail -f /path/to/file.log | sed '/^Finished: SUCCESS$/ q'` 当 file.log 里出现 Finished: SUCCESS 时候就退出 tail，这个命令用于实时监控并过滤 log 是否出现了某条记录。
 1. 临时切换 shell, 如果用的是 zsh，直接输入 bash 即可切换成 bash。
 1. 减少 grub 默认的引导时间 `sudo vim /etc/default/grub` 修改 TIMEOUT 值，然后 `sudo update-grub` 生效。
-1. [source, ., ./](http://askubuntu.com/questions/182012/is-there-a-difference-between-and-source-in-bash-after-all?lq=1)
+1. 区别 [source, ., ./](http://askubuntu.com/questions/182012/is-there-a-difference-between-and-source-in-bash-after-all?lq=1)
 
 ### Linux 入门
 

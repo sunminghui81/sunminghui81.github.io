@@ -18,3 +18,8 @@ icon: key
 1. RST 语法规范： [reStructuredText](http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html)
 1. RST 语法官方指令：[reStructuredText Directives](http://docutils.sourceforge.net/docs/ref/rst/directives.html)
 1. RST 文档在线编辑器：[Online reStructuredText editor](http://rst.ninjs.org/)
+
+### RST 和 Sphinx 参考文档
+
+1. [Sphinx and RST syntax guide](http://thomas-cokelaer.info/tutorials/sphinx/index.html)
+2. [Sphinx documentation](https://github.com/sphinx-doc/sphinx)
