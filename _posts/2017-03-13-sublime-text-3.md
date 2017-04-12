@@ -11,9 +11,9 @@ icon: key
 {% include mathsyouth/setup %}
 
 
-### Ubuntu 14.04 下 Sublime Text 3 的配置使用
+## Ubuntu 14.04 下 Sublime Text 3 的配置使用
 
-#### 安装 Sublime Text 3
+### 安装 Sublime Text 3
 
 到 [Sublime Text 3](https://www.sublimetext.com/3) 官网上下载 Ubuntu 下对应的版本 [Ubuntu 64 bit](https://download.sublimetext.com/sublime-text_build-3126_amd64.deb)，然后执行命令：
 
@@ -21,35 +21,36 @@ icon: key
 sudo dpkg --install sublime-text_build-3126_amd64.deb
 ```
 
-#### Sublime Text 3 [快捷键](https://segmentfault.com/a/1190000002570753)
+### Sublime Text 3 [快捷键](https://segmentfault.com/a/1190000002570753)
 
-`Ctrl` + `P`：搜索项目中的文件
-`Ctrl` + `G`：跳转到第几行
-`Ctrl` + `W`：关闭当前打开文件
-`Ctrl` + `Shift` + `W`：关闭所有打开文件
-`Ctrl` + `L`：选择行，重复可依次增加选择下一行
-`Ctrl` +` Shift` + `L`：选择多行
-`Ctrl` + `Shift` + `Enter`：在当前行前插入新行
-`Ctrl` + `X`：删除当前行
-`Ctrl` + `M`：跳转到对应括号
-`Ctrl` + `R`：前往 method
-`Ctrl` + `N`：新建窗口
-`Ctrl` + `/`：注释当前行
-`Ctrl` + `Shift`+ `/`：当前位置插入注释
-`F11`：开关全屏
-`Shift` + `F11`：开关全屏免打扰模式，只编辑当前文件
-`Alt` + 数字：切换打开第N个文件
-`Ctrl` + `Shift`+ 上下键：替换行
+* `Ctrl` + `P`：搜索项目中的文件
+* `Ctrl` +` Shift` + `F`： 打开多文件搜索面板
+* `Ctrl` + `G`：跳转到第几行
+* `Ctrl` + `W`：关闭当前打开文件
+* `Ctrl` + `Shift` + `W`：关闭所有打开文件
+* `Ctrl` + `L`：选择行，重复可依次增加选择下一行
+* `Ctrl` +` Shift` + `L`：选择多行
+* `Ctrl` + `Shift` + `Enter`：在当前行前插入新行
+* `Ctrl` + `X`：删除当前行
+* `Ctrl` + `M`：跳转到对应括号
+* `Ctrl` + `R`：前往 method
+* `Ctrl` + `N`：新建窗口
+* `Ctrl` + `/`：注释当前行
+* `Ctrl` + `Shift`+ `/`：当前位置插入注释
+* `F11`：开关全屏
+* `Shift` + `F11`：开关全屏免打扰模式，只编辑当前文件
+* `Alt` + 数字：切换打开第N个文件
+* `Ctrl` + `Shift`+ 上下键：替换行
 
-#### 解决无法输入中文的问题
+### 解决无法输入中文的问题
 
-##### fcitx 键盘输入法系统
+#### fcitx 键盘输入法系统
 
 解决方法请参考 [sublime-text-imfix](https://github.com/lyfeyaj/sublime-text-imfix)。
 
 搜狗拼音采用的是 fcitx，所以如果安装了搜狗可以采用该方法。但是搜狗很耗 CPU，详细信息请参考[链接](https://github.com/fcitx/fcitx/issues/183https://github.com/fcitx/fcitx/issues/183vv)。
 
-##### ibus 键盘输入法系统
+#### ibus 键盘输入法系统
 
 点击[链接](https://github.com/xgenvn/InputHelper)安装 [InputHelper](https://github.com/xgenvn/InputHelper) 插件，关于如何安装 Package Control 可参考后文。
 
@@ -59,7 +60,7 @@ sudo dpkg --install sublime-text_build-3126_amd64.deb
 sudo apt-get install python-gtk2-dev
 ```
 
-#### 安装 Package Control
+### 安装 Package Control
 
 以后用到的插件都要借助 `Package Control` 来安装，打开已经安装好的 Sublime Text 3，然后点击顶部菜单的 View > Show Console（或者使用快捷键 `Ctrl` + `` ` ``）。在弹出的输入框里复制粘贴下面的代码：
 
@@ -89,37 +90,37 @@ import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.
 1. 输入 `upgrade package` 并回车，如果有列表出来则有插件需要更新；否则，会弹出提示框提醒没有任何插件需要更新；
 1. 重启 Sublime Text 3 以完成升级。
 
-#### Sublime Text 3 插件
+### Sublime Text 3 插件
 
-##### [MarkDown Editing](https://github.com/SublimeText-Markdown/MarkdownEditing)
+#### [MarkDown Editing](https://github.com/SublimeText-Markdown/MarkdownEditing)
 
 这个插件通过适当的颜色高亮和其它功能来更好地编辑 Markdown 文件，详细使用情况请点击 [MarkDown Editing](https://github.com/SublimeText-Markdown/MarkdownEditing)。
 
-##### [Markdown Preview](https://github.com/revolunet/sublimetext-markdown-preview)
+#### [Markdown Preview](https://github.com/revolunet/sublimetext-markdown-preview)
 
 Markdown 预览工具，可以在网页上直接显示。
 
-##### [SideBarEnhancements](https://packagecontrol.io/packages/SideBarEnhancements)
+#### [SideBarEnhancements](https://packagecontrol.io/packages/SideBarEnhancements)
 
 SideBarEnhancements 扩展了侧边栏中菜单选项的数量，提供诸如”New file”， “Duplicate” 和　“Delete” 等功能。"Delete" 功能将删除文件放入回收站，当你没有使用这样的功能而彻底删除了一个文件的时候，除非你用了版本管理软件，否则将很难恢复这个文件。
 
-##### [Git](https://github.com/kemayo/sublime-text-git)
+#### [Git](https://github.com/kemayo/sublime-text-git)
 
 版本库是软件开发中不可缺少的工具，该插件把 Git 常用命令加入了 Command Palette，让开发人员进行代码管理方便不少。
 
-##### [Git​Gutter](https://packagecontrol.io/packages/GitGutter)
+#### [Git​Gutter](https://packagecontrol.io/packages/GitGutter)
 
 这个小插件是在修改后的文件行号前增加一些标识图片，方便与版本库对比，修改内容一目了然。
 
-##### [ConvertToUTF8](https://github.com/seanliang/ConvertToUTF8/blob/master/README.zh_CN.md)
+#### [ConvertToUTF8](https://github.com/seanliang/ConvertToUTF8/blob/master/README.zh_CN.md)
 
 通过插件 ConvertToUTF8，可以编辑并保存目前编码不被 Sublime Text 3 支持的文件，特别是中日韩用户使用的 GB2312，GBK，BIG5，EUC-KR，EUC-JP 等。
 
-##### [BracketHighlighter](https://github.com/facelessuser/BracketHighlighter)
+#### [BracketHighlighter](https://github.com/facelessuser/BracketHighlighter)
 
 括号和标签高亮显示的插件
 
-##### [spacegray](https://github.com/kkga/spacegray/)
+#### [spacegray](https://github.com/kkga/spacegray/)
 
 A Hyperminimal UI Theme for Sublime Text. Activate the UI theme and color scheme by modifying your user preferences file, which you can find using the menu item Preferences -> Settings - User:
 
@@ -178,15 +179,15 @@ A Hyperminimal UI Theme for Sublime Text. Activate the UI theme and color scheme
 }
 ```
 
-##### [Emmet](https://github.com/sergeche/emmet-sublime)
+#### [Emmet](https://github.com/sergeche/emmet-sublime)
 
 前端必备神器，提高 HTML 和 CSS3 编写速度。
 
-##### [Anaconda](http://damnwidget.github.io/anaconda/)
+#### [Anaconda](http://damnwidget.github.io/anaconda/)
 
 Anaconda 把 Pyflakes, pep8 和 McCabe 以插件的方式集成起来。安装 Anaconda 后，通过配置即可完成一个良好的 Python 开发环境。
 
-##### [SublimeCodeIntel](https://github.com/SublimeCodeIntel/SublimeCodeIntel)
+#### [SublimeCodeIntel](https://github.com/SublimeCodeIntel/SublimeCodeIntel)
 
 SublimeCodeIntel 为部分语言增强自动完成+成员/方法提示功能，包括了 Python。Additional settings can be configured in the User File Settings:
 
@@ -205,6 +206,6 @@ Do NOT edit the default SublimeCodeIntel settings. Your changes will be lost whe
 }
 ```
 
-##### [sublime-rst-completion](https://github.com/mgaitan/sublime-rst-completion)
+#### [sublime-rst-completion](https://github.com/mgaitan/sublime-rst-completion)
 
 编写 RST 文档的利器。
