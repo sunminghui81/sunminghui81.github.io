@@ -74,6 +74,9 @@ icon: linux
 
 * Ctrl + Alt + Delete: 锁屏或登出
 * Ctrl + Alt + L: 锁屏
+* `Ctrl` + `Alt` + `F1`: 进入 tty1，输入用户名和密码登录
+* `Ctrl` + `Alt` + `F7`: 退出 tty1，返回桌面
+* `pkill Xorg` 或 `restart lightdm`：注销桌面重新登录
 
 
 ## Terminal 终端

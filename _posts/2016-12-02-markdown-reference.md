@@ -13,6 +13,7 @@ icon: key
 ### Markdown 入门
 
 1. [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
+1. [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)
 2. [GitHub Flavored Markdown](https://help.github.com/categories/writing-on-github/)
 2. [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 3. [Daring Fireball: Markdown Syntax Documentation](http://daringfireball.net/projects/markdown/syntax)

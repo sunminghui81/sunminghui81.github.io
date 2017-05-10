@@ -161,6 +161,7 @@ icon: code
 1. 在 Ubuntu 安装的时候默认 root 用户是不开启的，需要建立一个非 root 用户 。Ubuntu 系统默认 root 用户是不能登录的，密码也是空的。 如果要使用 root 用户登录，必须先为 root 用户设置密码。打开终端， 输入： `sudo passwd root` 然后按回车，此时会提示你输入密码，在 password: 后输入密码。
 1. 更改用户密码： `sudo passwd username`，root 用户可以修改其他用户的密码，但是普通账户只能修改自己的密码，即不带参数的 passwd 命令。
 1. 创建用户命令两条： `adduser`, `useradd`; 用户删除命令 `userdel`。`adduser` 会自动为创建的用户指定主目录、系统 shell 版本，会在创建时输入用户密码；`useradd` 需要使用参数选项指定上述基本设置，如果不使用任何参数，则创建的用户无密码、无主目录、没有指定 shell 版本。
+1. 查看所有用户: `cat /etc/passwd`。若第三个参数500以上，表示新建用户，否则为系统用户；所有新建用户的目录放在 `/home` 下。
 
 ### 进程管理
 
@@ -178,6 +179,7 @@ icon: code
 1. 临时切换 shell, 如果用的是 zsh，直接输入 bash 即可切换成 bash。
 1. 减少 grub 默认的引导时间 `sudo vim /etc/default/grub` 修改 TIMEOUT 值，然后 `sudo update-grub` 生效。
 1. 区别 [source, ., ./](http://askubuntu.com/questions/182012/is-there-a-difference-between-and-source-in-bash-after-all?lq=1)
+1. 查看 GPU 信息： `lspci -vnn | grep VGA -A 12`。
 
 ### Linux 入门
 
