@@ -84,12 +84,12 @@ Modules must be located in the search path, therefore you can:
   You may use symbolic links (on Linux) to keep the code somewhere else.
 * modify the environment variable `PYTHONPATH` to include the directories
   containing the user-defined modules. On Linux/Unix, add the following line to
-  a file read by the shell at startup (e.g. /etc/profile, .profile) <br>
+  a file read by the shell at startup (e.g. /etc/profile, .profile) 
 
   ```shell
   export PYTHONPATH=$PYTHONPATH:/.../user_defined_modules
   ```
-* modify the sys.path variable itself within a Python script: <br>
+* modify the sys.path variable itself within a Python script: 
 
   ```python
   import sys

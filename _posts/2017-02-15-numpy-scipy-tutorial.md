@@ -13,7 +13,7 @@ icon: github
 
 ### NumPy 关键知识点
 
-1. For `array`, all arithmetic operations (`*`, `/`,` +`, `-` etc) are elementwise. <br>
+1. For `array`, all arithmetic operations (`*`, `/`,` +`, `-` etc) are elementwise. 
 
    ```python
    import numpy as np
@@ -22,7 +22,7 @@ icon: github
    c = a - b
    b**2
    ```
-1. The matrix product can be performed using the dot function or method: <br>
+1. The matrix product can be performed using the dot function or method: 
 
    ```python
    import numpy as np
@@ -32,7 +32,7 @@ icon: github
    A.dot(B)  # matrix product
    np.dot(A, B)
    ```
-1. By specifying the `axis` parameter you can apply an operation along the specified axis of an array: <br>
+1. By specifying the `axis` parameter you can apply an operation along the specified axis of an array: 
 
    ```python
    import numpy as np
@@ -41,7 +41,7 @@ icon: github
    b.min(axis=1)  # min of each row
    b.cumsum(axis=1)  # cumulative sum along each row
    ```
-1. Multidimensional arrays can have one index per axis. When fewer indices are provided than the number of axes, the missing indices are considered complete slices: <br>
+1. Multidimensional arrays can have one index per axis. When fewer indices are provided than the number of axes, the missing indices are considered complete slices: 
 
    ```python
    def f(x, y):
@@ -54,7 +54,7 @@ icon: github
    * `x[1,2,...]` is equivalent to `x[1,2,:,:,:]`,
    * `x[...,3]` to `x[:,:,:,:,3]`,
    * `x[4,...,5,:]` to `x[4,:,:,5,:]`.
-1. The following three commands all return a modified array, but do not change the original array: <br>
+1. The following three commands all return a modified array, but do not change the original array: 
 
    ```python
    a = np.floor(10*np.random.random((3,4)))
@@ -66,7 +66,7 @@ icon: github
    a.transpose()
    a.T.shape
    ```
-1. Several arrays can be stacked together along different axes: <br>
+1. Several arrays can be stacked together along different axes: 
 
    ```python
    a = np.floor(10*np.random.random((2,2)))
@@ -81,7 +81,7 @@ icon: github
    a[:, newaxis]
    np.column_stack((a[:,newaxis], b[:,newaxis]))
    ```
-1. Using `hsplit`, you can split an array along its horizontal axis, either by specifying the number of equally shaped arrays to return, or by specifying the columns after which the division should occur: <br>
+1. Using `hsplit`, you can split an array along its horizontal axis, either by specifying the number of equally shaped arrays to return, or by specifying the columns after which the division should occur: 
 
    ```python
    a = np.floor(10*np.random.random((2,12)))
@@ -89,7 +89,7 @@ icon: github
    np.hsplit(a,(3,4))   # Split a after the third and the fourth column
    ```
    `vsplit` splits along the vertical axis, and `array_split` allows one to specify along which axis to split.
-1. The `view` method creates a new array object that looks at the same data. <br>
+1. The `view` method creates a new array object that looks at the same data. 
 
    ```python
    a = np.arange(12)
@@ -106,7 +106,7 @@ icon: github
    s[:] = 10  # s[:] is a view of s.
    print a
    ```
-1. The `copy` method makes a complete copy of the array and its data. <br>
+1. The `copy` method makes a complete copy of the array and its data. 
 
    ```python
    d = a.copy()   # a new array object with new data is created
@@ -115,7 +115,7 @@ icon: github
    d[0,0] = 9999
    print a
    ```
-1. Linear algebra. <br>
+1. Linear algebra. 
 
    ```python
    A = np.array([[1.0, 2.0], [3.0, 4.0]])
@@ -129,7 +129,7 @@ icon: github
    np.linalg.solve(A, b)
    np.linalg.eig(A)
    ```
-1. To change the dimensions of an array, you can omit one of the sizes which will then be deduced automatically: <br>
+1. To change the dimensions of an array, you can omit one of the sizes which will then be deduced automatically: 
 
    ```python
    a = np.arange(30)
@@ -139,7 +139,7 @@ icon: github
    ```
 1. You can treat one-dimensional arrays as either row or column vectors. `dot(A,v)` treats `v` as a column vector, while `dot(v,A)` treats `v` as a row vector. This can save you having to type a lot of transposes.
 1. For `matrix`, maximum of two-dimensional. To hold three-dimensional data you need `array` or perhaps a Python list of `matrix`. Minimum of two-dimensional. You cannot have vectors. They must be cast as single-column or single-row matrices. The `array` is thus much more advisable to use.
-1. Since `array` may be multidimensional, you must specify a slice for each dimension of the array: <br>
+1. Since `array` may be multidimensional, you must specify a slice for each dimension of the array: 
 
    ```python
    import numpy as np
@@ -154,7 +154,7 @@ icon: github
    b[0, 0] = 77
    print a[0, 1]
    ```
-1. You can also mix integer indexing with slice indexing. However, doing so will yield an array of lower rank than the original array. <br>
+1. You can also mix integer indexing with slice indexing. However, doing so will yield an array of lower rank than the original array. 
 
    ```python
    import numpy as np
@@ -169,7 +169,7 @@ icon: github
 
    # We can make the same distinction when accessing columns of an array.
    ```
-1. Integer array indexing allows you to construct arbitrary arrays using the data from another array. One useful trick with integer array indexing is selecting or mutating one element from each row of a matrix. Here is an example: <br>
+1. Integer array indexing allows you to construct arbitrary arrays using the data from another array. One useful trick with integer array indexing is selecting or mutating one element from each row of a matrix. Here is an example: 
 
    ```python
    import numpy as np
@@ -197,7 +197,7 @@ icon: github
    * The arrays can be broadcast together if they are compatible in all dimensions.
    * After broadcasting, each array behaves as if it had shape equal to the elementwise maximum of shapes of the two input arrays.
    * In any dimension where one array had size 1 and the other array had size greater than 1, the first array behaves as if it were copied along that dimension
-1. A broadcasting example. <br>
+1. A broadcasting example. 
 
    ```python
    import numpy as np

@@ -49,7 +49,7 @@ icon: compass
 ### Python Descriptor
 
 1. [Python Descriptors Demystified](http://nbviewer.jupyter.org/urls/gist.github.com/ChrisBeaumont/5758381/raw/descriptor_writeup.ipynb)
-1. [Python 描述符（descriptor）解密](Python描述符（descriptor）解密)
+1. [Python 描述符（descriptor）解密](http://lingxiankong.github.io/blog/2014/03/28/python-descriptor/)
 
 
 ### Python Packages
