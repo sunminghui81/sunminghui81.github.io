@@ -3,7 +3,7 @@ layout: post
 keywords: web scraping, web crawling
 description: 网页爬虫学习总结
 title: 网页爬虫零起步
-categories: [web scraping]
+categories: [web-scraping]
 tags: [web scraping, web crawling]
 group: archive
 icon: file
