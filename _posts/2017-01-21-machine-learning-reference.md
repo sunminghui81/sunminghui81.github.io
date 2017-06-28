@@ -1,10 +1,10 @@
 ---
 layout: post
-keywords: 机器学习
+keywords: machine learning, deep learning
 description: 收集关于机器学习的经典学习资料，以便随时查阅
 title: 机器学习实战总结
-categories: [机器学习]
-tags: [机器学习]
+categories: [machine learning]
+tags: [machine learning, deep learning]
 group: archive
 icon: github
 ---
@@ -35,6 +35,10 @@ icon: github
 1. [LIBSVM: A Library for Support Vector Machines](http://www.csie.ntu.edu.tw/~cjlin/papers/libsvm.pdf)
 1. [LIBLINEAR – A Library for Large Linear Classification](http://www.csie.ntu.edu.tw/~cjlin/liblinear/)
 
+### 机器学习经典教材
+
+1. [CS 229 Machine Learning](http://cs229.stanford.edu/materials.html)
+
 ## 深度学习
 
 ### 深度学习导读
@@ -52,6 +56,9 @@ icon: github
 1. [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/)
 1. [Deep Learning](http://www.deeplearningbook.org/)
 1. [CS231n Convolutional Neural Networks for Visual Recognition](http://cs231n.github.io/)
+1. [CS224n: Natural Language Processing with Deep Learning](http://web.stanford.edu/class/cs224n/)
+1. [UFLDL Tutorial (older version)](http://deeplearning.stanford.edu/wiki/index.php/UFLDL_Tutorial)
+1. [UFLDL Tutorial (new version)](http://deeplearning.stanford.edu/tutorial/)
 
 ### 深度学习博客
 
