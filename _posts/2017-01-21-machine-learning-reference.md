@@ -3,7 +3,7 @@ layout: post
 keywords: machine learning, deep learning
 description: 收集关于机器学习的经典学习资料，以便随时查阅
 title: 机器学习实战总结
-categories: [machine learning]
+categories: [machine-learning]
 tags: [machine learning, deep learning]
 group: archive
 icon: github

@@ -3,7 +3,7 @@ layout: post
 keywords: TensorFlow, deep learning
 description: TensorFlow 学习总结
 title: "TensorFlow 学习笔记"
-categories: [machine learning]
+categories: [machine-learning]
 tags: [machine learning, TensorFlow, deep learning]
 group: archive
 icon: github
