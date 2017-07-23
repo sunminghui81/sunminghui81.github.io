@@ -27,16 +27,16 @@ PS：安装 brew 的时候会自动下载和安装 Apple 的 Command Line Tools�
 
 ### [Homebrew Cask](http://caskroom.io)
 
-`brew-cask`允许你使用命令行安装 OS X 应用，并从应用的官网上下载。比如可以这样安装 Chrome：`brew cask install google-chrome`，还有 Evernote、Sublime Text、VirtualBox 等都可以用 `brew-cask` 安装。
+`brew-cask` 允许你使用命令行安装 OS X 应用，并从应用的官网上下载。比如可以这样安装 Chrome：`brew cask install google-chrome`，还有 Evernote、Sublime Text、VirtualBox 等都可以用 `brew-cask` 安装。
 
-`brew-case` 安装步骤：
+`brew-cask` 安装步骤：
 
 ```
 brew tap caskroom/cask
 brew install brew-cask
 ```
 
-`brew-case` 的使用可参考 [Homebrew Cask Homepage](http://gillesfabio.github.io/homebrew-cask-homepage/)。
+`brew-cask` 的使用可参考 [Homebrew Cask Homepage](http://gillesfabio.github.io/homebrew-cask-homepage/)。
 
 应用也可以通过 App Store 安装，而且有些应用只能通过 App Store 安装，比如 Xcode 等一些 Apple 的应用。
 
