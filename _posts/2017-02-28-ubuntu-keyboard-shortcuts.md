@@ -11,21 +11,21 @@ icon: linux
 {% include mathsyouth/setup %}
 
 
-## 查找键盘快捷键
+### 查找键盘快捷键
 
-### 查找系统快捷键
+#### 查找系统快捷键
 
 点击右上角的主菜单，然后 System Settings > Keyboard > Shortcuts
 
 
-### 查找应用程序特定的键盘快捷键
+#### 查找应用程序特定的键盘快捷键
 
 应用程序特定的键盘快捷键通常可以在屏幕顶部的应用程序的下拉菜单中找到。
 
 注意: 下面的快捷键中， Super 键指 Win 键或苹果电脑的 Command 键。
 
 
-## 桌面快捷键
+### 桌面快捷键
 
 * Super: 打开 Dash 面板，可搜索或浏览项目，默认有个搜索框，按“下”方向键进入浏览区域
 * 在 Dash 面板中按 Ctrl + Tab: 切换到下一个子面板（可搜索不同类型项目，如程序、文件、音乐）
@@ -57,7 +57,7 @@ icon: linux
 * Ctrl + +/- 增大/缩小终端字体的大小
 
 
-## 常见的应用程序快捷键
+### 常见的应用程序快捷键
 
 * Ctrl + C: 复制
 * Ctrl + X: 剪切
@@ -70,7 +70,7 @@ icon: linux
 * Ctrl + Shift + Z: 重做刚刚撤销的动作
 
 
-## 系统快捷键
+### 系统快捷键
 
 * Ctrl + Alt + Delete: 锁屏或登出
 * Ctrl + Alt + L: 锁屏
@@ -79,7 +79,7 @@ icon: linux
 * `pkill Xorg` 或 `restart lightdm`：注销桌面重新登录
 
 
-## Terminal 终端
+### Terminal 终端
 
 * Ctrl + Alt + T: 打开终端
 * Ctrl + Shift + T: 新建标签页
@@ -91,6 +91,6 @@ icon: linux
 * Ctrl + C: 终止当前任务
 
 
-## 参考
+### 参考
 
 1. [KeyboardShortcuts](https://help.ubuntu.com/community/KeyboardShortcuts)

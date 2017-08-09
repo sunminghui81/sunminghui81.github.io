@@ -79,7 +79,3 @@ icon: github
 1. [macOS: Install OpenCV 3 and Python 2.7](http://www.pyimagesearch.com/2016/11/28/macos-install-opencv-3-and-python-2-7/)
 1. [OpenCV 3 Tutorials, Resources, and Guides](http://www.pyimagesearch.com/opencv-tutorials-resources-guides/)
 1. [A simple neural network with Python and Keras](http://www.pyimagesearch.com/2016/09/26/a-simple-neural-network-with-python-and-keras/)
-
-## 数据分析
-
-1. [Working With Large Excel Files in Pandas](https://realpython.com/blog/python/working-with-large-excel-files-in-pandas/)
