@@ -16,5 +16,3 @@ icon: key
 1. [简明 vim 练级攻略](http://coolshell.cn/articles/5426.html)
 1. [Vim cheet sheet for programmers](http://michael.peopleofhonoronly.com/vim/)
 1. [VIM 的分屏功能](http://coolshell.cn/articles/1679.html)
-1. [Vim 查找替换及正则表达式的使用](http://tanqisen.github.io/blog/2013/01/13/vim-search-replace-regex/)
-

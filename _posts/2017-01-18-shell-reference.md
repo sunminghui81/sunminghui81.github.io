@@ -168,6 +168,7 @@ icon: code
 1. [lsof](http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/lsof.html) 是一个查看当前系统文件的工具。在 Linux 环境下，任何事物都以文件的形式存在，通过文件不仅仅可以访问常规数据，还可以访问网络连接和硬件。如传输控制协议 (TCP) 和用户数据报协议 (UDP) 套接字等，系统在后台都为该应用程序分配了一个文件描述符，该文件描述符提供了大量关于这个应用程序本身的信息。
 2. [ps](http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/ps.html) 命令用来列出系统中当前运行的那些进程。ps 命令列出的是当前那些进程的快照，就是执行 ps 命令的那个时刻的那些进程，如果想要动态的显示进程信息，就可以使用 top 命令。
 3. [top](http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/top.html) 命令是 Linux 下常用的性能分析工具，能够实时显示系统中各个进程的资源占用状况，类似于 Windows 的任务管理器。
+   1. `top` 然后按 `O` 输入 `rsize` 查看每个进程的内存使用情况;
 1. 使用 `pgrep` 和 `pkill` 来找到或是 kill 某个名字的进程。 （`-f` 选项很有用）
 1. `kill PID` 根据进程号，直接终止进程
 1. 清除僵尸进程： `ps -eal | awk '{ if ($2 == "Z") {print $4}}' | xargs sudo kill -9`

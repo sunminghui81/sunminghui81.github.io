@@ -11,9 +11,7 @@ icon: key
 {% include mathsyouth/setup %}
 
 
-### 常用工具
-
-#### [Homebrew](http://brew.sh)
+### [Homebrew](http://brew.sh)
 
 包管理工具，官方称之为 "The missing package manager for OS X"。安装步骤见官网。
 
@@ -23,9 +21,9 @@ icon: key
 brew install mysql gradle maven node
 ```
 
-PS：安装 brew 的时候会自动下载和安装 Apple 的 Command Line Tools。
+安装 `brew` 的时候会自动下载和安装 Apple 的 Command Line Tools。
 
-#### [Homebrew Cask](http://caskroom.io)
+### [Homebrew Cask](http://caskroom.io)
 
 `brew-cask` 允许你使用命令行安装 OS X 应用，并从应用的官网上下载。比如可以这样安装 Chrome：`brew cask install google-chrome`，还有 Evernote、Sublime Text、VirtualBox 等都可以用 `brew-cask` 安装。
 
@@ -34,6 +32,12 @@ PS：安装 brew 的时候会自动下载和安装 Apple 的 Command Line Tools�
 ```
 brew tap caskroom/cask
 brew install brew-cask
+```
+
+更新 `brew-cask` 安装的所有软件：
+
+```
+brew cask list | xargs brew cask install --force
 ```
 
 `brew-cask` 的使用可参考 [Homebrew Cask Homepage](http://gillesfabio.github.io/homebrew-cask-homepage/)。
