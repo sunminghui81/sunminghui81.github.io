@@ -1,10 +1,10 @@
 ---
 layout: post
-keywords: Spark 
-description: Spark 学习笔记
-title: "在 macOS 上安装 Spark 和 Hadoop"
+keywords: Spark, Hadoop, YARN, HDFS
+description: Spark 安装笔记
+title: "在 macOS 上安装 Spark on YARN"
 categories: [data-mining]
-tags: [spark]
+tags: [spark, hadoop, yarn, hdfs]
 group: archive
 icon: rocket
 ---
@@ -133,8 +133,8 @@ Hadoop 配置文件说明：
 1. Hadoop 的运行方式是由配置文件决定的（运行 Hadoop 时会读取配置文件），因此如果需要从伪分布式模式切换回非分布式模式，需要删除 core-site.xml 中的配置项。
 1. 伪分布式虽然只需要配置 `fs.defaultFS` 和 `dfs.replication` 就可以运行，不过若没有配置 `hadoop.tmp.dir` 参数，则默认使用的临时目录为 `/tmp/hadoo-hadoop`，而这个目录在重启时有可能被系统清理掉，导致必须重新执行 `format` 才行。所以我们进行了设置，同时也指定 `dfs.namenode.name.dir` 和 `dfs.datanode.data.dir`，否则在接下来的步骤中可能会出错。
 
-接下来需要对 Yarn 进行资源分配配置，否则会出现两种问题：
-1. Hadoop 运行用例时在浏览器端会发现 YarnApplicationState: ACCEPTED: waiting for AM container to be allocated, launched and register with RM. 或者运行的 Job 程序不动。
+接下来需要对 YARN 进行资源分配配置，否则会出现两种问题：
+1. Hadoop 运行用例时在浏览器端会发现 `YarnApplicationState: ACCEPTED: waiting for AM container to be allocated, launched and register with RM.` 或者运行的 Job 程序不动。
 1. 启动的 NodeManager 进程会终止，并报错：
    
    ```
@@ -156,11 +156,11 @@ vim etc/hadoop/yarn-site.xml
 21     </property>
 22     <property>
 23         <name>yarn.nodemanager.resource.memory-mb</name>
-24         <value>3096</value>
+24         <value>3072</value>
 25     </property>
 26     <property>
 27         <name>yarn.nodemanager.resource.cpu-vcores</name>
-28         <value>1</value>
+28         <value>4</value>
 29     </property>
 30     <property>
 31         <name>yarn.scheduler.minimum-allocation-mb</name>
@@ -171,8 +171,13 @@ vim etc/hadoop/yarn-site.xml
 36         <value>2.1</value>
 37     </property>
 38 </configuration>
-
 ```
+
+参数说明：
+1. `yarn.nodemanaer.resource.memory-mb` 表示该节点上 YARN 可使用的物理内存总量，默认是 8192 (MB)，如果内存资源不够 8G，则需要调小该值，因为 Yarn 不会智能的探测节点的物理内存总量。
+1. `yarn.nodemanager.vmem-pmem-ratio` 任务每使用 1MB 的物理内存，最多可使用虚拟内存量，默认值是 2.1。
+1. `yarn.scheduler.minimum-allocation-mb` 单个任务可申请的最少物理内存量，默认是 1024 (MB)，如果一个任务申请的物理内存少于该值，则更改该值。
+1. `yarn.nodemanager.resource.cpu-vcores` 表示该节点上 YARN 可以使用的虚拟 CPU 个数，默认是 8，目前推荐将该值设置为与物理 CPU 核数数目相同。**如果节点的 CPU 核数小于 8，则需要减小该值，因为 YARN 不会智能探测节点的物理 CPU 总数，否则，会导致 NodeManager 启动后会迅速终止**。
 
 通知 MapReduce 使用 YARN
 
@@ -235,7 +240,7 @@ sbin/start-dfs.sh
 sbin/start-yarn.sh
 ```
 
-不过这里会出现一个 警告：WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable 这对 Hadoop 的运行没有影响。
+不过这里会出现一个 警告：`WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable` 这对 Hadoop 的运行没有影响。
 
 #### 验证安装是否成功
 
@@ -293,7 +298,7 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Hom
 ./bin/hdfs dfs -cat output/*
 ```
 
-Hadoop 运行程序时，输出目录不能存在，否则会提示错误 “org.apache.hadoop.mapred.FileAlreadyExistsException: Output directory hdfs://localhost:9000/user/hadoop/output already exists” ，因此若要再次执行，需要执行如下命令删除 output 文件夹:
+Hadoop 运行程序时，输出目录不能存在，否则会提示错误 `org.apache.hadoop.mapred.FileAlreadyExistsException: Output directory hdfs://localhost:9000/user/hadoop/output already exists`，因此若要再次执行，需要执行如下命令删除 output 文件夹:
 
 ```
 ./bin/hdfs dfs -rm -r output
@@ -469,15 +474,30 @@ sc = SparkContext(conf = conf)
 1. A *cluster URL*, namely `local` in the above example, which tells Spark how to connect to a cluster. `local` is a special value that runs Spark on one thread on the local machine, without connecting to a cluster.
 1. An *application name*, namely `My App` in the above example. This will identify your application on the cluster manager’s UI if you connect to a cluster.
 
-运行脚本：
+在本地运行应用：
 
 ```
-bin/spark-submit --master local[*] my_script.py
+bin/spark-submit --master local[*] examples/src/main/python/pi.py 100 
+```
+
+要在 YARN cluster 上运行应用，首先配置 `HADOOP_CONF_DIR` 环境变量：
+
+```
+vim ~/.bash_profile
+# 加在文件末
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+
+source ~/.bash_profile
+```
+
+然后运行：
+```
+./bin/spark-submit --master yarn --deploy-mode cluster --driver-memory 1g --executor-memory 1g --executor-cores 1 examples/src/main/python/pi.py 100
 ```
 
 ### 用 RDD 进行编程
 
-一旦 RDDs 创建成功，RDDs 提供两种操作：*transformations* 和 *actions*：
+在 Spark 2.0 以前，Spark 的主要编程接口是 Resilient Distributed Dataset (RDD)，Spark 2.0 之后，RDDs 被Dataset 所替代，Dataset 和 RDD 很相似，但是性能会更好。关于 Dataset 的信息，可以参考[Spark SQL, DataFrames and Datasets Guide](https://spark.apache.org/docs/latest/sql-programming-guide.html)。这里简单回顾一下 RDD，后续会详细介绍 Dataset。一旦 RDDs 创建成功，RDDs 提供两种操作：*transformations* 和 *actions*：
 
 1. *transformations* 指的是依据已创建的 RDDs 构造新的 RDDs， 比如上文的例子中的 `filter` 操作；
 1. *actions* 指的是基于 RDDs 计算出一个结果，比如上文例子中的 `count` 操作。
