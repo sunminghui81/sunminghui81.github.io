@@ -136,11 +136,11 @@ Hadoop 配置文件说明：
 接下来需要对 YARN 进行资源分配配置，否则会出现两种问题：
 1. Hadoop 运行用例时在浏览器端会发现 `YarnApplicationState: ACCEPTED: waiting for AM container to be allocated, launched and register with RM.` 或者运行的 Job 程序不动。
 1. 启动的 NodeManager 进程会终止，并报错：
-   
+
    ```
    2017-09-07 21:52:48,233 FATAL org.apache.hadoop.yarn.server.nodemanager.NodeManager: Error starting NodeManager
    org.apache.hadoop.yarn.exceptions.YarnRuntimeException: org.apache.hadoop.yarn.exceptions.YarnRuntimeException: Recieved SHUTDOWN signal from Resourcemanager ,Registration of NodeManager failed, Message from ResourceManager: NodeManager from  XXX.XXX.XXX.XXX doesn't satisfy minimum allocations, Sending SHUTDOWN signal to the NodeManager.
-   
+
    Caused by: org.apache.hadoop.yarn.exceptions.YarnRuntimeException: Recieved SHUTDOWN signal from Resourcemanager ,Registration of NodeManager failed, Message from ResourceManager: NodeManager from  XXX.XXX.XXX.XXX doesn't satisfy minimum allocations, Sending SHUTDOWN signal to the NodeManager.
    ```
 
@@ -304,7 +304,7 @@ Hadoop 运行程序时，输出目录不能存在，否则会提示错误 `org.a
 ./bin/hdfs dfs -rm -r output
 ```
 
-可以通过登录 Web 端进行监控： 
+可以通过登录 Web 端进行监控：
 
 1. HDFS Administrator: http://localhost:50070/
 1. JobTracker: http://localhost:8088
@@ -344,7 +344,7 @@ Hadoop 运行程序时，输出目录不能存在，否则会提示错误 `org.a
 cd file_path
 tar -xf spark-2.2.0-bin-hadoop2.7.tgz
 mv spark-2.2.0-bin-hadoop2.7 /usr/local/spark
-cd /usr/local/spark 
+cd /usr/local/spark
 ```
 
 将 Spark bin 文件加到 PATH 中
@@ -403,7 +403,7 @@ spark-shell
 
 ```
 bin/pyspark
-``` 
+```
 
 屏幕上会显示一些打印的日志，为了控制日志的输出，在 `conf` 文件夹下创建文件 `log4j.properties`，该文件夹下有文件模版 `log4j.properties.template`，复制一份并改名为 `log4j.properties`:
 
@@ -477,7 +477,7 @@ sc = SparkContext(conf = conf)
 在本地运行应用：
 
 ```
-bin/spark-submit --master local[*] examples/src/main/python/pi.py 100 
+bin/spark-submit --master local[*] examples/src/main/python/pi.py 100
 ```
 
 要在 YARN cluster 上运行应用，首先配置 `HADOOP_CONF_DIR` 环境变量：
@@ -523,6 +523,20 @@ lines = sc.parallelize(["pandas", "i like pandas"])
 *transformed* RDDs 都是 lazily 计算的，仅当要对它们进行 *action* 时，它们才被计算，从外部文件中加载生成的 RDDs 也是 lazily 生成的，所以当用户调用 `sc.textFile()`时，数据并没有被加载。 每次调用 *action* 时，整个 RDDs 需要从头开始计算。为了避免这种低效性，用户可以 `persist` 中间结果。
 
 When you pass a function that is the member of an object, or contains references to fields in an object (e.g., `self.field`), Spark sends the entire object to worker nodes, which can be much larger than the bit of information you need.
+
+### 补充：在 Ubuntu 16.04 上安装 Spark
+
+这里仅指出在 Ubuntu 16.04 上安装步骤的不同之处，其他相同步骤请参考上文。
+
+在终端上运行命令 `java -version`，如果显示 "请尝试：sudo apt install <选定的软件包>"，运行命令：
+
+```
+sudo apt-get update
+sudo apt-get install openjdk-8-jre-headless -y
+sudo apt-get install scala
+```
+
+注意此处不需要将 `JAVA_HOME` 环境变量写入到 `.bash_profile` 文件中。
 
 ### 参考资料
 
