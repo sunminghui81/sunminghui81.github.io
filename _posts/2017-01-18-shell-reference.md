@@ -181,6 +181,10 @@ icon: code
 1. 减少 grub 默认的引导时间 `sudo vim /etc/default/grub` 修改 TIMEOUT 值，然后 `sudo update-grub` 生效。
 1. 区别 [source, ., ./](http://askubuntu.com/questions/182012/is-there-a-difference-between-and-source-in-bash-after-all?lq=1)
 1. 查看 GPU 信息： `lspci -vnn | grep VGA -A 12`。
+1. 查看 CPU 信息：
+   1. 查看物理 CPU 个数：`cat /proc/cpuinfo| grep "physical id"| sort| uniq| wc -l`
+   1. 查看每个物理 CPU 中 core 个数：`cat /proc/cpuinfo| grep "cpu cores"| uniq`
+   1. 查看逻辑 CPU 的个数：`cat /proc/cpuinfo| grep "processor"| wc -l`
 
 ### Linux 入门
 
