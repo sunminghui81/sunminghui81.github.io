@@ -89,13 +89,23 @@ icon: code
    * `/boot` 启动目录
    * `/dev` 设备文件命令
    * `/etc` 配置文件保存目录
-   * `/home`
    * `/lib` 系统库保存命令
    * `/mnt` 系统挂载目录
 1. 创建一个空文件:
    * `:> file.txt`
    * `touch file.txt`
 1. 列出当前目录里最大的10个文件: `du -s * | sort -n | tail`
+1. 批量下载网站的所有文件，比如：`http://clgiles.ist.psu.edu/IST597/materials/slides/`，运行命令
+ `wget --random-wait -e robots=off -r -np -nH --cut-dirs=3 -R *index* http://clgiles.ist.psu.edu/IST597/materials/slides/`，其中：
+   * `--random-wait` 为了减轻服务器的负担，在连续多次抓取的过程中随机等待；
+   * `-e robots=off` `wget` 绕开 `robots.txt` 的规则；
+   * `-r` 表示递归下载；
+   * `-np` 表示不会下载上级文件 `/materials`；
+   * `-nH` 表示下载时去掉文件名 `clgiles.ist.psu.edu`；
+   * `--cut-dirs=3` 表示下载时去掉文件名 `IST597/materials/slides/`；
+   * `-R *index*` 表示不会下载命名包含 `index` 的文件；
+   * `-a pdf` 表示只下载 `pdf` 文件。
+
 
 ### 文件搜索命令
 

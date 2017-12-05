@@ -40,6 +40,12 @@ brew install brew-cask
 brew cask list | xargs brew cask install --force
 ```
 
+或者
+
+```
+brew cask install --force $(brew cask outdated | awk '{print $1}' | xargs)
+```
+
 `brew-cask` 的使用可参考 [Homebrew Cask Homepage](http://gillesfabio.github.io/homebrew-cask-homepage/)。
 
 应用也可以通过 App Store 安装，而且有些应用只能通过 App Store 安装，比如 Xcode 等一些 Apple 的应用。
