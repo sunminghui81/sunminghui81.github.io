@@ -37,13 +37,7 @@ brew install brew-cask
 更新 `brew-cask` 安装的所有软件：
 
 ```
-brew cask list | xargs brew cask install --force
-```
-
-或者
-
-```
-brew cask install --force $(brew cask outdated | awk '{print $1}' | xargs)
+brew cask upgrade --greedy
 ```
 
 `brew-cask` 的使用可参考 [Homebrew Cask Homepage](http://gillesfabio.github.io/homebrew-cask-homepage/)。
