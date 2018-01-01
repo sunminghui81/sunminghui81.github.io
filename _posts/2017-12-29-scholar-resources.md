@@ -32,6 +32,10 @@ icon: key
 2. http://libgen.io/scimag/
 3. http://libgen.io
 
+#### [Semantic Scholar](https://www.semanticscholar.org/)
+
+#### [微软学术](https://academic.microsoft.com/) 
+
 #### [BookSC 网](http://zh.booksc.org)
 
 #### [OA图书馆](http://www.oalib.com)
@@ -50,7 +54,7 @@ icon: key
 
 Find Articles是BNET网站下属的信息检索平台，包括3000余种出版物（期刊、网站等）。
 
-#### [ArnetMiner](https://www.aminer.cn)
+#### [AMiner](https://www.aminer.cn)
 
 CS 领域第一搜索神器，体验不比百度学术和Google学术差。
 
