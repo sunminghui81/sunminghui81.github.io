@@ -13,8 +13,13 @@ icon: key
 ### Markdown 入门
 
 1. [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
-1. [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)
-2. [GitHub Flavored Markdown](https://help.github.com/categories/writing-on-github/)
-2. [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-3. [Daring Fireball: Markdown Syntax Documentation](http://daringfireball.net/projects/markdown/syntax)
-4. [Markdown 语法说明](http://www.appinn.com/markdown/)
+2. [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)
+3. [GitHub Flavored Markdown](https://help.github.com/categories/writing-on-github/)
+4. [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+5. [Daring Fireball: Markdown Syntax Documentation](http://daringfireball.net/projects/markdown/syntax)
+6. [Markdown 语法说明](http://www.appinn.com/markdown/)
+
+
+### Markdown 编辑神器
+1. [typora](https://www.typora.io/) 所见即所得
+2. [MacDown](http://macdown.uranusjr.com/) macOS 下的 markdown 神器
