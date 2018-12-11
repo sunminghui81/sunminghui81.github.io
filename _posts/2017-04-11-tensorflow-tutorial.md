@@ -2,7 +2,7 @@
 layout: post
 keywords: TensorFlow, deep learning
 description: TensorFlow 学习总结
-title: "TensorFlow 学习笔记"
+title: "TensorFlow 基本概念"
 categories: [machine-learning]
 tags: [machine learning, TensorFlow, deep learning]
 group: archive
@@ -27,7 +27,7 @@ icon: github
    ```
    You have to initialize variables before using them. The easiest way is initializing all variables at once using: `tf.global_variables_initializer()`.
 
-#### `tf.placeholder` 和 `tf.Variable` 的区别
+#### Placeholders 和 Variables 的区别
 
 1. [What's the difference between tf.placeholder and tf.Variable](http://stackoverflow.com/questions/36693740/whats-the-difference-between-tf-placeholder-and-tf-variable)
 1. [TensorFlow: tf.placeholder and tf.Variable - why is the dimension not required?](http://stackoverflow.com/questions/41352745/tensorflow-tf-placeholder-and-tf-variable-why-is-the-dimension-not-required)
@@ -61,11 +61,11 @@ sess2 = tf.Session()
 sess1.run(W.initializer)
 sess2.run(W.initializer)
 
-print sess1.run(W.assign_add(10))
-print sess2.run(W.assign_sub(2))
+print(sess1.run(W.assign_add(10)))
+print(sess2.run(W.assign_sub(2)))
 
-print sess1.run(W.assign_add(100))
-print sess2.run(W.assign_sub(50))
+print(sess1.run(W.assign_add(100)))
+print(sess2.run(W.assign_sub(50)))
 
 sess1.close()
 sess2.close()
@@ -98,9 +98,6 @@ with tf.Session() as sess:
 
 #### `tf.nn.softmax_cross_entropy_with_logits` 和 `tf.nn.sparse_softmax_cross_entropy_with_logits` 的区别
 
-1. labels
-   * For `tf.nn.softmax_cross_entropy_with_logits`, each row `labels[i]` must be a valid probability distribution.
-   * For `tf.nn.sparse_softmax_cross_entropy_with_logits`, `Tensor` of shape `[d_0, d_1, ..., d_{r-1}]` (where `r` is rank of `labels` and result) and dtype `int32` or `int64`. Each entry in `labels` must be an index in `[0, num_classes)`.
 1. http://stackoverflow.com/questions/37312421/tensorflow-whats-the-difference-between-sparse-softmax-cross-entropy-with-logi
 
 #### Numerical problem in `tf.nn.softmax_cross_entropy_with_logits`

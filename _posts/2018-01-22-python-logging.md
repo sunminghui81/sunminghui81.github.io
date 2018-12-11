@@ -13,7 +13,7 @@ icon: compass
 
 ### Python Logging 重要参考信息
 
-读完以下参考资料，Python Logging 就可以入门了：
+Python Logging 入门参考资料：
 
 1. [python logging 模块使用教程](http://www.jianshu.com/p/feb86c06c4f4)
 2. [Python之日志处理（logging模块）](https://www.cnblogs.com/yyds/p/6901864.html)
