@@ -1,12 +1,12 @@
 ---
 layout: post
-keywords: Python, web crawl, spider
+keywords: Python, web scraping, web crawling, spider
 description: 收集关于 Python 爬虫的经典学习资料，以便随时查阅
 title: "Python 爬虫技能树"
-categories: [python]
-tags: [python, web-crawl, spider]
+categories: [web-scraping]
+tags: [python, web scraping, web crawling, spider]
 group: archive
-icon: compass
+icon: file
 ---
 {% include mathsyouth/setup %}
 

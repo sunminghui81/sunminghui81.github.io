@@ -3,10 +3,10 @@ layout: post
 keywords: re, regex
 description: python 正则化表达式的学习总结
 title: "总结 python 正则化表达式常见用法"
-categories: [python]
+categories: [NLP]
 tags: [re, regex]
 group: archive
-icon: compass
+icon: comment
 ---
 {% include mathsyouth/setup %}
 

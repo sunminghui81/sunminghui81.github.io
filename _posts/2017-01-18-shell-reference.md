@@ -183,6 +183,49 @@ icon: code
 1. `kill PID` 根据进程号，直接终止进程
 1. 清除僵尸进程： `ps -eal | awk '{ if ($2 == "Z") {print $4}}' | xargs sudo kill -9`
 
+
+### Linux 查看物理 CPU个数、核数、逻辑 CPU 个数
+
+总核数 = 物理CPU个数 X 每颗物理CPU的核数 
+总逻辑CPU数 = 物理CPU个数 X 每颗物理CPU的核数 X 超线程数
+
+查看物理CPU个数
+```shell
+cat /proc/cpuinfo| grep "physical id"| sort| uniq| wc -l
+```
+
+查看每个物理CPU中core的个数 (即核数)
+```shell
+cat /proc/cpuinfo| grep "cpu cores"| uniq
+```
+
+查看逻辑CPU的个数
+```shell
+cat /proc/cpuinfo| grep "processor"| wc -l
+```
+
+查看CPU信息（型号）
+```shell
+cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c
+```
+
+### Mac 查看物理 CPU 核数、逻辑 CPU 个数
+
+查看 CPU 信息
+```shell
+sysctl machdep.cpu
+```
+
+查看 CPU 核数
+```shell
+sysctl -n machdep.cpu.core_count
+```
+
+查看逻辑 CPU 个数
+```shell
+sysctl -n machdep.cpu.thread_count
+```
+
 ### 其他常用工具和命令
 
 1. `echo “ls -l” | at midnight` 在某个时间运行某个命令。
@@ -191,10 +234,8 @@ icon: code
 1. 减少 grub 默认的引导时间 `sudo vim /etc/default/grub` 修改 TIMEOUT 值，然后 `sudo update-grub` 生效。
 1. 区别 [source, ., ./](http://askubuntu.com/questions/182012/is-there-a-difference-between-and-source-in-bash-after-all?lq=1)
 1. 查看 GPU 信息： `lspci -vnn | grep VGA -A 12`。
-1. 查看 CPU 信息：
-   1. 查看物理 CPU 个数：`cat /proc/cpuinfo| grep "physical id"| sort| uniq| wc -l`
-   1. 查看每个物理 CPU 中 core 个数：`cat /proc/cpuinfo| grep "cpu cores"| uniq`
-   1. 查看逻辑 CPU 的个数：`cat /proc/cpuinfo| grep "processor"| wc -l`
+2. 查看各文件夹大小 `du -h --max-depth=1 /path`。
+
 
 ### Linux 入门
 
