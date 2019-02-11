@@ -179,9 +179,46 @@ icon: code
 2. [ps](http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/ps.html) 命令用来列出系统中当前运行的那些进程。ps 命令列出的是当前那些进程的快照，就是执行 ps 命令的那个时刻的那些进程，如果想要动态的显示进程信息，就可以使用 top 命令。
 3. [top](http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/top.html) 命令是 Linux 下常用的性能分析工具，能够实时显示系统中各个进程的资源占用状况，类似于 Windows 的任务管理器。
    1. `top` 然后按 `O` 输入 `rsize` 查看每个进程的内存使用情况;
-1. 使用 `pgrep` 和 `pkill` 来找到或是 kill 某个名字的进程。 （`-f` 选项很有用）
-1. `kill PID` 根据进程号，直接终止进程
 1. 清除僵尸进程： `ps -eal | awk '{ if ($2 == "Z") {print $4}}' | xargs sudo kill -9`
+
+#### 查看进程
+```shell
+ps -ef
+ps -aux
+```
+
+把 `ps` 查询结果通过管道给 `grep`查找包含特定字符串的进程。管道符“|”用来隔开两个命令，管道符左边命令的输出会作为管道符右边命令的输入：
+```shell
+ps -ef | grep pyenv
+```
+`pgrep` 的 `p` 表明了这个命令是专门用于进程查询的 `grep`：
+```shell
+pgrep pyenv
+```
+
+#### 杀死进程
+
+```shell
+kill -s 9 1827
+```
+`-s 9` 指定了传递给进程的信号是`９`，即强制、尽快终止进程。
+
+#### 管道
+
+```shell
+pgrep pyenv | xargs kill -s 9
+kill -s 9 `pgrep pyenv`
+```
+
+`xargs kill -s 9` 中的 `xargs` 命令是用来把前面命令的输出结果（PID）作为 `kill -s 9`命令的参数，并执行该命令。
+
+### 后台运行
+
+```shell
+nohup flask run -h 0.0.0.0 > logs 2>&1 & 
+tail -f logs
+```
+`nohup` 不挂断地运行命令，它是  `no hangup` 的缩写，意即“不挂断”。`&` 是指在后台运行。用 	`nohup` 运行命令可以使命令永久的执行下去，和用户终端没有关系，例如我们断开 SSH 连接都不会影响他的运行，注意 `nohup` 没有后台运行的意思；`&` 是指在后台运行，但当用户推出(挂起)的时候，命令自动也跟着退出。`1` 表示 stdout 标准输出，`2` 表示 stderr 标准错误，`2>&1` 把标准错误重定向到标准输出，是`&1` 而不是 `1`，这里`&1` 相当于等效于标准输出。
 
 
 ### Linux 查看物理 CPU个数、核数、逻辑 CPU 个数
