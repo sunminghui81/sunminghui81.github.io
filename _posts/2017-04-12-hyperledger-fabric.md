@@ -3,7 +3,7 @@ layout: post
 keywords: Hyperledger, Fabric, blockchain
 description: Hyperledger Fabric 学习总结
 title: Hyperledger Fabric 学习笔记
-categories: [Go]
+categories: [新语言]
 tags: [Hyperledger, Fabric, blockchain]
 group: archive
 icon: chain
