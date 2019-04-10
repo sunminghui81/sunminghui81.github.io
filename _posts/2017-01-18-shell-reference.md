@@ -6,7 +6,7 @@ title: "Bash 常用命令"
 categories: [unix-based]
 tags: [shell]
 group: archive
-icon: code
+icon: linux
 ---
 {% include mathsyouth/setup %}
 
@@ -91,6 +91,7 @@ icon: code
    * `/etc` 配置文件保存目录
    * `/lib` 系统库保存命令
    * `/mnt` 系统挂载目录
+   * 备注:  一般而言， `include` 文件夹包含程序定义的头文件，比如宏、结构定义、函数定义等；`bin` 文件夹包含可执行文件；`lib` 文件夹包含程序实现文件编译生成的library。
 1. 创建一个空文件:
    * `:> file.txt`
    * `touch file.txt`
