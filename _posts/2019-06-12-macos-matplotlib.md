@@ -79,9 +79,9 @@ rm -rf ~/.matplotlib/*.cache
 7. 改了配置之后并不会生效，需要重新加载字体，在 Python 中运行如下代码
 ```python
 from matplotlib.font_manager import _rebuild
-
 _rebuild()
 ```
+
 
 #### 方法二：利用系统已用字体（相对方法一操作简单很多）
 
