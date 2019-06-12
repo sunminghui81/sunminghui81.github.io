@@ -83,19 +83,11 @@ icon: linux
 1. 复制目录: `cp[选项][原文件目录][目标目录]`，　选项：
    * `-r` 复制目录
 1. 剪切、改名: `mv[原文件目录][目标文件目录]`
-1. 常见目录作用
-   * `/` 根目录
-   * `/bin` 命令保存目录
-   * `/boot` 启动目录
-   * `/dev` 设备文件命令
-   * `/etc` 配置文件保存目录
-   * `/lib` 系统库保存命令
-   * `/mnt` 系统挂载目录
-   * 备注:  一般而言， `include` 文件夹包含程序定义的头文件，比如宏、结构定义、函数定义等；`bin` 文件夹包含可执行文件；`lib` 文件夹包含程序实现文件编译生成的library。
 1. 创建一个空文件:
    * `:> file.txt`
    * `touch file.txt`
-1. 列出当前目录里最大的10个文件: `du -s * | sort -n | tail`
+1. 列出当前目录里最大的10个文件: `du -hsx * | sort -rh | head -10`
+2. 查看各文件夹大小 `du -h --max-depth=1 /path`。
 1. 批量下载网站的所有文件，比如：`http://clgiles.ist.psu.edu/IST597/materials/slides/`，运行命令
  `wget --random-wait -e robots=off -r -np -nH --cut-dirs=3 -R *index* http://clgiles.ist.psu.edu/IST597/materials/slides/`，其中：
    * `--random-wait` 为了减轻服务器的负担，在连续多次抓取的过程中随机等待；
@@ -272,7 +264,6 @@ sysctl -n machdep.cpu.thread_count
 1. 减少 grub 默认的引导时间 `sudo vim /etc/default/grub` 修改 TIMEOUT 值，然后 `sudo update-grub` 生效。
 1. 区别 [source, ., ./](http://askubuntu.com/questions/182012/is-there-a-difference-between-and-source-in-bash-after-all?lq=1)
 1. 查看 GPU 信息： `lspci -vnn | grep VGA -A 12`。
-2. 查看各文件夹大小 `du -h --max-depth=1 /path`。
 
 
 ### Linux 入门
