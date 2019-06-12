@@ -62,7 +62,6 @@ vim /Users/linghui/.local/share/virtualenvs/projects-R8MYRK6K/lib/python3.6/site
 前面的`#`注释号去掉，并将 `True` 改为 `False`
 
 5. 静态设置参数 -- 添加如下代码（或者第4步动全局设置参数，二者选一即可）
-
 ```python
 import matplotlib
 # 指定默认字体
@@ -73,13 +72,11 @@ matplotlib.rcParams['axes.unicode_minus'] = False
 ```
 
 6. 清空缓存
-
-```
+```shell
 rm -rf ~/.matplotlib/*.cache 
 ```
 
 7. 改了配置之后并不会生效，需要重新加载字体，在 Python 中运行如下代码
-
 ```python
 from matplotlib.font_manager import _rebuild
 
@@ -98,14 +95,10 @@ fc-list :lang=zh
 from matplotlib import rcParams
 from matplotlib.font_manager import FontProperties
 import matplotlib.pyplot as plt
-
-
 # 解决负号'-'显示为方块的问题
 rcParams['axes.unicode_minus']=False
-
 myfont = FontProperties(fname='/Library/Fonts/Songti.ttc',
     size=15)
-
 plt.title('乘客等级分布', fontproperties=myfont)
 plt.ylabel('人数', fontproperties=myfont)
 plt.legend(('头等舱', '二等舱', '三等舱'), loc='best', prop=myfont)
