@@ -10,9 +10,7 @@ icon: compass
 ---
 {% include mathsyouth/setup %}
 
-### 解决 macOS 系统上 matplotlib 中文显示乱码问题
-
-#### matplotlib 中文显示乱码问题
+### matplotlib 中文显示乱码问题
 
 `matplotlib` 中文显示乱码，并提示警告：
 ```
@@ -20,7 +18,7 @@ icon: compass
   font.set_text(s, 0, flags=flags)
 ```
 
-#### 方法一：下载新的字体（相对方法二操作复杂很多）
+### 方法一：下载新的字体（相对方法二操作复杂很多）
 
 1. 下载中文字体，比如：黑体（注意系统版本），[链接](https://www.fontpalace.com/font-details/SimHei/)，解压之后在系统当中安装好，打开字体册就可以安装；
 
@@ -82,8 +80,7 @@ from matplotlib.font_manager import _rebuild
 _rebuild()
 ```
 
-
-#### 方法二：利用系统已用字体（相对方法一操作简单很多）
+### 方法二：利用系统已用字体（相对方法一操作简单很多）
 
 1. 利用 Unix-like 命令查找系统已经存在的字体
 ```shell

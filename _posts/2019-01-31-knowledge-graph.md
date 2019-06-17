@@ -138,7 +138,8 @@ Once you are finished, it's time to access ArangoDB web interface.
 
 ### 知识图谱入门介绍
 
-1. [知识图谱基础（二）-知识图谱的知识表达系统](https://www.jianshu.com/p/941dc6d7e760)
+1. [图形数据库Neo4J简介](https://www.cnblogs.com/loveis715/p/5277051.html)
+2. [知识图谱基础（二）-知识图谱的知识表达系统](https://www.jianshu.com/p/941dc6d7e760)
 2. [知识图谱基础（三）-schema的构建](https://www.jianshu.com/p/704e935c98a9)
 3. [知识图谱的应用篇（一）-搜索与推荐](https://www.jianshu.com/p/801f0d90b155)
 1. [知识图谱基础之RDF，RDFS与OWL](https://zhuanlan.zhihu.com/p/32122644)
