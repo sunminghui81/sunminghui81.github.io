@@ -14,6 +14,7 @@ icon: comment
 ### 正则表达式入门资料
 
 1. [正则表达式30分钟入门教程](https://deerchao.net/tutorials/regex/regex.htm)
+2. [Learn regex the easy way](https://github.com/ziishaned/learn-regex)
 2. [Regular Expression HOWTO](https://docs.python.org/3/howto/regex.html)
 3. [re — Regular Expressions](https://pymotw.com/3/re/)
 2. [Regular Expressions](https://www.python-course.eu/python3_re.php)

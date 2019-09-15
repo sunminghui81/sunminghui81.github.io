@@ -16,3 +16,5 @@ icon: key
 1. [简明 vim 练级攻略](http://coolshell.cn/articles/5426.html)
 1. [Vim cheet sheet for programmers](http://michael.peopleofhonoronly.com/vim/)
 1. [VIM 的分屏功能](http://coolshell.cn/articles/1679.html)
+2. [无插件VIM编程技巧](https://coolshell.cn/articles/11312.html)
+3. [VIM有趣的命令](https://coolshell.cn/articles/1651.html)
