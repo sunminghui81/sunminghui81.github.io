@@ -262,7 +262,6 @@ sysctl -n machdep.cpu.thread_count
 1. `tail -f /path/to/file.log | sed '/^Finished: SUCCESS$/ q'` 当 file.log 里出现 Finished: SUCCESS 时候就退出 tail，这个命令用于实时监控并过滤 log 是否出现了某条记录。
 1. 临时切换 shell, 如果用的是 zsh，直接输入 bash 即可切换成 bash。
 1. 减少 grub 默认的引导时间 `sudo vim /etc/default/grub` 修改 TIMEOUT 值，然后 `sudo update-grub` 生效。
-1. 区别 [source, ., ./](http://askubuntu.com/questions/182012/is-there-a-difference-between-and-source-in-bash-after-all?lq=1)
 1. 查看 GPU 信息： `lspci -vnn | grep VGA -A 12`。
 
 

@@ -11,18 +11,14 @@ icon: compass
 {% include mathsyouth/setup %}
 
 
+### pyenv 和 pipenv
+
+`pyenv` 是一个 Python 的版本管理工具，便于在不同的 Python 版本中进行切换，支持每个项目的 Python 版本管理。如果需要管理 Python 虚拟环境，需要使用 `pyenv-virtualenv` 插件。可以使用 `pyenv shell` 命令来设置当前 Shell session 下的 Python 版本。
+
+`pipenv` 的目的是为了给 Python 提供最好的打包工具。当安装/删除安装包事，它可以自动创建和管理项目的虚拟环境，从 Pipfile 中添加/删除安装包。它也会产生重要的 `Pipfile.lock` 文件，它用来产生确定性的构建。关于 `Pipfile` 和 `setup.py` 的区别，可以参考 [Pipfile vs setup.py](https://docs.pipenv.org/en/latest/advanced/#pipfile-vs-setuppy)。
+
+
 ### MacOS 版本和虚拟环境管理工具
-
-Homebrew 安装 Python 3.6：
-```
-brew install python3
-```
-
-打开 `.bash_profile` 文件，添加：
-
-```
-export PATH=/usr/local/share/python3:$PATH
-```
 
 #### 在 MacOS 上安装 `pyenv` 和 `pipenv`
 

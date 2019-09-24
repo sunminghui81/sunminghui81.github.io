@@ -144,6 +144,8 @@ Once you are finished, it's time to access ArangoDB web interface.
 2. [知识图谱基础（三）-schema的构建](https://www.jianshu.com/p/704e935c98a9)
 3. [知识图谱基础之RDF，RDFS与OWL](https://zhuanlan.zhihu.com/p/32122644)
 4. [图数据库查询语言Cypher、Gremlin和SPARQL](https://blog.csdn.net/wzwdcld/article/details/80783782)
+5. [知识图谱的技术与应用（18版）](https://zhuanlan.zhihu.com/p/38056557)
+
 
 #### 视频简介
 

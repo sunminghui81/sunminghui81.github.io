@@ -31,7 +31,7 @@ brew install mysql gradle maven node
 
 ```
 brew tap caskroom/cask
-brew install brew-cask
+brew install brew-cask-completion
 ```
 
 更新 `brew-cask` 安装的所有软件：
