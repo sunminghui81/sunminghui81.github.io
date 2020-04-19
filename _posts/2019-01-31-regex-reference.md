@@ -20,8 +20,8 @@ icon: comment
 2. [Regular Expressions](https://www.python-course.eu/python3_re.php)
 3. [Advanced Regular Expressions](https://www.python-course.eu/python3_re_advanced.php)
 2. [Python正则表达式指南](http://www.cnblogs.com/huxi/archive/2010/07/04/1771073.html)
+1. [使用 Python 模块 re 实现解析小工具](https://www.ibm.com/developerworks/cn/opensource/os-cn-pythonre/index.html)
 3. [正则表达式的先行断言(lookahead)和后行断言(lookbehind)](https://blog.51cto.com/cnn237111/749047)
-4. [正则表达式中零宽断言的用法](https://cuiqingcai.com/5788.html)
 4. [常用正则表达式](https://deerchao.net/tutorials/regex/common.htm)
 9. [Online regex tester and debugger](https://regex101.com/)
 10. [pythex](https://pythex.org/) – A web-based tool for testing regular expressions created by Gabriel Rodríguez. Inspired by Rubular

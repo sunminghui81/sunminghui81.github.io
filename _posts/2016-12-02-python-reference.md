@@ -55,36 +55,6 @@ icon: compass
 ### Python Descriptor
 
 1. [Python Descriptors Demystified](http://nbviewer.jupyter.org/urls/gist.github.com/ChrisBeaumont/5758381/raw/descriptor_writeup.ipynb)
-2. [Python 描述符（descriptor）解密](http://lingxiankong.github.io/blog/2014/03/28/python-descriptor/)
-
-
-### Python Packages
-
-1. [Python Packages and You](http://blog.habnab.it/blog/2013/07/21/python-packages-and-you/)
-2. [A comprehensive guide through Python packaging (a.k.a. setup scripts)](http://foobar.lu/wp/2012/05/13/a-comprehensive-step-through-python-packaging-a-k-a-setup-scripts/)
-3. [A guide to Python packaging](http://www.ibm.com/developerworks/opensource/library/os-pythonpackaging/)
-
-
-### Python testing
-
-1. [Improve Your Python: Understanding Unit Testing](https://jeffknupp.com/blog/2013/12/09/improve-your-python-understanding-unit-testing/)
-2. [unittest](https://docs.python.org/2/library/unittest.html)
-3. [testtools: tasteful testing for Python](https://testtools.readthedocs.io/en/latest/)
-4. [Testing Your Code](http://docs.python-guide.org/en/latest/writing/tests/)
-5. [Python test cheatsheet](https://www.pythonsheets.com/notes/python-tests.html)
-
-
-### Python Unicode
-
-1. [Unicode之痛](http://pycoders-weekly-chinese.readthedocs.io/en/latest/issue5/unipain.html)
-2. [The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
-
-
-### Metaclass
-
-1. [What is a metaclass in Python?](http://stackoverflow.com/questions/100003/what-is-a-metaclass-in-python?rq=1)
-2. [Meta Programming - Some Use Cases for Everyday Programming](https://ep2013.europython.eu/media/conference/slides/meta-programming-some-use-cases-for-everyday-programming.pdf)
-3. [深刻理解 Python 中的元类 (metaclass)](http://blog.jobbole.com/21351/)
 
 
 ### Decorator
@@ -112,12 +82,6 @@ icon: compass
 2. [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
 3. [Python 风格规范](http://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/python_style_rules/)
 4. [OpenStack Style Guidelines](http://docs.openstack.org/developer/hacking/)
-
-
-### Performance
-
-1. http://stackoverflow.com/questions/11241523/why-does-python-code-run-faster-in-a-function
-2. http://stackoverflow.com/questions/5082452/python-string-formatting-vs-format
 
 
 ### Pythonic

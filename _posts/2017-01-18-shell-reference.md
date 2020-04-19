@@ -99,7 +99,6 @@ icon: linux
    * `-R *index*` 表示不会下载命名包含 `index` 的文件；
    * `-a pdf` 表示只下载 `pdf` 文件。
 
-
 ### 文件搜索命令
 
 1. 文件搜索: `find [搜索范围][选项][条件]`。举例：
@@ -171,7 +170,7 @@ icon: linux
 1. [lsof](http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/lsof.html) 是一个查看当前系统文件的工具。在 Linux 环境下，任何事物都以文件的形式存在，通过文件不仅仅可以访问常规数据，还可以访问网络连接和硬件。如传输控制协议 (TCP) 和用户数据报协议 (UDP) 套接字等，系统在后台都为该应用程序分配了一个文件描述符，该文件描述符提供了大量关于这个应用程序本身的信息。
 2. [ps](http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/ps.html) 命令用来列出系统中当前运行的那些进程。ps 命令列出的是当前那些进程的快照，就是执行 ps 命令的那个时刻的那些进程，如果想要动态的显示进程信息，就可以使用 top 命令。
 3. [top](http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/top.html) 命令是 Linux 下常用的性能分析工具，能够实时显示系统中各个进程的资源占用状况，类似于 Windows 的任务管理器。
-   1. `top` 然后按 `O` 输入 `rsize` 查看每个进程的内存使用情况;
+1. `top` 然后按 `O` 输入 `rsize` 查看每个进程的内存使用情况;
 1. 清除僵尸进程： `ps -eal | awk '{ if ($2 == "Z") {print $4}}' | xargs sudo kill -9`
 
 #### 查看进程
@@ -205,13 +204,16 @@ kill -s 9 `pgrep pyenv`
 
 `xargs kill -s 9` 中的 `xargs` 命令是用来把前面命令的输出结果（PID）作为 `kill -s 9`命令的参数，并执行该命令。
 
+
 ### 后台运行
 
 ```shell
-nohup flask run -h 0.0.0.0 > logs 2>&1 & 
+nohup flask run -h 0.0.0.0 > log.txt 2> &1 & 
+# 或者
+nohup flask run -h 0.0.0.0 &> log.txt &
 tail -f logs
 ```
-`nohup` 不挂断地运行命令，它是  `no hangup` 的缩写，意即“不挂断”。`&` 是指在后台运行。用 	`nohup` 运行命令可以使命令永久的执行下去，和用户终端没有关系，例如我们断开 SSH 连接都不会影响他的运行，注意 `nohup` 没有后台运行的意思；`&` 是指在后台运行，但当用户推出(挂起)的时候，命令自动也跟着退出。`1` 表示 stdout 标准输出，`2` 表示 stderr 标准错误，`2>&1` 把标准错误重定向到标准输出，是`&1` 而不是 `1`，这里`&1` 相当于等效于标准输出。
+`nohup` 不挂断地运行命令，它是  `no hangup` 的缩写，意即“不挂断”。`&` 是指在后台运行。用 	`nohup` 运行命令可以使命令永久的执行下去，和用户终端没有关系，例如我们断开 SSH 连接都不会影响他的运行，注意 `nohup` 没有后台运行的意思；`&` 是指在后台运行，但当用户推出(挂起)的时候，命令自动也跟着退出。`1` 表示 stdout 标准输出，`2` 表示 stderr 标准错误，`2> &1` 把标准错误重定向到标准输出，是`&1` 而不是 `1`，这里`&1` 相当于等效于标准输出。`&> log.txt` 表示把标准输出和标准错误都重定向到文件 `log.txt` 中。
 
 
 ### Linux 查看物理 CPU个数、核数、逻辑 CPU 个数

@@ -150,6 +150,9 @@ Once you are finished, it's time to access ArangoDB web interface.
 #### 视频简介
 
 1. [4-王昊奋-知识图谱关键技术及行业应用浅析](https://www.bilibili.com/video/av28256339/?spm_id_from=333.788.videocard.9)
+2. [搭建工业级知识图谱系统项目实战](https://www.bilibili.com/video/av67444336/?p=1)
+3. [2019年 知识图谱入门到实战](https://www.bilibili.com/video/av61354140/?spm_id_from=333.788.videocard.0)
+4. [知识图谱视频教程](https://www.bilibili.com/video/av52797797/?p=5)
 
 
 ### 知识图谱存储
