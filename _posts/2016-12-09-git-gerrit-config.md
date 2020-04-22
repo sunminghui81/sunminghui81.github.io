@@ -78,17 +78,49 @@ git config user.email
 
 If you want to set the editor only for Git, do either (you don’t need both):
 
-* Set core.editor in your Git config: git config --global core.editor "vim"
-* Set the GIT_EDITOR environment variable: export GIT_EDITOR=vim
+* Set `core.editor` in your Git config: `git config --global core.editor "vim"`
+* Set the `GIT_EDITOR` environment variable: `export GIT_EDITOR=vim`
 
+#### Git 配置代理
 
-#### Git 配置其他
+Git 配置全局代理：
+
+```shell
+git config --global http.proxy http://127.0.0.1:1080
+git config --global https.proxy https://127.0.0.1:1080
+```
+**请注意，需要查看自己的端口是不是也是1080，可以打开你的SS查看代理设置。** 同时，也请注意，这里指的是 http 和 https 协议:
+
+```shell
+git clone https://www.github.com/xxxx/xxxx.git
+git clone http://www.github.com/xxxx/xxxx.git
+```
+对于SSH协议:
+
+```shell
+git clone git@github.com:xxxxxx/xxxxxx.git
+```
+依然无效。
+
+不推荐直接用全局代理，如果挂了全局代理，需要克隆 coding 之类的国内仓库，会奇慢无比。 所以建议使用这条命令，只对 github 进行代理，对国内的仓库不影响:
+
+```shell
+git config --global http.https://github.com.proxy http://127.0.0.1:1080
+git config --global https.https://github.com.proxy https://127.0.0.1:1080
+```
+同时，如果在输入这条命令之前，已经输入全局代理的话，可以输入以下命令进行取消
+
+```shell
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+```
+
+#### Git 其他配置
 
 * 开启颜色显示: `git config --global color.ui true`
-* `export https_proxy=”http://XXXXXX:XXXXXX@XXXXXX:8080/”` 配置代理
 
 
-### Gerrit配置
+### Gerrit 配置
 
 在Ubuntu上安装`git-review`:
 
@@ -154,3 +186,9 @@ git rebase -i HEAD~3
 git commit --amend --author "Firstname Lastname <youremail@example.com>"
 git rebase --continue
 ```
+
+### 参考资料
+
+1. [git clone一个github上的仓库，太慢，经常连接失败，但是github官网流畅访问，为什么？](https://www.zhihu.com/question/27159393)
+1. [Getting Git to work with a proxy server - fails with “Request timed out”](https://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server-fails-with-request-timed-out)
+
