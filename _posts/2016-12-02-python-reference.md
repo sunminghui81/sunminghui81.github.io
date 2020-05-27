@@ -34,11 +34,6 @@ icon: compass
 7. [copy – Duplicate objects](https://pymotw.com/2/copy/index.html#module-copy)
 
 
-### Parameters
-
-1. [How to use args and kwargs in Python](http://www.saltycrane.com/blog/2008/01/how-to-use-args-and-kwargs-in-python/)
-
-
 ### Mutable and immutable objects, mutable default arguments and create “Immutable” Classes
 
 1. [Gotcha — Mutable default arguments](https://pythonconquerstheuniverse.wordpress.com/2012/02/15/mutable-default- arguments/)
@@ -55,25 +50,6 @@ icon: compass
 ### Python Descriptor
 
 1. [Python Descriptors Demystified](http://nbviewer.jupyter.org/urls/gist.github.com/ChrisBeaumont/5758381/raw/descriptor_writeup.ipynb)
-
-
-### Decorator
-
-1. [A guide to Python's function decorators](http://thecodeship.com/patterns/guide-to-python-function-decorators/)
-2. http://stackoverflow.com/questions/739654/how-to-make-a-chain-of-function-decorators-in-python
-3. [PYTHON 修饰器的函数式编程](http://coolshell.cn/articles/11265.html)
-4. [Python Decortor Library](https://wiki.python.org/moin/PythonDecoratorLibrary)
-5. [看完这篇文章你还不理解 Python 装饰器，只有一种可能](https://gold.xitu.io/post/587c565f128fe1006b00c973)
-6. [PEP 318 -- Decorators for Functions and Methods](https://www.python.org/dev/peps/pep-0318/)
-
-
-### Context manager
-
-1. [Context managers](http://book.pythontips.com/en/latest/context_managers.html)
-2. [PEP 343 -- The "with" Statement](https://www.python.org/dev/peps/pep-0343/)
-3. [Composing Context Managers in Python](http://www.tech-foo.net/composing-context-managers-in-python.html)
-4. [Understanding Python's "with" statement](http://effbot.org/zone/python-with-statement.htm)
-5. [contextlib – Context manager utilities](https://pymotw.com/2/contextlib/index.html#module-contextlib)
 
 
 ### Python 风格规范
