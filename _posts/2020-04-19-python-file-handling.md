@@ -16,6 +16,7 @@ icon: compass
 1. [Working With Files in Python](https://realpython.com/working-with-files-in-python/)
 1. [Python 3's pathlib Module: Taming the File System](https://realpython.com/python-pathlib/)
 1. [No Really, Python's Pathlib is Great](https://rednafi.github.io/digressions/python/2020/04/13/python-pathlib.html)
+1. [No really, pathlib is great](https://treyhunner.com/2019/01/no-really-pathlib-is-great/)
 1. [Why pathlib.Path doesn't inherit from str in Python](https://snarky.ca/why-pathlib-path-doesn-t-inherit-from-str/)
 1. [Reading and Writing Files in Python (Guide)](https://realpython.com/read-write-files-python/)
 1. [Python: How to read and write files](https://thepythonguru.com/python-how-to-read-and-write-files/)
@@ -39,7 +40,14 @@ icon: compass
 1. [Python: How to read and write CSV files](https://thepythonguru.com/python-how-to-read-and-write-csv-files/)
 
 
-### Handle json files
+### Handle JSON files
 
 1. [Working With JSON Data in Python](https://realpython.com/python-json/)
+
+
+### Handler Excel Files
+
+1. [pyexcel](https://github.com/pyexcel/pyexcel) is a simple API for reading, manipulating and writing data in csv, ods, xls, xlsx and xlsm files.
+1. [Working with Excel Files in Python](http://www.python-excel.org/)
+1. [XlsxWriter](https://github.com/jmcnamara/XlsxWriter) is a Python module for writing files in the Excel 2007+ XLSX file format.
 

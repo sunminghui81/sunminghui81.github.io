@@ -26,3 +26,14 @@ icon: comment
 9. [Online regex tester and debugger](https://regex101.com/)
 10. [pythex](https://pythex.org/) – A web-based tool for testing regular expressions created by Gabriel Rodríguez. Inspired by Rubular
 10. [pyre2](https://github.com/facebook/pyre2/) is a python wrapper for [RE2](https://github.com/google/re2/).
+
+
+### Python regular expressions
+
+1. [Python regular expression cheatsheet and examples](https://learnbyexample.github.io/cheatsheet/python/python-regex-cheatsheet/)
+
+
+### JavaScript regular expressions
+
+1. [JavaScript regular expressions cheatsheet and examples](https://learnbyexample.github.io/cheatsheet/javascript/javascript-regexp-cheatsheet/)
+
