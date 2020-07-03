@@ -18,6 +18,8 @@ icon: compass
 1. [pdb-tutorial](https://github.com/spiside/pdb-tutorial) is a simple tutorial about effectively using pdb.
 2. [Python Debugging With Pdb](https://realpython.com/python-debugging-pdb/)
 3. [Advanced Python Debugging with pdb](https://www.codementor.io/@stevek/advanced-python-debugging-with-pdb-g56gvmpfa)
+1. [pudb使用指南](http://legendtkl.com/2015/10/31/pudb-howto/)
+1. [pudb’s documentation](https://documen.tician.de/pudb/index.html)
 
 #### Python debugging 视频教程
 
