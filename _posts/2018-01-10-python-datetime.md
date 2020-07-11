@@ -27,6 +27,7 @@ print(now_timestamp)
 print(type(now_timestamp))
 ```
 
+### 入门 
 
-
-
+1. [Using Python datetime to Work With Dates and Times](https://realpython.com/python-datetime/)
+1. [A Beginner’s Guide to the Python time Module](https://realpython.com/python-time-module/)

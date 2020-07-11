@@ -31,3 +31,11 @@ icon: git
 
 1. OpenStack 官网给出的 Git commit 规范：[Git Commit Good Practice](https://wiki.openstack.org/wiki/GitCommitMessages)
 
+
+### Git 和 Github Workflow
+
+1. [使用git和github进行协同开发流程](https://github.com/livoras/blog/issues/7)
+1. [Understanding the Git Workflow](https://sandofsky.com/workflow/git-workflow/)
+1. [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
+1. [How do I update a GitHub forked repository?](https://stackoverflow.com/questions/7244321/how-do-i-update-a-github-forked-repository/7244456#7244456)
+1. [Github进行fork后如何与原仓库同步：重新fork很省事，但不如反复练习版本合并](https://github.com/selfteaching/the-craft-of-selfteaching/issues/67)
