@@ -53,7 +53,7 @@ pyenv update
 
 ```
 sudo apt-get install -y build-essential zlib1g-dev libssl-dev
-# 选择安装
+# 选择安装，最好安装，否则会报 Warning
 sudo apt-get install libsqlite3-dev libbz2-dev libreadline-dev
 ```
 
@@ -70,6 +70,21 @@ pyenv install 3.6.4
 卸载 Python 3.6.4：
 ```
 pyenv uninstall 3.6.4
+```
+
+#### 加速下载 Python 安装包
+
+如果下载压缩包时（如：https://bitbucket.org/pypy/pypy/downloads/pypy3.6-v7.3.1-osx64.tar.bz2）比较慢，可以利用浏览器走代理下载，操作步骤如下：
+
+如果不存在 `~/.pyenv/cache` 缓存目录，则创建
+```shell
+mkdir -p ~/.pyenv/cache
+```
+
+利用浏览器下载压缩包，并将压缩包放在上述缓存目录中，然后再次安装就可以了（如：`pyenv install pypy3.6-7.3.1`）。
+最后，手动清空上述缓存目录:
+```shell
+rm -rf ~/.pyenv/cache/*
 ```
 
 
