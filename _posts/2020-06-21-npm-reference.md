@@ -6,7 +6,7 @@ title: "npm 常用技巧"
 categories: [js]
 tags: [npm]
 group: archive
-icon: js-square
+icon: codepen
 ---
 {% include mathsyouth/setup %}
 

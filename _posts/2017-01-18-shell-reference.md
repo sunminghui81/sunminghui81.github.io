@@ -13,12 +13,12 @@ icon: linux
 
 ### 学会使用命令帮助
 
-* 在只记得部分命令关键字的场合，可通过 `man -k` 来搜索: `man -k py`。
-* 需要知道某个命令的简要说明，可以使用 `whatis`: `whatis python`, `whatis ls`。
-* 详细的介绍，则可用 `info`: `info python`, `info ls`。
-* 查看程序的 binary 文件所在路径，可使用 `which`: `which python`, `which ls`。
-* 当系统中安装了同一软件的多个版本时，不确定使用的是哪个版本时，使用 `whereis` 命令就能查看程序的搜索路径: `whereis python`。
-* 对于命令的具体参数及使用方法，需要用到强大的 `man`: `man python`, `man ls`。关于 `which` 和 `whereis` 的区别可以使用命令： `man which`, `man whereis`。
+* 在只记得部分命令关键字的场合，可通过 `man -k` 来搜索，如: `man -k py`。
+* 需要知道某个命令的简要说明，可以使用 `whatis`，如: `whatis python`, `whatis ls`。
+* 详细的介绍，则可用 `info`，如: `info python`, `info ls`。
+* 查看程序的 binary 文件所在路径，可使用 `which`，如: `which python`, `which ls`。
+* 当系统中安装了同一软件的多个版本时，不确定使用的是哪个版本时，使用 `whereis` 命令就能查看程序的搜索路径，如: `whereis python`。
+* 对于命令的具体参数及使用方法，需要用到强大的 `man`，如: `man python`, `man ls`。关于 `which` 和 `whereis` 的区别可以使用命令： `man which` 和 `man whereis`。
 
 
 ### 移动光标
@@ -34,6 +34,7 @@ icon: linux
 
 **Note: 对于 Ubuntu 14.04 来说，`Alt` + `F` 默认用作“启用菜单访问键”，若要此快捷键生效，需要修改默认配置。打开终端，点击 edit -> keyboard shortcuts, 然后去勾第一个选项 "Enable menu access keys (Such as `Alt` + `F` to open the File menu)"。或者用　`Alt` + `Super` + `F` 替代 `Alt` + `F`，此处 `Super` 键特指 win 键。**
 
+
 ### 编辑命令
 
 * `Ctrl` + `U`：从光标处删除至命令行首
@@ -45,10 +46,15 @@ icon: linux
 * `Ctrl` + `Shift` + `C`: 复制
 * `Ctrl` + `Shift` + `V`: 粘贴
 
+
 ### 重新执行命令
 
 * 在命令行前加空格，该命令不会进入 `history` 里
-* `history | awk '{CMD[$2]++;count++;} END { for (a in CMD )print CMD[a] " " CMD[a]/count*100 "% " a }' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl | head -n10` 这行脚本能输出你最常用的十条命令，由此甚至可以洞察你是一个什么类型的程序员。
+* 最常用的10条命令：
+
+  ```
+  history | awk '{ CMD[$2]++; count++; } END { for (a in CMD) print CMD[a] " " CMD[a]/count*100 "% " a }' | grep -v "./" | column -c 3 -s " " -t | sort -nr | nl | head -n 10
+  ```
 * `Ctrl` + `R`：逆向搜索命令历史
 * `Ctrl` + `G`：从历史搜索模式退出
 * `Ctrl` + `P`：历史中的上一条命令
@@ -63,10 +69,11 @@ icon: linux
 * `!$:p`：打印输出 `!$` 的内容
 * `!*`：上一条命令的所有参数
 * `!*:p`：打印输出 `!*` 的内容
-* `sudo !!`： 以 root 的身份执行上一条命令。场景举例：比如 Ubuntu 里用 apt-get 安装软件包的时候是需要 root 身份的，我们经常会忘记在 apt-get 前加 sudo。
-* ^blah：删除上一条命令中的 blah
-* ^blah^foo：替换前一条命令里的部分字符串。场景： `echo "wanderful"`，其实是想输出 `echo "wonderful"`。只需要 `^a^o` 就行了，对很长的命令的错误拼写有很大的帮助。（陈皓注：也可以使用 `!!:gs/blah/foo`）
-* ^blah^foo^：将上一条命令中所有的 blah 都替换为 foo
+* `sudo !!`： 以 root 的身份执行上一条命令。场景举例：比如 Ubuntu 里用 apt-get 安装软件包的时候是需要 root 身份的，我们经常会忘记在 apt-get 前加 sudo
+* `^blah`：删除上一条命令中的 `blah`
+* `^blah^foo`：替换前一条命令里的部分字符串。场景： `echo "wanderful"`，其实是想输出 `echo "wonderful"`。只需要 `^a^o` 就行了，对很长的命令的错误拼写有很大的帮助。（陈皓注：也可以使用 `!!:gs/blah/foo`）
+* `^blah^foo^`：将上一条命令中所有的 `blah` 都替换为 `foo`
+
 
 ### 文件及目录管理
 
@@ -89,7 +96,12 @@ icon: linux
 1. 列出当前目录里最大的10个文件: `du -hsx * | sort -rh | head -10`
 2. 查看各文件夹大小 `du -h --max-depth=1 /path`。
 1. 批量下载网站的所有文件，比如：`http://clgiles.ist.psu.edu/IST597/materials/slides/`，运行命令
- `wget --random-wait -e robots=off -r -np -nH --cut-dirs=3 -R *index* http://clgiles.ist.psu.edu/IST597/materials/slides/`，其中：
+
+   ```
+   wget --random-wait -e robots=off -r -np -nH --cut-dirs=3 -R *index* http://clgiles.ist.psu.edu/IST597/materials/slides/
+   ```
+
+   其中：
    * `--random-wait` 为了减轻服务器的负担，在连续多次抓取的过程中随机等待；
    * `-e robots=off` `wget` 绕开 `robots.txt` 的规则；
    * `-r` 表示递归下载；
@@ -98,6 +110,7 @@ icon: linux
    * `--cut-dirs=3` 表示下载时去掉文件名 `IST597/materials/slides/`；
    * `-R *index*` 表示不会下载命名包含 `index` 的文件；
    * `-a pdf` 表示只下载 `pdf` 文件。
+
 
 ### 文件搜索命令
 
@@ -147,16 +160,25 @@ icon: linux
 
      Trying 172.217.24.46...  
      Connected to google.com.  
-     Escape character is '^]'. #==> ``Ctrl``+ `]`  
+     Escape character is '^]'. #==> `Ctrl`+ `]`  
      ^]  
      telnet> quit  
      Connection closed.
+
 
 ### 远程操作
 
 1. `ssh user@host bash < /path/to/local/script.sh` 在远程机器上运行一段脚本。这条命令最大的好处就是不用把脚本拷到远程机器上。
 1. `ssh user@host cat /path/to/remotefile | diff /path/to/localfile –` 比较一个远程文件和一个本地文件
 1. `vim scp://user@host//path/to/somefile` vim一个远程文件
+1. 上传文件：
+
+   ```
+   rsync -avzP -e "ssh -p 2200" /data/myfile user@openthings.x.x.x:/data/
+   ```
+
+   实现通过 ssh 协议将 myfile 传输到远程服务器上。其中，`-e "ssh -p 2200"` 表示采用 ssh 协议链接并使用端口2200。
+
 
 ### 用户管理
 
