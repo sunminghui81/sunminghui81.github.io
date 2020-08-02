@@ -32,6 +32,11 @@ icon: git
 1. OpenStack 官网给出的 Git commit 规范：[Git Commit Good Practice](https://wiki.openstack.org/wiki/GitCommitMessages)
 
 
+### Git Pro
+
+1. [Pro Git](https://git-scm.com/book/en/v2) 学习 Git 开发实战
+
+
 ### Git 和 Github Workflow
 
 1. [使用git和github进行协同开发流程](https://github.com/livoras/blog/issues/7)

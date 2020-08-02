@@ -23,6 +23,14 @@ brew install mysql gradle maven node
 
 安装 `brew` 的时候会自动下载和安装 Apple 的 Command Line Tools。
 
+
+#### 给 Homebrew 配置代理
+
+```shell
+export ALL_PROXY=proxyIP:port
+```
+
+
 ### [Homebrew Cask](http://caskroom.io)
 
 `brew-cask` 允许你使用命令行安装 OS X 应用，并从应用的官网上下载。比如可以这样安装 Chrome：`brew cask install google-chrome`，还有 Evernote、Sublime Text、VirtualBox 等都可以用 `brew-cask` 安装。
