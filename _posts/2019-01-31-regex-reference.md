@@ -24,6 +24,7 @@ icon: comment
 3. [正则表达式的先行断言(lookahead)和后行断言(lookbehind)](https://blog.51cto.com/cnn237111/749047)
 4. [常用正则表达式](https://deerchao.net/tutorials/regex/common.htm)
 9. [Online regex tester and debugger](https://regex101.com/)
+1. [Regulex](https://jex.im/regulex/) is a JavaScript Regular Expression Parser & Visualizer.
 10. [pythex](https://pythex.org/) – A web-based tool for testing regular expressions created by Gabriel Rodríguez. Inspired by Rubular
 10. [pyre2](https://github.com/facebook/pyre2/) is a python wrapper for [RE2](https://github.com/google/re2/).
 
@@ -36,4 +37,4 @@ icon: comment
 ### JavaScript regular expressions
 
 1. [JavaScript regular expressions cheatsheet and examples](https://learnbyexample.github.io/cheatsheet/javascript/javascript-regexp-cheatsheet/)
-
+1. [JavaScript RegExp](https://learnbyexample.github.io/learn_js_regexp/) is an example based guide to mastering JavaScript regexp. The source code is [learn_js_regexp](https://github.com/learnbyexample/learn_js_regexp).
