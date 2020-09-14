@@ -21,5 +21,7 @@ Python Logging 入门参考资料：
 3. [Good logging practice in Python](https://fangpenlin.com/posts/2012/08/26/good-logging-practice-in-python/)
 5. [Best way to log a Python exception](http://stackoverflow.com/questions/5191830/best-way-to-log-a-python-exception)
 1. [Logging Cookbook](https://docs.python.org/3/howto/logging-cookbook.html)
+1. [Logging in Python](https://realpython.com/python-logging/)
+1. [Python Logging: A Stroll Through the Source Code](https://realpython.com/python-logging-source-code/)
 1. [structlog](https://github.com/hynek/structlog) makes logging in Python less painful and more powerful by adding structure to your log entries.
 
