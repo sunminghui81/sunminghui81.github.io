@@ -11,9 +11,7 @@ icon: compass
 {% include mathsyouth/setup %}
 
 
-### Python Logging 重要参考信息
-
-Python Logging 入门参考资料：
+### Python Logging 入门参考资料
 
 1. [Python Logging: An In-Depth Tutorial](https://www.toptal.com/python/in-depth-python-logging)
 2. [Python之日志处理（logging模块）](https://www.cnblogs.com/yyds/p/6901864.html)
@@ -23,5 +21,12 @@ Python Logging 入门参考资料：
 1. [Logging Cookbook](https://docs.python.org/3/howto/logging-cookbook.html)
 1. [Logging in Python](https://realpython.com/python-logging/)
 1. [Python Logging: A Stroll Through the Source Code](https://realpython.com/python-logging-source-code/)
-1. [structlog](https://github.com/hynek/structlog) makes logging in Python less painful and more powerful by adding structure to your log entries.
 
+
+### Python 第三方 Log 软件包
+
+1. [daiquiri](https://github.com/jd/daiquiri) provides an easy way to configure logging. It also provides some custom formatters and handlers. The author's blog [Easy Python logging with daiquiri](https://julien.danjou.info/python-logging-easy-with-daiquiri/) gives a great introduction.
+1. [eliot](https://github.com/itamarst/eliot) is the logging system that tells you *why* it happened.
+1. [loguru](https://github.com/Delgan/loguru) is a library which aims to bring enjoyable logging in Python.
+1. [structlog](https://github.com/hynek/structlog) makes logging in Python less painful and more powerful by adding structure to your log entries.
+1. [logbook](https://github.com/getlogbook/logbook) is a cool logging replacement for Python.
