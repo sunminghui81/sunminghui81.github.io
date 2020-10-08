@@ -43,6 +43,7 @@ icon: compass
 ### Handle JSON files
 
 1. [Working With JSON Data in Python](https://realpython.com/python-json/)
+1. [Choosing a faster JSON library for Python](https://pythonspeed.com/articles/faster-json-library/)
 
 
 ### Handler Excel Files

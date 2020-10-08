@@ -37,6 +37,25 @@ brew install pipenv
 
 详细过程请参考：[Install Python 2.7, virtualenv and virtualenvwrapper on OS X Mavericks/Yosemite](http://www.marinamele.com/2014/05/install-python-virtualenv-virtualenvwrapper-mavericks.html)。
 
+如果需要对 pyenv 进行升级，需要运行命令：
+
+```shell
+brew update && brew upgrade pyenv
+```
+
+升级之后，可能会报以下类似的错误：
+
+```
+/Users/linghui/.pyenv/shims/python3.7: line 21: /usr/local/Cellar/pyenv/1.2.19/libexec/pyenv: No such file or directory
+```
+
+解决方法是运行命令：
+
+```shell
+pyenv rehash
+```
+
+详细说明可以参考[pyenv puts incorrect path in shims with Homebrew](https://github.com/pyenv/pyenv/issues/816)。
 
 ### Ubuntu 16.04 安装 pyenv
 

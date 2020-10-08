@@ -2,7 +2,7 @@
 layout: post
 keywords: Python, logging
 description: 收集关于 Python logging 的经典学习资料，以便随时查阅
-title: "Python logging 入门"
+title: "Python logging 参考资料"
 categories: [python]
 tags: [python, logging]
 group: archive
@@ -18,9 +18,19 @@ icon: compass
 1. [Logging HOWTO](https://docs.python.org/3/howto/logging.html)
 3. [Good logging practice in Python](https://fangpenlin.com/posts/2012/08/26/good-logging-practice-in-python/)
 5. [Best way to log a Python exception](http://stackoverflow.com/questions/5191830/best-way-to-log-a-python-exception)
-1. [Logging Cookbook](https://docs.python.org/3/howto/logging-cookbook.html)
 1. [Logging in Python](https://realpython.com/python-logging/)
+
+
+### Python Logging Advanced 参考资料
+
+1. [Logging Cookbook](https://docs.python.org/3/howto/logging-cookbook.html)
 1. [Python Logging: A Stroll Through the Source Code](https://realpython.com/python-logging-source-code/)
+
+
+### Python Logging 增强软件包
+
+1. [mrfh (Multiprocess Rotating File Handler)](https://github.com/di/mrfh) is a drop-in replacement for the logging modules's RotatingFileHandler which provides a process-safe rotating log file handler using file-based locks.
+1. [concurrent-log-handler](https://github.com/Preston-Landers/concurrent-log-handler) provides an additional log handler for Python's standard logging package. This handler will write log events to a log file which is rotated when the log file reaches a certain size. Multiple processes can safely write to the same log file concurrently.
 
 
 ### Python 第三方 Log 软件包

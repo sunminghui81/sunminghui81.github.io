@@ -11,23 +11,13 @@ icon: compass
 {% include mathsyouth/setup %}
 
 
-### Python 日期和时间处理
-
-请参考以下经典的文献：
+### Python 日期和时间处理入门资料
 
 1. [PYTHON-基础-时间日期处理小结](http://www.wklken.me/posts/2015/03/03/python-base-datetime.html#1-datetime)
-
-补充说明，将 `datetime` 转换成 `timestamp`：
-
-```Python
-import datetime as dt
-now = dt.datetime.today()
-now_timestamp = now.timestamp()
-print(now_timestamp)
-print(type(now_timestamp))
-```
-
-### 入门 
-
 1. [Using Python datetime to Work With Dates and Times](https://realpython.com/python-datetime/)
 1. [A Beginner’s Guide to the Python time Module](https://realpython.com/python-time-module/)
+
+
+### Python 日期和时间第三方软件包
+
+1. [dateutil](https://github.com/dateutil/dateutil) provides powerful extensions to the standard datetime module.
