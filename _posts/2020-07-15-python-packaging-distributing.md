@@ -15,6 +15,8 @@ icon: compass
 
 1. [Python Modules and Packages – An Introduction](https://realpython.com/python-modules-packages/)
 1. [Absolute vs Relative Imports in Python](https://realpython.com/absolute-vs-relative-python-imports/)
+1. [The Definitive Guide to Python import Statements](https://chrisyeh96.github.io/2017/08/08/definitive-guide-python-imports.html)
+1. [Python import: Advanced Techniques and Tips](https://realpython.com/python-import/)
 1. [Modules](https://docs.python.org/3/tutorial/modules.html)
 1. [The import system](https://docs.python.org/3/reference/import.html)
 

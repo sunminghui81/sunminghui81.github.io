@@ -21,3 +21,4 @@ icon: compass
 ### Python 日期和时间第三方软件包
 
 1. [dateutil](https://github.com/dateutil/dateutil) provides powerful extensions to the standard datetime module.
+1. [pendulum](https://github.com/sdispater/pendulum) provides a cleaner and more easy to use API while still relying on the standard library.

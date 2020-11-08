@@ -211,5 +211,4 @@ pipx install pylint
 1. [Create and Publish a Python Package with Poetry](https://johnfraney.ca/posts/2019/05/28/create-publish-python-package-poetry/)
 1. [Tame the Snake: Python Package Management with Pyenv, Pipenv & Pipx](https://jacobsgill.es/python-package-management)
 1. [Overview of python dependency management tools](https://modelpredict.com/python-dependency-management-tools)
-
-
+1. [Python Application Dependency Management in 2018](https://hynek.me/articles/python-app-deps-2018/)
