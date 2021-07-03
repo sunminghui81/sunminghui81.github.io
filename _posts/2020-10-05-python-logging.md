@@ -35,7 +35,6 @@ icon: compass
 
 ### Python 第三方 Log 软件包
 
-1. [daiquiri](https://github.com/jd/daiquiri) provides an easy way to configure logging. It also provides some custom formatters and handlers. The author's blog [Easy Python logging with daiquiri](https://julien.danjou.info/python-logging-easy-with-daiquiri/) gives a great introduction.
 1. [eliot](https://github.com/itamarst/eliot) is the logging system that tells you *why* it happened.
 1. [loguru](https://github.com/Delgan/loguru) is a library which aims to bring enjoyable logging in Python.
 1. [structlog](https://github.com/hynek/structlog) makes logging in Python less painful and more powerful by adding structure to your log entries.

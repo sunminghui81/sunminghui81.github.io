@@ -40,6 +40,7 @@ icon: compass
 ### Type checking
 
 1. [Python Type Checking (Guide)](https://realpython.com/python-type-checking/)
+1. [the state of type hints in Python](https://www.bernat.tech/the-state-of-type-hints-in-python/)
 1. [Mypy documentation](https://mypy.readthedocs.io/en/stable/index.html)
 1. [pyre-check](https://github.com/facebook/pyre-check)
 1. [pytype](https://github.com/google/pytype)
@@ -62,3 +63,9 @@ icon: compass
 
 如果没有 `setup.py` 文件，同时假定 `tests` 文件夹和 package 文件夹在当前目录下，可以运行 `python -m pytest tests` 来直接测试 package 中的代码。
 
+
+### Python version control
+
+1. [Version numbers: how to use them?](https://www.bernat.tech/version-numbers/)
+1. [Versioning Software](https://caremad.io/posts/2016/02/versioning-software/)
+1. [Calendar Versioning](https://calver.org/)
