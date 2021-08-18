@@ -22,3 +22,5 @@ icon: compass
 
 1. [dateutil](https://github.com/dateutil/dateutil) provides powerful extensions to the standard datetime module.
 1. [pendulum](https://github.com/sdispater/pendulum) provides a cleaner and more easy to use API while still relying on the standard library.
+1. [Arrow](https://github.com/arrow-py/arrow) is a Python library that offers a sensible and human-friendly approach to creating, manipulating, formatting and converting dates, times and timestamps.
+
