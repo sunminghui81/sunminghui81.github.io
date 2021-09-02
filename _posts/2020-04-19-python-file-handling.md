@@ -22,6 +22,13 @@ icon: compass
 1. [Python: How to read and write files](https://thepythonguru.com/python-how-to-read-and-write-files/)
 
 
+### 字符编解码
+
+1. [字符串和编码](https://www.liaoxuefeng.com/wiki/1016959663602400/1017075323632896)
+1. [全网最全面、全详细的编码、解码知识！！！](https://zhuanlan.zhihu.com/p/165989439)
+1. [字符编码笔记：ASCII，Unicode 和 UTF-8](http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html)
+
+
 ### Understand Unicode
 
 1. [The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
@@ -33,6 +40,9 @@ icon: compass
 1. Text versus Bytes in Chapter 4 of "Fluent Python"
 1. [Pragmatic Unicode](https://nedbatchelder.com/text/unipain.html)
 1. [Programming with Unicode](https://unicodebook.readthedocs.io/index.html)
+1. [UTF-8 编解码实现](https://taoshu.in/c-utf-8.html)
+1. https://www.cl.cam.ac.uk/~mgk25/ucs/utf-8-history.txt
+1. [Simple, fast C library for manipulating strings in the UTF-8 encoding](https://github.com/JeffBezanson/cutef8)
 
 
 ### Handle CSV files
@@ -44,6 +54,8 @@ icon: compass
 
 1. [Working With JSON Data in Python](https://realpython.com/python-json/)
 1. [Choosing a faster JSON library for Python](https://pythonspeed.com/articles/faster-json-library/)
+1. [jq](https://stedolan.github.io/jq/) is a lightweight and flexible command-line JSON processor.
+1. [fx](https://github.com/antonmedv/fx) Command-line JSON processing tool.
 
 
 ### Handler Excel Files
