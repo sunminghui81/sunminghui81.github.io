@@ -8,7 +8,7 @@ gems: [jekyll-paginate]
 paginate: 4
 
 # 修改为自己的配置
-title : Ideas are cheap, execution is everything!
+title : Time flies, time flies!
 tagline: sunminghui81's blog
 author :
   name : sunminghui81
