@@ -4,7 +4,7 @@
 
 # 个人博客
 
-[mathsyouth](https://mathsyouth.github.io)
+[sunminghui81](https://sunminghui81.github.io)
 
 
 ## 使用的工具
@@ -55,7 +55,7 @@
 1. 删除pages目录
 1. 删除CNAME文件，如果你需要自定义域名，可以修改CNAME文件
 1. 修改config.yml中的设置，需要自定义的地方已经加了注释，建议把那个文件看一遍，对设置有个大概的了解
-1. 我使用我的id作为了一些设置的属性名、文件名、目录名，如果你想修改，最好使用替换工具，把所有文件中的"mathsyouth"，替换为你想要的名字 然后重命名以我的id为名的所有文件和目录
+1. 我使用我的id作为了一些设置的属性名、文件名、目录名，如果你想修改，最好使用替换工具，把所有文件中的"sunminghui81"，替换为你想要的名字 然后重命名以我的id为名的所有文件和目录
 1. config.yml中的comments和analytics必须修改，配置上你自己的账号，如果不想配置，请置provider为false
 1. 出现问题，建议自己google，有很多详细的教程，或者直接参考官方文档 [jekyll](http://jekyllrb.com)
 1. 有好的建议或者要求，欢迎提issue或者发邮件交流

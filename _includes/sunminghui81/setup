@@ -2,19 +2,19 @@
   <!--
   - Dynamically set liquid variables for working with URLs/paths
   -->
-  {% if site.mathsyouth.setup.provider == "custom" %}
+  {% if site.sunminghui81.setup.provider == "custom" %}
     {% include custom/setup %}
   {% else %}
-    {% if site.safe and site.mathsyouth.BASE_PATH and site.mathsyouth.BASE_PATH != '' %}
-      {% assign BASE_PATH = site.mathsyouth.BASE_PATH %}
-      {% assign HOME_PATH = site.mathsyouth.BASE_PATH %}
+    {% if site.safe and site.sunminghui81.BASE_PATH and site.sunminghui81.BASE_PATH != '' %}
+      {% assign BASE_PATH = site.sunminghui81.BASE_PATH %}
+      {% assign HOME_PATH = site.sunminghui81.BASE_PATH %}
     {% else %}
       {% assign BASE_PATH = nil %}
       {% assign HOME_PATH = "/" %}
     {% endif %}
 
-    {% if site.mathsyouth.ASSET_PATH %}
-      {% assign ASSET_PATH = site.mathsyouth.ASSET_PATH %}
+    {% if site.sunminghui81.ASSET_PATH %}
+      {% assign ASSET_PATH = site.sunminghui81.ASSET_PATH %}
     {% else %}
       {% capture ASSET_PATH %}{{ BASE_PATH }}/assets/themes/{{ page.theme.name }}{% endcapture %}
     {% endif %}  

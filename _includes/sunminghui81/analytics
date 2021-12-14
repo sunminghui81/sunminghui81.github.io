@@ -1,0 +1,14 @@
+{% if site.safe and site.sunminghui81.analytics.provider and page.sunminghui81.analytics != false %}
+
+{% case site.sunminghui81.analytics.provider %}
+{% when "google" %}
+  {% include sunminghui81/analytics-providers/google %}
+{% when "getclicky" %}
+  {% include sunminghui81/analytics-providers/getclicky %}
+{% when "mixpanel" %}
+  {% include sunminghui81/analytics-providers/mixpanel %}
+{% when "custom" %}
+  {% include custom/analytics %}
+{% endcase %}
+
+{% endif %}

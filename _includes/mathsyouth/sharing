@@ -1,8 +1,0 @@
-{% if site.safe and site.mathsyouth.sharing.provider and page.mathsyouth.sharing != false %}
-
-{% case site.mathsyouth.sharing.provider %}
-{% when "custom" %}
-  {% include custom/sharing %}
-{% endcase %}
-
-{% endif %}

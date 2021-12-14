@@ -1,8 +1,8 @@
 /* =============================================================================
-#     FileName: mathsyouth.js
+#     FileName: sunminghui81.js
 #         Desc: javascript for blog
-#       Author: mathsyouth
-#        Email: mathsyouth.li@gmail.com
+#       Author: sunminghui81
+#        Email: sunminghui81.li@gmail.com
 #     HomePage: http://www.weibo.com/anyexingchen
 #      Version: 0.0.1
 #   LastChange: 2013-05-12 01:39:30

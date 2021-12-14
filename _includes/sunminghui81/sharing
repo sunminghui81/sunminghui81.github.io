@@ -1,0 +1,8 @@
+{% if site.safe and site.sunminghui81.sharing.provider and page.sunminghui81.sharing != false %}
+
+{% case site.sunminghui81.sharing.provider %}
+{% when "custom" %}
+  {% include custom/sharing %}
+{% endcase %}
+
+{% endif %}
