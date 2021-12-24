@@ -1,0 +1,17 @@
+---
+layout: post
+keywords: 关键绩效指标模型
+description: ...
+title: 关键绩效指标模型
+categories: [需求建模]
+tags: [需求建模]
+group: archive
+icon: google
+---
+{% include sunminghui81/setup %}
+
+## KPIM模版
+KPIM: key performance indicator 关键绩效指标模型。  
+KPI，关键绩效指标是用来衡量活动成功的指标  
+KPIM使用KPI度量指标以及业务流程，帮助团队为映射到业务流程上去的**需求设定优先级**。  
+**新系统的一些重要部分将代替陈旧系统的现有功能时，KPIM特别适用于确保业务结果维持不变**  
