@@ -21,5 +21,88 @@ DISTRIB_DESCRIPTION="Ubuntu 16.04.6 LTS"
 ```
 我使用[官网安装](https://book.kubebuilder.io/quick-start.html#installation)的kubebuilder。  
 安装后可以查看相关命令行：  
+```console
+root@10076736:/home/julien/operator/sample# kubebuilder version
+Version: main.version{KubeBuilderVersion:"3.1.0", KubernetesVendor:"1.19.2", GitCommit:"92e0349ca7334a0a8e5e499da4fb077eb524e94a", BuildDate:"2021-05-27T17:54:28Z", GoOs:"linux", GoArch:"amd64"}
+```
 
+## 初始化创建
+
+### 创建工程
+```console
+root@10076736:/home/julien/gerrit/goworkspace/src# mkdir guardians
+root@10076736:/home/julien/gerrit/goworkspace/src# cd guardians/
+root@10076736:/home/julien/gerrit/goworkspace/src/guardians# kubebuilder init --domain my.domain --repo my.domain/guardians
+Writing kustomize manifests for you to edit...
+Writing scaffold for you to edit...
+Get controller runtime:
+$ go get sigs.k8s.io/controller-runtime@v0.8.3
+Update dependencies:
+$ go mod tidy
+Next: define a resource with:
+$ kubebuilder create api
+```
+### 创建 API
+```console
+root@10076736:/home/julien/gerrit/goworkspace/src/guardians# kubebuilder create api --group webapp --version v1 --kind Guardians
+Create Resource [y/n]
+y
+Create Controller [y/n]
+y
+Writing kustomize manifests for you to edit...
+Writing scaffold for you to edit...
+api/v1/guardians_types.go
+controllers/guardians_controller.go
+Update dependencies:
+$ go mod tidy
+Running make:
+$ make generate
+go: creating new go.mod: module tmp
+Downloading sigs.k8s.io/controller-tools/cmd/controller-gen@v0.4.1
+go get: sigs.k8s.io/controller-tools/cmd/controller-gen@v0.4.1: Get "https://goproxy.io/sigs.k8s.io/controller-tools/cmd/controller-gen/@v/v0.4.1.info": x509: certificate signed by unknown authority
+Makefile:90: recipe for target 'controller-gen' failed
+make: *** [controller-gen] Error 1
+Error: failed to create API: unable to run post-scaffold tasks of "base.go.kubebuilder.io/v3": exit status 2
+Usage:
+  kubebuilder create api [flags]
+
+Examples:
+  # Create a frigates API with Group: ship, Version: v1beta1 and Kind: Frigate
+  kubebuilder create api --group ship --version v1beta1 --kind Frigate
+
+  # Edit the API Scheme
+  nano api/v1beta1/frigate_types.go
+
+  # Edit the Controller
+  nano controllers/frigate/frigate_controller.go
+
+  # Edit the Controller Test
+  nano controllers/frigate/frigate_controller_test.go
+
+  # Install CRDs into the Kubernetes cluster using kubectl apply
+  make install
+
+  # Regenerate code and run against the Kubernetes cluster configured by ~/.kube/config
+  make run
+
+
+Flags:
+      --controller           if set, generate the controller without prompting the user (default true)
+      --crd-version string   version of CustomResourceDefinition to scaffold. Options: [v1, v1beta1] (default "v1")
+      --force                attempt to create resource even if it already exists
+      --group string         resource Group
+  -h, --help                 help for api
+      --kind string          resource Kind
+      --make make generate   if true, run make generate after generating files (default true)
+      --namespaced           resource is namespaced (default true)
+      --plural string        resource irregular plural form
+      --resource             if set, generate the resource without prompting the user (default true)
+      --version string       resource Version
+
+Global Flags:
+      --plugins strings   plugin keys to be used for this subcommand execution
+
+2021/12/25 11:10:05 failed to create API: unable to run post-scaffold tasks of "base.go.kubebuilder.io/v3": exit status 2
+```
+我的网络是公司统一对外网进行访问的，所以怀疑是代理没有提供证书
 
