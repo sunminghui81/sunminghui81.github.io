@@ -13,7 +13,7 @@ icon: google
 ## 安装
 我安装的系统是：  
 ```console
-root@10076736:/home/julien/operator/sample# cat /etc/lsb-release
+root@sun:/home/julien/operator/sample# cat /etc/lsb-release
 DISTRIB_ID=Ubuntu
 DISTRIB_RELEASE=16.04
 DISTRIB_CODENAME=xenial
@@ -22,7 +22,7 @@ DISTRIB_DESCRIPTION="Ubuntu 16.04.6 LTS"
 我使用[官网安装](https://book.kubebuilder.io/quick-start.html#installation)的kubebuilder。  
 安装后可以查看相关命令行：  
 ```console
-root@10076736:/home/julien/operator/sample# kubebuilder version
+root@sun:/home/julien/operator/sample# kubebuilder version
 Version: main.version{KubeBuilderVersion:"3.1.0", KubernetesVendor:"1.19.2", GitCommit:"92e0349ca7334a0a8e5e499da4fb077eb524e94a", BuildDate:"2021-05-27T17:54:28Z", GoOs:"linux", GoArch:"amd64"}
 ```
 
@@ -30,9 +30,9 @@ Version: main.version{KubeBuilderVersion:"3.1.0", KubernetesVendor:"1.19.2", Git
 
 ### 创建工程
 ```console
-root@10076736:/home/julien/gerrit/goworkspace/src# mkdir guardians
-root@10076736:/home/julien/gerrit/goworkspace/src# cd guardians/
-root@10076736:/home/julien/gerrit/goworkspace/src/guardians# kubebuilder init --domain my.domain --repo my.domain/guardians
+root@sun:/home/julien/gerrit/goworkspace/src# mkdir guardians
+root@sun:/home/julien/gerrit/goworkspace/src# cd guardians/
+root@sun:/home/julien/gerrit/goworkspace/src/guardians# kubebuilder init --domain my.domain --repo my.domain/guardians
 Writing kustomize manifests for you to edit...
 Writing scaffold for you to edit...
 Get controller runtime:
@@ -44,7 +44,7 @@ $ kubebuilder create api
 ```
 ### 创建 API
 ```console
-root@10076736:/home/julien/gerrit/goworkspace/src/guardians# kubebuilder create api --group webapp --version v1 --kind Guardians
+root@sun:/home/julien/gerrit/goworkspace/src/guardians# kubebuilder create api --group webapp --version v1 --kind Guardians
 Create Resource [y/n]
 y
 Create Controller [y/n]
@@ -104,5 +104,10 @@ Global Flags:
 
 2021/12/25 11:10:05 failed to create API: unable to run post-scaffold tasks of "base.go.kubebuilder.io/v3": exit status 2
 ```
-我的网络是公司统一对外网进行访问的，所以怀疑是代理没有提供证书
+上面的：x509: certificate signed by unknown authority 查了一下，是客户端证书问题：  
+[访问https时为何会出现x509 certificate signed by unknown authority](https://izsk.me/2020/06/18/why-x509-error-when-curl-https/)  
+但是机器上/etc/ssl证书是在的，并且执行update-ca-certificates命令，更新证书数为0.  
+
+
+
 
