@@ -28,6 +28,23 @@ Version: main.version{KubeBuilderVersion:"3.1.0", KubernetesVendor:"1.19.2", Git
 
 ## 初始化创建
 
+### kubebuilder init
+在kubebuilder init命令中，kubebuilder会创建下面几个基本的工程文件。
+```console
+root@b5700554c4c1:/home/ready/go/src/guardians# kubebuilder init --help
+Initialize a new project including vendor/ directory and Go package directories.
+
+Writes the following files:
+- a boilerplate license file
+- a PROJECT file with the project configuration
+- a Makefile to build the project
+- a go.mod with project dependencies
+- a Kustomization.yaml for customizating manifests
+- a Patch file for customizing image for manager manifests
+- a Patch file for enabling prometheus metrics
+- a cmd/manager/main.go to run
+```
+
 ### 创建工程
 ```console
 root@sun:/home/julien/gerrit/goworkspace/src# mkdir guardians
@@ -42,7 +59,7 @@ $ go mod tidy
 Next: define a resource with:
 $ kubebuilder create api
 ```
-### 创建 API
+### 创建 API 
 ```console
 root@sun:/home/julien/gerrit/goworkspace/src/guardians# kubebuilder create api --group webapp --version v1 --kind Guardians
 Create Resource [y/n]
@@ -106,7 +123,27 @@ Global Flags:
 ```
 上面的：x509: certificate signed by unknown authority 查了一下，是客户端证书问题：  
 [访问https时为何会出现x509 certificate signed by unknown authority](https://izsk.me/2020/06/18/why-x509-error-when-curl-https/)  
-但是机器上/etc/ssl证书是在的，并且执行update-ca-certificates命令，更新证书数为0.  
+但是机器上/etc/ssl证书是在的，并且执行update-ca-certificates命令，更新证书数为0.经过各种尝试，未果。  
+最终找到公司的一个goproxy,完成命令执行。
+```console
+root@sun:/home/julien/gerrit/goworkspace/src/guardians# kubebuilder create api --group webapp --version v1 --kind Guardians
+Create Resource [y/n]
+y
+Create Controller [y/n]
+y
+Writing kustomize manifests for you to edit...
+Writing scaffold for you to edit...
+api/v1/guardians_types.go
+controllers/guardians_controller.go
+Update dependencies:
+$ go mod tidy
+Running make:
+$ make generate
+go: creating new go.mod: module tmp
+Downloading sigs.k8s.io/controller-tools/cmd/controller-gen@v0.4.1
+go get: added sigs.k8s.io/controller-tools v0.4.1
+/home/julien/gerrit/goworkspace/src/guardians/bin/controller-gen object:headerFile="hack/boilerplate.go.txt" paths="./..."
+```
 
 
 
