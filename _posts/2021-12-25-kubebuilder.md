@@ -145,6 +145,63 @@ go get: added sigs.k8s.io/controller-tools v0.4.1
 /home/julien/gerrit/goworkspace/src/guardians/bin/controller-gen object:headerFile="hack/boilerplate.go.txt" paths="./..."
 ```
 
+此时创建出来的工程目录以及文件为：  
+```console
+root@10076736:/home/julien/gerrit/goworkspace/src/guardians# tree
+.
+├── api
+│   └── v1
+│       ├── groupversion_info.go
+│       ├── guardians_types.go
+│       └── zz_generated.deepcopy.go
+├── bin
+│   └── controller-gen
+├── config
+│   ├── crd
+│   │   ├── kustomization.yaml
+│   │   ├── kustomizeconfig.yaml
+│   │   └── patches
+│   │       ├── cainjection_in_guardians.yaml
+│   │       └── webhook_in_guardians.yaml
+│   ├── default
+│   │   ├── kustomization.yaml
+│   │   ├── manager_auth_proxy_patch.yaml
+│   │   └── manager_config_patch.yaml
+│   ├── manager
+│   │   ├── controller_manager_config.yaml
+│   │   ├── kustomization.yaml
+│   │   └── manager.yaml
+│   ├── prometheus
+│   │   ├── kustomization.yaml
+│   │   └── monitor.yaml
+│   ├── rbac
+│   │   ├── auth_proxy_client_clusterrole.yaml
+│   │   ├── auth_proxy_role_binding.yaml
+│   │   ├── auth_proxy_role.yaml
+│   │   ├── auth_proxy_service.yaml
+│   │   ├── guardians_editor_role.yaml
+│   │   ├── guardians_viewer_role.yaml
+│   │   ├── kustomization.yaml
+│   │   ├── leader_election_role_binding.yaml
+│   │   ├── leader_election_role.yaml
+│   │   ├── role_binding.yaml
+│   │   └── service_account.yaml
+│   └── samples
+│       └── webapp_v1_guardians.yaml
+├── controllers
+│   ├── guardians_controller.go
+│   └── suite_test.go
+├── Dockerfile
+├── go.mod
+├── go.sum
+├── hack
+│   └── boilerplate.go.txt
+├── main.go
+├── Makefile
+└── PROJECT
 
+13 directories, 37 files
+```
 
+### 待补充内容，下面如何修改这个工程，完成operator的编写。
 
