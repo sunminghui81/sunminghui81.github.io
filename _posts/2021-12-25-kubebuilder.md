@@ -3,7 +3,7 @@ layout: post
 keywords: kubebuilder
 description: 第一次使用kubebuilder
 title: kubebuilder
-categories: [operator]
+categories: [kubernetes]
 tags: [kubebuilder]
 group: archive
 icon: google
