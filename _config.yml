@@ -8,13 +8,13 @@ gems: [jekyll-paginate]
 paginate: 4
 
 # 修改为自己的配置
-title : Time flies, time flies!
+title : 时光荏苒，岁月如梭!
 tagline: sunminghui81's blog
 author :
   name : sunminghui81
-  email : lh.zeng@hotmail.com
+  email : juliensun81@gmail.com
   github : https://github.com/sunminghui81
-  twitter : http://twitter.com/sunminghui81
+
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt
