@@ -1,0 +1,35 @@
+---
+layout: post
+keywords: 端到端测试
+description: 如何从beego的router开始测试
+title: Beego的端到端测试
+categories: [端到端测试]
+tags: [端到端测试]
+group: archive
+icon: google
+---
+{% include sunminghui81/setup %}
+
+### Beego的router注册机制
+Beego是借助Go语言对于模块的import机制自动完成router（URL和controller的map）注册执行的。  
+Go语言模块的import机制如下图示例： 
+是先执行import模块的import，然后执行import模块的const申明，var申明，init()函数。  
+/* TODO: 补充参考一中的图 */
+Begoo框架就是利用这个init自动执行的go语言特性：
+1. 在router模块的init函数中执行router注册函数，建立url和controller的map
+2. main文件中import router的模块，就可以自动完成router的注册。main函数中只需要把框架跑起来就行了(beego.Run())
+
+### 端到端测试
+根据Beego的router注册机制，我们可以发现在单元测试时只要import router模块就可以实现Beego框架中router的注册.  
+
+具体实施有两种方法：  
+第一种，使用httptest库进行测试。httptest有一个NewServer的函数，结合Beego提供的一个http的handle(beego.BeeApp.Handlers),  
+就可以启动这个fake server，然后使用http.(method)进行请求触发，见参考二。  
+第二种，直接使用Beego的serverHTTP，beego.BeeApp.Handlers.ServeHTTP(rsp, req)触发router服务。  
+这里的rep用httptest的NewRecorder()创建，req用httptest的NewRequest()创建。
+
+
+
+### 参考文献
+1. [Beego路由设置](https://beego.vip/docs/quickstart/router.md)
+2. [A good way to do tests for beego router](https://jialinwu.com/post/a-good-way-to-do-tests-for-beego-router/)
