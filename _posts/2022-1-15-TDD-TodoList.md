@@ -3,7 +3,7 @@ layout: post
 keywords: Todolist in TDD
 description: Todolist 在TDD活动中的作用 
 title: TodoList
-categories: [TDD]
+categories: [测试]
 tags: [Todolist]
 group: archive
 icon: google
