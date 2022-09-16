@@ -17,6 +17,7 @@ icon: google
 如下所示：
 
 `
+
 // You can edit this code!
 // Click here and start typing.
 package main
@@ -69,11 +70,13 @@ func main() {
 	fmt.Println(delParams)
 }
 
-`Golang
+`golang
 
 ### 缺少键值结构时，转化struct
 如下所示，json字符串中缺少了name字段，解析后，struct的值使用对应类型的空值赋值
+
 `
+
 // You can edit this code!
 // Click here and start typing.
 package main
@@ -131,7 +134,8 @@ Hello, 世界
 true
 
 Program exited.
-`Golang
+
+`golang
 
 
 ### play ground
