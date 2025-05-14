@@ -31,3 +31,48 @@ Vibe Coding 依赖于强大的人工智能技术，尤其是深度学习和自�
 开发者的角色从编写代码转变为与 AI 的协作。AI 不仅生成初步代码，还能根据开发者的反馈进行优化、修改，甚至参与代码调试和测试。
 AI 和开发者之间的合作是动态的，开发者可以实时提供反馈，AI 会根据这些反馈不断调整生成的代码，保证代码的质量和功能的实现。
 
+### AI编程的模式与工具
+https://sourcegraph.com/blog/levels-of-code-ai
+下面level0-level4是人主导，level5是AI主导完成开发
+1. Level 0 – 无 AI 协助：
+开发者完全手动编写代码，AI 不参与任何生成或修改。此阶段包括基础的非 AI 辅助功能，如符号名称补全、悬停提示、定义和引用查找、自动格式化等。
+- Visual Studio Code
+- JetBrains 系列（如 IntelliJ IDEA、PyCharm）
+- Git
+- GitHub
+- GitLab
+
+2. Level 1 – 代码补全：
+AI 根据上下文生成单行或整块代码，例如根据函数签名推测实现逻辑。此时，AI 仅在开发者的指引下执行单次操作，生成的代码仍需开发者验证。
+- GitHub Copilot：由 OpenAI Codex 驱动，提供上下文相关的代码建议。
+- Tabnine：支持多种编程语言的 AI 代码补全工具。
+- JetBrains AI：集成于 JetBrains IDE 中，提供智能代码补全功能。
+- Amazon CodeWhisperer：亚马逊推出的 AI 代码补全工具。
+- Google Gemini Code Assist：谷歌推出的 AI 代码补全工具。
+
+3. Level 2 – 代码生成：
+AI 能够根据开发者指令，设计和实现 API、修复现有代码等，生成更长的代码块。开发者仍需审查 AI 生成的代码，但 AI 的理解能力和生成质量已显著提升。
+- OpenAI Codex：支持多种编程语言的代码生成。
+- Anthropic Sonnet：支持多种编程语言的代码生成。
+- Replit Ghostwriter：Replit 提供的 AI 代码生成工具。
+- FauxPilot：提供代码生成和补全功能的工具。
+
+
+4. Level 3 – 监督自动化：
+开发者提供高层次目标，AI 执行多步操作以实现目标，并具备一定的自我验证能力。例如，修复多种类型的 bug、添加新特性、与其他系统集成等。
+- Sourcegraph Cody：提供代码生成、调试和文档生成等功能的 AI 助手。
+- Cursor：AI 驱动的集成开发环境，支持代码生成和重构。
+- Functionize：AI 驱动的自动化测试平台。
+- Digital.ai Continuous Testing：提供持续集成和自动化测试的解决方案
+
+5. Level 4 – 完全自动化：
+AI 能够独立完成复杂任务，开发者无需审查最终代码输出。此阶段的 AI 类似于高级工程师，能够自主解决复杂问题。
+- Builder.io Visual Copilot：将设计转化为代码的 AI 工具。
+- StackAI：无代码 AI 平台，帮助构建 AI 代理自动化业务任务。
+
+6. Level 5 – AI 主导的完全自主：
+AI 不仅执行开发者定义的目标，还能自主设定目标，最大化某种基本奖励函数。这类似于人类大脑追求多巴胺或公司追求利润的方式。
+- OpenAI Codex CLI：命令行界面的 AI 编程助手。
+- Windsurf（原 Codeium）：AI 编程助手，支持多种编程语言。
+
+
